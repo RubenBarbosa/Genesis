@@ -38,11 +38,15 @@ public class EstadoPedido implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
+
     @Column(name = "idEstado")
     private Integer idEstado;
-    @Size(max = 20)
+    @NotNull(message = "Este campo es obligatorio")
+    @Size(min = 1, max = 20, message = "Este campo debe estar entre 1 y 20 carácteres")
+
     @Column(name = "nombre")
     private String nombre;
+    @NotNull(message = "Este campo es obligatorio")
     @OneToMany(mappedBy = "idEstado", fetch = FetchType.LAZY)
     private List<Pedido> pedidoList;
 
@@ -102,5 +106,5 @@ public class EstadoPedido implements Serializable {
     public String toString() {
         return "" + nombre;
     }
-    
+
 }

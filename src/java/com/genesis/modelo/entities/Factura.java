@@ -18,6 +18,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -38,18 +39,26 @@ public class Factura implements Serializable {
     private static final long serialVersionUID = 1L;
     @EmbeddedId
     protected FacturaPK facturaPK;
+    
     @Column(name = "cantidad")
     private Integer cantidad;
+    @NotNull(message = "Este campo es obligatorio")
+    
     @Column(name = "fecha")
     @Temporal(TemporalType.DATE)
     private Date fecha;
+    @NotNull(message = "Este campo es obligatorio")
+    
     @JoinColumn(name = "idPedido", referencedColumnName = "idPedido", insertable = false, updatable = false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Pedido pedido;
+    @NotNull(message = "Este campo es obligatorio")
+    
     @JoinColumn(name = "idProducto", referencedColumnName = "idProducto", insertable = false, updatable = false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Producto producto;
-
+    @NotNull(message = "Este campo es obligatorio")
+    
     public Factura() {
     }
 

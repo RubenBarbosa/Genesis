@@ -18,6 +18,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
@@ -42,10 +43,13 @@ public class Ambiente implements Serializable {
     
     @Column(name = "idAmbiente")
     private Integer idAmbiente;
-    @Size(max = 25)
+    @NotNull(message = "Este campo es obligatorio")
+    @Size(min = 1, max = 25, message = "Este campo debe estar entre 1 y 25 carácteres")
     
-    @Column(name = "nombre")
+@Column(name = "nombre")
     private String nombre;
+    @NotNull(message = "Este campo es obligatorio")
+    
     @OneToMany(mappedBy = "idAmbiente", fetch = FetchType.LAZY)
     private List<Mesa> mesaList;
 

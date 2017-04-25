@@ -53,39 +53,49 @@ public class Usuario implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
+    
     @Column(name = "cedula")
     private Long cedula;
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 15)
+    @NotNull(message = "Este campo es obligatorio")
+    @Size(min = 1, max = 15, message = "Este campo debe estar enre 1 y ")
+    
     @Column(name = "primerNombre")
     private String primerNombre;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 15)
+    
     @Column(name = "segundoNombre")
     private String segundoNombre;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 15)
+    
     @Column(name = "primerApellido")
     private String primerApellido;
     @Size(max = 15)
+    
     @Column(name = "segundoApellido")
     private String segundoApellido;
     @Size(max = 30)
+    
     @Column(name = "telefono")
     private String telefono;
     @Size(max = 40)
+    
     @Column(name = "correo")
     private String correo;
     @Size(max = 30)
+    
     @Column(name = "direccion")
     private String direccion;
     @Size(max = 30)
+    
     @Column(name = "clave")
     private String clave;
     @Size(max = 45)
+    
     @Column(name = "area")
     private String area;
     @OneToMany(mappedBy = "cedulaCapitan", fetch = FetchType.LAZY)

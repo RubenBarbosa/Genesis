@@ -18,6 +18,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
@@ -39,11 +40,15 @@ public class EstadoMesa implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
+
     @Column(name = "idEstado")
     private Integer idEstado;
-    @Size(max = 45)
+    @NotNull(message = "Este campo es obligatorio")
+    @Size(min = 1, max = 45, message = "Este campo debe estar entre 1 y 45 carácteres")
+
     @Column(name = "nombre")
     private String nombre;
+    @NotNull(message = "Este campo es obligatorio")
     @OneToMany(mappedBy = "idEstados", fetch = FetchType.LAZY)
     private List<Mesa> mesaList;
 
@@ -103,5 +108,5 @@ public class EstadoMesa implements Serializable {
     public String toString() {
         return "" + nombre;
     }
-    
+
 }

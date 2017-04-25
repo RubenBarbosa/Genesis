@@ -18,6 +18,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -39,14 +40,20 @@ public class Calificacion implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
+    
     @Column(name = "idcalificacion")
     private Integer idcalificacion;
-    @Size(max = 45)
+    @NotNull(message = "Este campo es obligatorio")
+    @Size(min = 1, max = 45, message = "Este campo debe estar entre 1 y 45 carácteres")
+    
     @Column(name = "descripcion")
     private String descripcion;
-    @Size(max = 45)
+    @NotNull(message = "Este campo es obligatorio")
+    @Size(min = 1, max = 45, message = "Este campo debe estar entre 1 y 45 carácteres")
+    
     @Column(name = "fecha")
     private String fecha;
+    @NotNull(message = "Este campo es obligatorio")
     @JoinColumn(name = "cedulaMesero", referencedColumnName = "cedula")
     @ManyToOne(fetch = FetchType.LAZY)
     private Usuario cedulaMesero;

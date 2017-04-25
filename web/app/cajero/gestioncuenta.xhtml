@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <ui:composition template="/WEB-INF/cajero/template.xhtml">
+        <ui:define name="contenido">
+            <!--inicio recibo -->
+            <section >
+                <div class="container">
+                    <div class="container">
+                        <div class="row cajbu">
+                            <h4 style="color: white;">Ingrese el número de mesa o número de acción</h4>
+                            <div id="custom-search-input">
+                                <div class="input-group col-md-4">
+                                    <input type="text" class="form-control input-lg" placeholder="Buscar" />
+                                    <span class="input-group-btn">
+
+                                        <button class="btn btn-info btn-lg" type="button">
+                                            <i class="glyphicon glyphicon-search"></i>
+                                        </button>
+
+                                    </span>
+                                </div>
+                            </div>
+                            <br/><br/><br/>
+                            <hr/>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+                                <img id="recibo" style="width: 100%;height: 10%;" src="/genesis_1/javax.faces.resource/recibo.png.xhtml?ln=imgs" alt="" />
+                                <div class="row">
+                                    <div class="col-xs-6 col-sm-6 col-md-6">
+                                        <address>
+
+                                            <strong>GENESIS GOURMET</strong>
+                                            <br />
+                                            Club Campestre Guaymaral
+                                            <br />
+                                            Sergio Camargo
+                                            <br/>
+                                            <abbr title="Phone"></abbr> Acción No. 001</address>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                                        <p>
+                                            <em>Fecha: Septiembre 7, 2016</em>
+                                        </p>
+                                        <p>
+                                            <em>Factura #: 34522677</em>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="text-center">
+                                        <h1>Factura</h1>
+                                    </div>
+
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Producto</th>
+                                                <th>#</th>
+                                                <th class="text-center">Precio</th>
+                                                <th class="text-center">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="col-md-9"><h4><em>Linguini Amatriciana</em></h4></td>
+                                                <td class="col-md-1" style="text-align: center"> 2 </td>
+                                                <td class="col-md-1 text-center">$29.900</td>
+                                                <td class="col-md-1 text-center">$59.800</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-9"><h4><em>Bife de Chorizo 400g</em></h4></td>
+                                                <td class="col-md-1" style="text-align: center"> 1 </td>
+                                                <td class="col-md-1 text-center">$39.900</td>
+                                                <td class="col-md-1 text-center">$39.900</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-9"><h4><em>Limonada Guaymaral</em></h4></td>
+                                                <td class="col-md-1" style="text-align: center"> 3 </td>
+                                                <td class="col-md-1 text-center">$3.300</td>
+                                                <td class="col-md-1 text-center">$9.900</td>
+                                            </tr>
+                                            <tr>
+                                                <td>   </td>
+                                                <td>   </td>
+                                                <td class="text-right">
+                                                    <p>
+                                                        <strong>Subtotal: </strong>
+                                                    </p>
+                                                    <p>
+                                                        <strong>Servicio: </strong>
+                                                    </p></td>
+                                                <td class="text-center">
+                                                    <p>
+                                                        <strong>$109.600</strong>
+                                                    </p>
+                                                    <p>
+                                                        <strong>$10.960</strong>
+                                                    </p></td>
+                                            </tr>
+                                            <tr>
+                                                <td>   </td>
+                                                <td>   </td>
+                                                <td class="text-right"><h4><strong>Total: </strong></h4></td>
+                                                <td class="text-center text-danger"><h4><strong>$120.560</strong></h4></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <a href="modificarcuenta.xhtml">
+                                        <button type="button" class="btn btn-success btn-lg btn-block">
+                                            Modificar propina <span class="glyphicon glyphicon-chevron-right"></span>
+                                        </button>
+                                    </a>
+                                    <button type="button" id="imprimir" class="btn btn-success btn-lg btn-block">
+                                        Imprimir cuenta&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-right"></span>
+                                    </button>
+
+                                    <button type="button" id="btn_Eliminar" style="background:#DC143C" class="btn btn-success btn-lg btn-block">
+                                        Eliminar cuenta <span class="glyphicon glyphicon-chevron-right"></span> 
+                                    </button>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--fin recibo -->
+
+            <!--Boton Eliminar Cuenta -->
+            <script>
+                $().ready(function () {
+                    $('#btn_Eliminar').click(function () {
+                        swal({
+                            title: "¿Está seguro de eliminar su cuenta?",
+                            text: "Una vez eliminada su cuenta no se podra recuperar",
+                            type: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#DD6B55",
+                            confirmButtonText: "Si, eliminar!",
+                            cancelButtonText: "No, cancelar!",
+                            closeOnConfirm: false,
+                            closeOnCancel: false
+                        },
+                                function (isConfirm) {
+                                    if (isConfirm) {
+                                        swal("¡Cuenta Eliminada con Exito!", "Su cuenta se ha eliminado .", "success");
+                                    } else {
+                                        swal("Cancelado", "Su cuenta no se ha eliminado", "error");
+                                    }
+                                });
+                    });
+                });
+            </script>
+
+            <script>
+                $().ready(function () {
+                    $('#imprimir').click(function () {
+                        swal({
+                            title: "¿Está seguro de imprimir la factura?",
+
+                            type: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#DD6B55",
+                            confirmButtonText: "Si, imprimir!",
+                            cancelButtonText: "No, cancelar!",
+                            closeOnConfirm: false,
+                            closeOnCancel: false
+                        },
+                                function (isConfirm) {
+                                    if (isConfirm) {
+                                        swal("¡Imprimiendo factura!", "Impresion en curso...", "success");
+                                    } else {
+                                        swal("Cancelado", "Su cuenta no se ha imprimido", "error");
+                                    }
+                                });
+                    });
+                });
+            </script>
+        </ui:define>    
+    </ui:composition>
+
+</html>
+

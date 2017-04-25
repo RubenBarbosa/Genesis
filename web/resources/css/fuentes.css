@@ -1,0 +1,18 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 7/04/2017, 08:59:01 AM
+    Author     : zergiok
+*/
+@font-face{
+    font-family: Blacksword;
+    src: url('#{resource["fonts/Blacksword.ttf"]}')
+}
+
+@font-face{
+    font-family: Exo-Regular;
+    src: url('#{resource["fonts/Exo-Regular.ttf"]}')
+}

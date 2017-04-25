@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/WEB-INF/administrador/template.xhtml">
+        <ui:define name="migas">
+            <!-- inicio migas de pan -->
+            <section>
+                <div class="migas">
+                    <div class="row migas">
+                        <ol class="breadcrumb migas">
+                            <li><a href="../../inicioadministrador.xhtml">Inicio</a></li>
+                            <li><a href="../List.xhtml">Usuarios</a></li>
+                            <li class="active">Tipos documentos</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <!-- fin migas de pan -->
+        </ui:define>
+        <ui:define name="contenido">
+            <section id="mesas">
+                <div class="container">
+                    <div class="row">
+                        <div class="">
+                            <h:form styleClass="jsfcrud_list_form">
+                                <h:panelGroup id="messagePanel" layout="block">
+                                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                </h:panelGroup>
+                                <h:outputText escape="false" value="#{bundle.ListTipodocumentoEmpty}" rendered="#{tipodocumentoController.items.rowCount == 0}"/>
+                                <h:panelGroup rendered="#{tipodocumentoController.items.rowCount > 0}">
+                                    <h:outputText style="margin-left: 10%; color: #fff; margin-top: 10px;" value="#{tipodocumentoController.pagination.pageFirstItem + 1}..#{tipodocumentoController.pagination.pageLastItem + 1}/#{tipodocumentoController.pagination.itemsCount}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{tipodocumentoController.previous}" value="#{bundle.Previous} #{tipodocumentoController.pagination.pageSize}" rendered="#{tipodocumentoController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{tipodocumentoController.next}" value="#{bundle.Next} #{tipodocumentoController.pagination.pageSize}" rendered="#{tipodocumentoController.pagination.hasNextPage}"/>&nbsp;
+                                    <br/>
+                                    <br/>
+                                    <h:commandLink  style="margin-left: 10%;" class="btn btn-primary" action="#{tipoController.prepareCreate}" value="#{bundle.ListTipoCreateLink}"/>
+                                    <h:dataTable value="#{tipodocumentoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px; margin-left: 30%;">
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{bundle.ListTipodocumentoTitle_id}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.id}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{bundle.ListTipodocumentoTitle_tipo}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.tipo}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{bundle.ListTipodocumentoTitle_sigla}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.sigla}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="&nbsp;"/>
+                                            </f:facet>
+                                            <h:commandLink class="btn btn-primary btn-sm fa fa-eye" action="#{tipodocumentoController.prepareView}" />
+                                            <h:outputText value=" "/>
+                                            <h:commandLink class="btn btn-warning btn-sm fa fa-pencil" action="#{tipodocumentoController.prepareEdit}"/>
+                                            <h:outputText value=" "/>
+                                            <h:commandLink class="btn btn-danger btn-sm fa fa-trash" action="#{tipodocumentoController.destroy}" />
+                                        </h:column>
+                                    </h:dataTable>
+                                </h:panelGroup>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </ui:define>
+    </ui:composition>
+
+</html>

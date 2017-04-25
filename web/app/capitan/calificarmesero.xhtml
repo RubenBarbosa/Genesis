@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <ui:composition template="/WEB-INF/capitan/template.xhtml">
+        <ui:define name="contenido">
+            <!-- inicio migas de pan -->
+            <section>
+                <div class="migas">
+                    <div class="row migas">
+                        <ol class="breadcrumb migas">
+                            <li><a href="iniciocapitan.xhtml">Inicio</a></li>
+                            <li class="active">Calificación</li>
+                        </ol>
+                    </div>
+                </div>
+
+            </section>
+            <!-- fin migas de pan -->
+            <section id="fondo">
+
+                <!-- inicio formulario datos de pedido -->
+                <section>
+
+
+                    <div class="rowusuario">
+                        <h5>3:05 pm  4/08/2016</h5>
+                        <br/><br/>
+                        <div class="container-fluid well span6">
+                            <div class="row-fluid">
+                                <div class="span2" >
+                                    <h:graphicImage library="imgs" name="perfil.jpg" width="200px" height="200px" class="img-circle"/>
+                                    <!--<img src="images/perfil.jpg" style=" width: 200px; height: 200px; " class="img-circle">-->
+                                </div>
+
+                                <div class="span8 colortexto">
+                                    <h3>Daniel Campos</h3>
+                                    <h5>Correo: dscampos8@misena.edu.co</h5>
+                                    <h5>Cargo: Mesero</h5>
+                                    <h5>Edad: 17 años</h5>
+                                    <!-- <h6><a href="#">Más... </a></h6> -->
+                                </div>
+
+                                <div class="span2">
+                                    <div class="btn-group">
+                                        <a class="btn btn-info" data-toggle="" href="reportesCapitán.html">
+                                            Historial de calificaciones
+                                            <span class=""></span><span class=""></span>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>	
+
+
+                </section>
+                <!-- bUSCAR MESERO -->
+
+                <section id="">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-md-6 buscar">
+                                <h2>Ingrese nombre del mesero</h2>
+                                <div id="custom-search-input">
+                                    <div class="input-group col-md-12">
+                                        <h:inputText class="form-control input-lg"/>
+                                        <!--<input type="text" class="form-control input-lg" placeholder="Buscar" />-->
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-info btn-lg" type="button">
+                                                <i class="glyphicon glyphicon-search"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:40px;">
+                                    <div class="col-md-6">
+                                        <div class="well well-sm">
+                                            <div class="text-right">
+                                                <a class="btn btn-info" href="#reviews-anchor" id="open-review-box">Calificar y agregar observación</a>
+                                            </div>
+                                            <p class="texto">Criterios de Calificación: <br/> 1 Estrella = <b>Pésimo</b> <br/> 2 Estrellas = <b>Malo</b> <br/> 3 Estrellas = <b>Regular</b> <br/> 4 Estrellas = <b>Bueno</b><br/> 5 Estrellas = <b>Excelente</b> <br/> No olvide agregar alguna observación.</p>
+                                            <div class="row" id="post-review-box" style="display:none;">
+                                                <div class="col-md-12">
+                                                    <form accept-charset="UTF-8" action="" method="post">
+                                                        <h:inputText id="ratings-hidden"/>
+                                                        <!--<input id="ratings-hidden" name="rating" type="hidden">--> 
+                                                        <h:inputTextarea id="new-review" class="form-control animated" cols="50" rows="5"/>
+                                                        <!--<textarea class="form-control animated" cols="50" id="new-review" name="comment" placeholder="Ingrese su comentario aquí..." rows="5"></textarea>-->
+
+                                                        <div class="text-right">
+                                                            <div class="stars starrr" data-rating="0"></div>
+                                                            <a class="btn btn-danger btn-sm" href="#" id="close-review-box" style="display:none; margin-right: 10px;">
+                                                                <span class="glyphicon glyphicon-remove"></span>Cancelar</a>
+                                                            <h:button class="btn btn-success btn-lg" value="Guardar"></h:button>
+                                                            <!--<button  class="btn btn-success btn-lg" type="submit">Guardar</button>-->
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div> 
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calificar y comentar -->
+                    
+                    <div class="container">
+                        <h:button id="guardar" class="btn btn-success" value="Guardar Calificación"></h:button>
+                        <!--<button id="guardar" type="button" class="btn btn-success">Guardar Calificación</button>-->
+                    </div>
+                    
+                </section>
+            </section>
+
+
+        </ui:define>
+
+    </ui:composition>
+
+</html>

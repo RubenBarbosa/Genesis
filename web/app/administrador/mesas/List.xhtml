@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/WEB-INF/administrador/template.xhtml">
+        <ui:define name="migas">
+            <!-- inicio migas de pan -->
+            <section>
+                <div class="migas">
+                    <div class="row migas">
+                        <ol class="breadcrumb migas">
+                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
+                            <li class="active">Mesas</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <!-- fin migas de pan -->
+        </ui:define>
+        <ui:define name="contenido">
+            <section id="mesas">
+                <div class="container">
+                    <div class="row">
+                        <div class="">
+
+                            <h:form styleClass="jsfcrud_list_form">
+                                <h:panelGroup id="messagePanel" layout="block">
+                                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                </h:panelGroup>
+                                <h:outputText escape="false" value="#{bundle.ListMesaEmpty}" rendered="#{mesaController.items.rowCount == 0}"/>
+                                <h:panelGroup  rendered="#{mesaController.items.rowCount > 0}">
+                                    <h:outputText style="margin-left: 10%; color: #fff; margin-top: 10px;" value="#{mesaController.pagination.pageFirstItem + 1}..#{mesaController.pagination.pageLastItem + 1}/#{mesaController.pagination.itemsCount}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{mesaController.previous}" value="#{bundle.Previous} #{mesaController.pagination.pageSize}" rendered="#{mesaController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{mesaController.next}" value="#{bundle.Next} #{mesaController.pagination.pageSize}" rendered="#{mesaController.pagination.hasNextPage}"/>&nbsp;
+                                    <br/>
+                                    <br/>
+                                    <h:commandLink style="margin-left: 12%;" class="btn btn-primary" action="#{mesaController.prepareCreate}" value="#{bundle.ListMesaCreateLink}"/>
+                                    <br/>
+                                    <br/>
+                                    <li><a class="btn btn-success" style="margin-left: 15%;" href="estadomesa/List.xhtml">Estados</a></li>
+                                    <h:dataTable class="col-sm-4 col-sm-offset-4" value="#{mesaController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px;">
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{bundle.ListMesaTitle_idMesa}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idMesa}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{bundle.ListMesaTitle_idAmbiente}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idAmbiente.nombre}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{bundle.ListMesaTitle_idEstados}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idEstados.nombre}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="&nbsp;"/>
+                                            </f:facet>
+                                            <h:commandLink class="btn btn-primary btn-sm fa fa-eye" action="#{mesaController.prepareView}" />
+                                            <h:outputText value=" "/>
+                                            <h:commandLink class="btn btn-warning btn-sm fa fa-pencil" action="#{mesaController.prepareEdit}" />
+                                            <h:outputText value=" "/>
+                                            <h:commandLink class="btn btn-danger btn-sm fa fa-trash"  action="#{mesaController.destroy}" />
+                                        </h:column>
+                                        <!--                        <h:column>
+                                                                    <f:facet name="header">
+                                                                        <h:outputText value="#{bundle.ListUsuarioTitle_tipoDocumento}"/>
+                                                                    </f:facet>
+                                                                    <h:outputText value="#{item.tipoDocumento}"/>
+                                                                </h:column>-->
+
+                                    </h:dataTable>
+                                </h:panelGroup>
+                                <!--<h:link outcome="/index" value="#{bundle.ListUsuarioIndexLink}"/>-->
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </ui:define>
+    </ui:composition>
+
+</html>

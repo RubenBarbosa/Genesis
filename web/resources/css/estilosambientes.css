@@ -1,0 +1,112 @@
+/*BBQ*/
+#BBQ{
+  background-image: url('#{resources["/imgs/bbq.jpg"]}');
+  font-family: 'Exo', sans-serif;
+  background-attachment: fixed;
+  -webkit-background-size: 100%; 
+  background-size: 100%;
+  /* centrar, fijar y tamaño 100% en imagen de fondo */
+  min-width: 300px;
+  min-height: 300px;
+  margin: 0 auto;
+  
+  /* centrar -bloque- */
+}
+/*CAFETERIA*/
+#cafeteria{
+  background-image: url('/#{resources["imgs/cafeteria.jpg"]}');
+  font-family: 'Exo', sans-serif;
+  background-attachment: fixed;
+  -webkit-background-size: 100%; 
+  background-size: 100%;
+  /* centrar, fijar y tamaño 100% en imagen de fondo */
+  min-width: 300px;
+  min-height: 300px;
+  margin: 0 auto;
+  
+  /* centrar -bloque- */
+}
+/*salonprincipal*/
+#salonprincipal{
+  background-image: url('#{resources["/imgs/salonprincipal.jpg"]}');
+  font-family: 'Exo', sans-serif;
+  background-attachment: fixed;
+  -webkit-background-size: 100%; 
+  background-size: 100%;
+  /* centrar, fijar y tamaño 100% en imagen de fondo */
+  min-width: 300px;
+  min-height: 300px;
+  margin: 0 auto;
+  
+  /* centrar -bloque- */
+}
+/*vestier caballeros*/
+#vestiercaballeros{
+  background-image: url('#{resources["/imgs/caballeros2.jpg"]}');
+  font-family: 'Exo', sans-serif;
+  background-attachment: fixed;
+  -webkit-background-size: 100%; 
+  background-size: 100%;
+  /* centrar, fijar y tamaño 100% en imagen de fondo */
+  min-width: 300px;
+  min-height: 300px;
+  margin: 0 auto;
+  
+  /* centrar -bloque- */
+}
+/*vestier damas*/
+#vestierdamas{
+  background-image: url('#{resources["/imgs/vestierdamas.jpg"]}');
+  font-family: 'Exo', sans-serif;
+  background-attachment: fixed;
+  -webkit-background-size: 100%; 
+  background-size: 100%;
+  /* centrar, fijar y tamaño 100% en imagen de fondo */
+  min-width: 300px;
+  min-height: 300px;
+  margin: 0 auto;
+  
+  /* centrar -bloque- */
+}
+/*pedido taberna*/
+#taberna2{
+  background-image: url('#{resources["/imgs/taberna2.jpg"]}');
+  font-family: 'Exo', sans-serif;
+  background-attachment: fixed;
+  -webkit-background-size: 100%; 
+  background-size: 100%;
+  /* centrar, fijar y tamaño 100% en imagen de fondo */
+  min-width: 300px;
+  min-height: 300px;
+  margin: 0 auto;
+  
+  /* centrar -bloque- */
+}
+/*terraza*/
+#terraza{
+  background-image: url('#{resources["/imgs/terraza.jpg"]}');
+  font-family: 'Exo', sans-serif;
+  background-attachment: fixed;
+  -webkit-background-size: 100%; 
+  background-size: 100%;
+  /* centrar, fijar y tamaño 100% en imagen de fondo */
+  min-width: 300px;
+  min-height: 300px;
+  margin: 0 auto;
+  
+  /* centrar -bloque- */
+}
+/*taberna*/
+#taberna{
+  background-image: url('#{resources["/imgs/taberna.jpg"]}');
+  font-family: 'Exo', sans-serif;
+  background-attachment: fixed;
+  -webkit-background-size: 100%; 
+  background-size: 100%;
+  /* centrar, fijar y tamaño 100% en imagen de fondo */
+  min-width: 300px;
+  min-height: 300px;
+  margin: 0 auto;
+  
+  /* centrar -bloque- */
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditRolusuarioTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditRolusuarioLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{rolusuarioController.selected.id}" title="#{bundle.EditRolusuarioTitle_id}" required="true" requiredMessage="#{bundle.EditRolusuarioRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditRolusuarioLabel_fecha}" for="fecha" />
+                    <h:inputText id="fecha" value="#{rolusuarioController.selected.fecha}" title="#{bundle.EditRolusuarioTitle_fecha}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditRolusuarioLabel_idRol}" for="idRol" />
+                    <h:selectOneMenu id="idRol" value="#{rolusuarioController.selected.idRol}" title="#{bundle.EditRolusuarioTitle_idRol}" required="true" requiredMessage="#{bundle.EditRolusuarioRequiredMessage_idRol}">
+                        <f:selectItems value="#{rolController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditRolusuarioLabel_cedula}" for="cedula" />
+                    <h:selectOneMenu id="cedula" value="#{rolusuarioController.selected.cedula}" title="#{bundle.EditRolusuarioTitle_cedula}" required="true" requiredMessage="#{bundle.EditRolusuarioRequiredMessage_cedula}">
+                        <f:selectItems value="#{usuarioController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{rolusuarioController.update}" value="#{bundle.EditRolusuarioSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditRolusuarioViewLink}"/>
+                <br />
+                <h:commandLink action="#{rolusuarioController.prepareList}" value="#{bundle.EditRolusuarioShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditRolusuarioIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

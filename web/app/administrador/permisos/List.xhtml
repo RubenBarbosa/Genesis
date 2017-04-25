@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/WEB-INF/administrador/template.xhtml">
+        <ui:define name="migas">
+            <!-- inicio migas de pan -->
+            <section>
+                <div class="migas">
+                    <div class="row migas">
+                        <ol class="breadcrumb migas">
+                            <li><a href="../../inicioadministrador.xhtml">Inicio</a></li>
+                            <li class="active">Permisos</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <!-- fin migas de pan -->
+        </ui:define>
+        <ui:define name="contenido">
+            <section id="mesas">
+                <div class="">
+                    <div class="">
+                        <div class="col-sm-9 col-sm-offset-3">
+
+                            <h:form styleClass="jsfcrud_list_form">
+                                <h:panelGroup id="messagePanel" layout="block">
+                                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                </h:panelGroup>
+                                <h:outputText escape="false" value="#{bundle.ListPermisoEmpty}" rendered="#{permisoController.items.rowCount == 0}"/>
+                                <h:panelGroup  rendered="#{permisoController.items.rowCount > 0}">
+                                    <h:outputText style=" color: #fff; margin-top: 10px;" value="#{permisoController.pagination.pageFirstItem + 1}..#{permisoController.pagination.pageLastItem + 1}/#{permisoController.pagination.itemsCount}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{permisoController.previous}" value="#{bundle.Previous} #{permisoController.pagination.pageSize}" rendered="#{permisoController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{permisoController.next}" value="#{bundle.Next} #{permisoController.pagination.pageSize}" rendered="#{permisoController.pagination.hasNextPage}"/>&nbsp;
+                                    <br/>
+                                    <br/>
+                                    <h:commandLink  class="btn btn-primary" action="#{permisoController.prepareCreate}" value="#{bundle.ListPermisoCreateLink}"/>
+                                                    <h:dataTable value="#{permisoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px; ">
+                                            <h:column>
+                                                <f:facet name="header">
+                                                    <h:outputText value="#{bundle.ListPermisoTitle_idpermisos}"/>
+                                                </f:facet>
+                                                <h:outputText value="#{item.idpermisos}"/>
+                                            </h:column>
+                                            <h:column>
+                                                <f:facet name="header">
+                                                    <h:outputText value="#{bundle.ListPermisoTitle_nombre}"/>
+                                                </f:facet>
+                                                <h:outputText value="#{item.nombre}"/>
+                                            </h:column>
+                                            <h:column>
+                                                <f:facet name="header">
+                                                    <h:outputText value="#{bundle.ListPermisoTitle_url}"/>
+                                                </f:facet>
+                                                <h:outputText value="#{item.url}"/>
+                                            </h:column>
+                                            <h:column>
+                                                <f:facet name="header">
+                                                    <h:outputText value="&nbsp;"/>
+                                                </f:facet>
+                                                <h:commandLink class="btn btn-primary btn-sm fa fa-eye" action="#{permisoController.prepareView}" value="#{bundle.ListUsuarioViewLink}"/>
+                                                <h:outputText value=" "/>
+                                                <h:commandLink class="btn btn-warning btn-sm fa fa-pencil" action="#{permisoController.prepareEdit}" value="#{bundle.ListUsuarioEditLink}"/>
+                                                <h:outputText value=" "/>
+                                                <h:commandLink class="btn btn-danger btn-sm fa fa-trash" action="#{permisoController.destroy}" value="#{bundle.ListUsuarioDestroyLink}"/>
+                                            </h:column>
+                                        </h:dataTable>
+                                </h:panelGroup>
+                                <!--<h:link outcome="/index" value="#{bundle.ListUsuarioIndexLink}"/>-->
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </ui:define>
+    </ui:composition>
+
+</html>

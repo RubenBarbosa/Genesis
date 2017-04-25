@@ -1,0 +1,197 @@
+body{
+    background-color: white;
+    font-family: verdana;
+    text-align: justify-all;
+    min-height: 100%;
+    padding-top: 70px;
+    font-family: 'Exo', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+/*carrucel Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque hic, voluptates assumenda, quasi odio quo alias modi iste reprehenderit in eveniet nobis quis, aliquam provident ad laborum reiciendis! Voluptas, magnam.*/
+
+
+#thumbnail-preview-indicators {
+    position: relative;
+    overflow: hidden;
+}
+#thumbnail-preview-indicators .slides .slide-1, 
+#thumbnail-preview-indicators .slides .slide-2,
+#thumbnail-preview-indicators .slides .slide-3,
+#thumbnail-preview-indicators .slides .slide-4,
+#thumbnail-preview-indicators .slides .slide-5,
+#thumbnail-preview-indicators .slides .slide-6,
+#thumbnail-preview-indicators .slides .slide-7,
+#thumbnail-preview-indicators .slides .slide-8,
+#thumbnail-preview-indicators .slides .slide-9,
+#thumbnail-preview-indicators .slides .slide-10,
+#thumbnail-preview-indicators .slides .slide-11, 
+#thumbnail-preview-indicators .slides .slide-12 
+{
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+#thumbnail-preview-indicators,
+#thumbnail-preview-indicators .slides,
+#thumbnail-preview-indicators .slides .slide-1, 
+#thumbnail-preview-indicators .slides .slide-2,
+#thumbnail-preview-indicators .slides .slide-3,
+#thumbnail-preview-indicators .slides .slide-4, 
+#thumbnail-preview-indicators .slides .slide-5,
+#thumbnail-preview-indicators .slides .slide-6, 
+#thumbnail-preview-indicators .slides .slide-7, 
+#thumbnail-preview-indicators .slides .slide-8, 
+#thumbnail-preview-indicators .slides .slide-9,
+#thumbnail-preview-indicators .slides .slide-10,
+#thumbnail-preview-indicators .slides .slide-11,
+#thumbnail-preview-indicators .slides .slide-12
+{
+    height: 700px;
+}
+#thumbnail-preview-indicators .slides .slide-1 {
+    background-image: url('#{resources["imgs/fondocalificar.jpg"]}');
+    /*background-image: url(../images/fondocalificar.jpg);*/ 
+}
+#thumbnail-preview-indicators .slides .slide-2 {
+    background-image: url('#{resources["imgs/027.jpg"]}');
+    /*background-image: url(../images/027.jpg);*/
+}
+#thumbnail-preview-indicators .slides .slide-3 {
+    background-image: url('#{resources["imgs/031.jpg"]}');
+    /*background-image: url(../images/031.jpg);*/
+}
+#thumbnail-preview-indicators .slides .slide-4 {
+    background-image: url('#{resources["imgs/011.jpg"]}');
+    /*background-image: url(../images/011.jpg);*/
+}
+#thumbnail-preview-indicators .slides .slide-5 {
+    background-image: url('#{resources["imgs/019.jpg"]}');
+    /*background-image: url(../images/019.jpg);*/
+}
+#thumbnail-preview-indicators .slides .slide-6 {
+    background-image: url('#{resources["imgs/06.jpg"]}');
+    /*background-image: url(../images/06.jpg);*/
+}
+#thumbnail-preview-indicators .slides .slide-7 {
+    background-image: url('#{resources["imgs/025.jpg"]}');
+    /*background-image: url(../images/025.jpg);*/
+}
+#thumbnail-preview-indicators .slides .slide-8 {
+    background-image: url('#{resources["imgs/029.jpg"]}');
+    /*background-image: url(../images/029.jpg);*/
+}
+#thumbnail-preview-indicators .slides .slide-9 {
+    background-image: url('#{resources["imgs/050.jpg"]}');
+    /*background-image: url(../images/050.jpg);*/
+}
+#thumbnail-preview-indicators .slides .slide-10 {
+    background-image: url('#{resources["imgs/fondo4.jpg"]}');
+    /*background-image: url(../images/fondo4.jpg);*/
+}
+#thumbnail-preview-indicators .slides .slide-11 {
+    background-image: url('#{resources["imgs/034.jpg"]}');
+    /*background-image: url(../images/034.jpg);*/
+}
+#thumbnail-preview-indicators .slides .slide-12 {
+    background-image: url('#{resources["imgs/037.jpg"]}');
+    /*background-image: url(../images/037.jpg);*/
+}
+#thumbnail-preview-indicators .carousel-inner .item .carousel-caption {
+    top: 20%;
+    bottom: inherit;
+}
+#thumbnail-preview-indicators .carousel-indicators li,
+#thumbnail-preview-indicators .carousel-indicators li.active {
+    position: relative;
+    width: 100px;
+    height: 8px;  
+}
+#thumbnail-preview-indicators .carousel-indicators li > .thumbnail {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    display: none;
+    opacity: 0;
+    left: 50%;
+    margin-top: -80px;
+    margin-left: -50px;
+}
+#thumbnail-preview-indicators .carousel-indicators li:hover > .thumbnail,
+#thumbnail-preview-indicators .carousel-indicators li.active > .thumbnail {
+    display: block;
+    opacity: .5;
+}
+#thumbnail-preview-indicators .carousel-indicators li.active > .thumbnail:hover{
+    opacity: 4;
+}
+@media screen and (max-width : 480px) {    
+    #thumbnail-preview-indicators .carousel-indicators li,
+    #thumbnail-preview-indicators .carousel-indicators li.active {
+        width: 50px;
+        height: 8px;
+        position: relative;
+    }
+    #thumbnail-preview-indicators .carousel-indicators li > .thumbnail {
+        width: 50px;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -25px;
+    }
+}
+/*Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque perferendis explicabo expedita placeat, sed nihil, sit aperiam totam doloribus eveniet nesciunt tempore temporibus reiciendis non provident iusto tempora dolor nulla?*/
+
+.panel-image {
+    position: relative;   
+}
+.panel-image img.panel-image-preview {
+    width: 100%;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.panel-image label {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.panel-heading ~ .panel-image img.panel-image-preview {
+    border-radius: 0px;
+}
+
+.panel-body {
+    overflow: hidden;
+}
+
+.panel-image ~ input[type=checkbox] {
+    position:absolute;
+    top:- 30px;
+    z-index: -1;   
+}
+
+.panel-image ~ input[type=checkbox] ~ .panel-body {
+    height: 0px;
+    padding: 0px;
+}
+
+.panel-image ~ input[type=checkbox]:checked ~ .panel-body {
+    height: auto;
+    padding: 15px;
+}
+
+.panel-image ~ .panel-footer a {
+    padding: 0px 10px;
+    font-size: 1.3em;
+    color: rgb(100, 100, 100);
+}
+h1 {
+    font-size: 60px;
+}
+#thumbnail-preview-indicators .carousel-inner .item .carousel-caption {
+    top: 20%;
+    bottom: inherit;
+    background-color: rgba(000, 000, 000, .5  );
+}

@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/WEB-INF/administrador/template.xhtml">
+        <ui:define name="migas">
+
+            <!-- inicio migas de pan -->
+            <section>
+                <div class="migas">
+                    <div class="row migas">
+                        <ol class="breadcrumb migas">
+                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
+                            <li><a href="List.xhtml">Usuarios</a></li>
+                            <li class="active">Editar</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <!-- fin migas de pan -->
+        </ui:define>
+        <ui:define name="contenido">
+            <section id="mesas">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <div class="page-header">
+                                <h2>Actualizacci�n de datos</h2>
+                            </div>
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <h:form id="defaultForm" a:method="post" class="form-horizontal" >
+<!--                                <div class="form-group">
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.EditRolLabel_idRol}" for="idRol" />
+                                    <div class="col-sm-5">
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="Documento" a:pattern="[0-9]" id="idRol" value="#{rolController.selected.idRol}" title="#{bundle.EditRolTitle_idRol}" required="true" requiredMessage="#{bundle.EditRolRequiredMessage_idRol}"/>
+                                    </div>
+                                </div>-->
+
+                                <div class="form-group">
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.EditRolLabel_descripcion}" for="descripcion" />
+                                    <div class="col-sm-5">
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="Descrici�n" id="descripcion" value="#{rolController.selected.descripcion}" title="#{bundle.EditRolTitle_descripcion}" />/>
+                                    </div>                    
+                                </div>
+
+                                <br />
+                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{rolController.update}" value="#{bundle.EditRolSaveLink}"/>
+
+
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    // Generate a simple captcha
+                    function randomNumber(min, max) {
+                        return Math.floor(Math.random() * (max - min + 1) + min);
+                    }
+                    ;
+                    $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
+
+                    $('#defaultForm').formValidation({
+                        message: 'Este valor no es válido',
+                        icon: {
+                            valid: 'glyphicon glyphicon-ok',
+                            invalid: 'glyphicon glyphicon-remove',
+                            validating: 'glyphicon glyphicon-refresh'
+                        },
+                        fields: {
+                            firstName: {
+                                row: '.col-sm-4',
+                                validators: {
+                                    notEmpty: {
+                                        message: 'Este campo es requerido'
+                                    }
+                                }
+                            },
+                            lastName: {
+                                row: '.col-sm-4',
+                                validators: {
+                                    notEmpty: {
+                                        message: 'Este campo es requerido'
+                                    }
+                                }
+                            },
+                            username: {
+                                message: 'El documento no es válido',
+                                validators: {
+                                    notEmpty: {
+                                        message: 'Este campo es requerido'
+                                    },
+                                    stringLength: {
+                                        min: 6,
+                                        max: 30,
+                                        message: 'El nombre de usuario debe ser entre más de 6 y menos de 30 caracteres'
+                                    },
+                                    regexp: {
+                                        regexp: /^[a-zA-Z0-9_\.]+$/,
+                                        message: 'The username can only consist of alphabetical, number, dot and underscore'
+                                    }
+                                }
+                            },
+                            email: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'Este campo es requerido'
+                                    },
+                                    emailAddress: {
+                                        message: 'Esto no es un correo electrónico valido'
+                                    }
+                                }
+                            },
+                            area: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'Este campo es requerido'
+                                    },
+                                    emailAddress: {
+                                        message: 'Esto no es un correo electrónico valido'
+                                    }
+                                    regexp: {
+                                        regexp: /^[a-zA-Z0-9_\.]+$/,
+                                        message: 'Este campo no puede contener n�meros'
+                                    }
+                                }
+                            },
+                            password: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'Este campo es requerido'
+                                    },
+                                    different: {
+                                        field: 'username',
+                                        message: 'La contraseña no coincide con este usuario'
+                                    }
+                                }
+                            },
+                            
+                            gender: {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'Este campo es requerido'
+                                    }
+                                }
+                            },
+                            captcha: {
+                                validators: {
+                                    callback: {
+                                        message: 'Respuesta incorrecta',
+                                        callback: function (value, validator, $field) {
+                                            var items = $('#captchaOperation').html().split(' '), sum = parseInt(items[0]) + parseInt(items[2]);
+                                            return value == sum;
+                                        }
+                                    }
+                                }
+                            },
+                            /*agree: {
+                             validators: {
+                             notEmpty: {
+                             message: 'You must agree with the terms and conditions'
+                             }
+                             }
+                             }*/
+                        }
+                    }).on('success.form.fv', function (event) {
+                        event.preventDefault();
+                        swal({
+                            title: "Registro éxitoso",
+                            text: "El usuario se ha registrado correctámente!"
+                        }, function () {
+                            location.href = "registrarPersonal.html"
+                        });
+                    });
+                });
+            </script>
+            <script>
+            </script>
+
+        </ui:define>
+
+    </ui:composition>
+
+</html>

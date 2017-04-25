@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <ui:composition template="/WEB-INF/administrador/template.xhtml">
+        
+        <ui:define name="migas">
+            <!-- inicio migas de pan -->
+            <section>
+                <div class="migas">
+                    <div class="row migas">
+                        <ol class="breadcrumb migas">
+                            <li class="active">Inicio</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <!-- fin migas de pan -->
+        </ui:define>
+        <ui:define name="contenido">
+            
+
+            <!--inicio bienvenida -->
+            <section>
+                <div class="row">
+                    <h:graphicImage id="fotoperfilj" library="imgs" name="perfil.jpg" alt="imagen de perfil" class="img-circle img-responsive" />
+                </div>
+                <div class="container bienvenida">
+                    <div class="row ">
+
+                        <h1><strong>Bienvenido Administrador</strong></h1>
+                        <h3><strong>Aquí podrá:</strong>
+                            <br/>
+                            <br/> - Gestionar personal 
+                            <br/> - Ver estadisticas
+                            <br/> - Gestionar opciones del sistema
+                            <br/> - Generar reportes</h3>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <!--fin bienvenida-->
+            <!--alerta bienvenida-->
+            <script>
+                swal("¡Bienvenido Administrador!")
+            </script>
+
+        </ui:define>
+
+    </ui:composition>
+
+</html>
+

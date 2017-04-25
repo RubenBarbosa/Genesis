@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <ui:composition template="/WEB-INF/administrador/template.xhtml">
+        <ui:define name="migas">
+            <!-- inicio migas de pan -->
+            <section>
+                <div class="migas">
+                    <div class="row migas">
+                        <ol class="breadcrumb migas">
+                            <li><a href="inicioadministrador.xhtml">Inicio</a></li>
+                            <li><a href="perfiladministrador.xhtml">Perfil</a></li>
+                            <li class="active">Modificar datos</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <!-- fin migas de pan -->
+        </ui:define>
+        <ui:define name="contenido">
+            <section id="fondo" class="fondo">
+
+			<div class="container ">
+				<div class="">
+					<div class="panel-heading">
+						<div class="panel-title text-center">
+							<h1 class="title">Modificar datos</h1>
+							<hr/>
+						</div>
+					</div> 
+					<form class="form-horizontal">
+					<fieldset>
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="textinput" style="color:white;">Teléfono</label>  
+								<div class="col-md-4">
+									<input id="textinput" name="textinput" type="text" placeholder="Ingrese su nuevo teléfono" class="form-control input-md" required=""/>
+									<span class="help-block"></span>  
+								</div>
+							</div>
+
+							<!-- Text input-->
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="textinput" style="color:white;">Correo electrónico</label>  
+								<div class="col-md-4">
+									<input id="textinput" name="textinput" type="text" placeholder="Ingrese su nuevo correo electrónico" class="form-control input-md" required=""/>
+									<span class="help-block"></span>  
+								</div>
+							</div>
+
+							<!-- Text input-->
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="textinput" style="color:white;">Dirección</label>  
+								<div class="col-md-4">
+									<input id="textinput" name="textinput" type="text" placeholder="Ingrese su nueva dirección" class="form-control input-md" requires=""/>
+									<span class="help-block"></span>  
+								</div>
+							</div>
+
+							<!-- Password input-->
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="passwordinput" style="color:white;">Contraseña</label>
+								<div class="col-md-4">
+									<input id="passwordinput" name="passwordinput" type="password" placeholder="Ingrese su contraseña" class="form-control input-md" required=""/>
+									<span class="help-block"></span>
+								</div>
+							</div>
+
+							<!-- Password input-->
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="passwordinput" style="color:white;">Confirmar contraseña</label>
+								<div class="col-md-4">
+									<input id="passwordinput" name="passwordinput" type="password" placeholder="Confirme su contraseña" class="form-control input-md" required=""/>
+									<span class="help-block"></span>
+								</div>
+							</div>
+
+							<!-- Button -->
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="singlebutton" style="color:white;"></label>
+								<div class="col-md-4">
+									<button id="singlebutton" name="singlebutton" class="btn btn-primary">Guardar</button>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</section>
+        </ui:define>
+
+    </ui:composition>
+
+</html>
+

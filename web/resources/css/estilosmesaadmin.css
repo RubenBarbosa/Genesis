@@ -1,0 +1,190 @@
+*{
+    box-sizing: border-box;
+}
+/*estilos ingresar pedido*/
+body{
+    background-image:url('#{resource["imgs/2.jpg"]}');
+    font-family: 'Exo', sans-serif;
+    background-attachment: fixed;
+    -webkit-background-size: 100%; 
+    background-size: 100%;
+    /* centrar, fijar y tamaño 100% en imagen de fondo */
+    min-width: 300px;
+    min-height: 300px;
+    margin: 0 auto;
+    height: auto;
+
+    /* centrar -bloque- */
+    /* estilos fondo admin */
+
+    /* fin estilos fondo admin */
+
+}
+.encabezado{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#606c88+0,3f4c6b+100;Grey+3D+%232 */
+    background-color: #23282e ;
+    width: 100%;
+    height: 70px;
+    text-align: right;
+    color: white;
+}
+.encabezado div a{
+    color: white;
+    text-decoration: none;
+}
+.encabezado div a:hover{
+    color: #ccc;
+    font-size: 17px;
+}
+.migas{
+    background-color: #002B3C;
+    margin: 0 0 0 8px;
+    margin-top: 0;
+    padding-right: 0;
+
+}
+.ambientesnav{
+    background-color: rgba(000, 000, 000, .8  );
+    margin-top: 0px; 
+}
+.nav-pills{
+    background-color: rgba(000, 000, 000, .8  );
+    width: 98.5%;
+    min-width: 650px;
+    max-width: 1500px;
+    float: left;
+    margin-left: 1.5%;
+}
+
+
+#mesas{
+    background-color: rgba(000, 000, 000, .6 );
+    width: 100%;
+    height: 700px;
+}
+#mesas h2{
+    color: white;
+}
+label{
+    color: #ccc;
+}
+input{
+    background-color: #ccc;
+}
+#observaciones{
+    height: 70px;
+}
+#btn_Pedido{
+    margin-top: 2px;
+}
+.hora{
+    width: 100%;
+}
+
+
+#productositems{
+    width: 501px;
+    float: left;
+    text-align: center;
+}
+legend{
+    color: white;
+}
+.listaproductos{
+    border-left: 1px solid white;
+    float: left;
+    width: 800px;
+    text-align: center;
+}
+#mesasp{
+    background-color: rgba(000, 000, 000, .6 );
+    width: 100%;
+    height: 594px;
+}
+/*inicio estilos lista productos*/
+.listaproductos table thead{
+    background-color: #3F3F3F;
+    color: black;
+}
+.listaproductos table tbody tr td{
+    background-color: #242424;
+    color: white;
+    text-align: left;
+}
+
+.tabla{
+    width: 700px;
+    margin: 3% 0 6% 3%;
+}
+.lista{
+    width: 800px;
+}
+
+/*inicio estilos mensaje de alerta de estado del pedido*/
+.alerta{
+    background-color: rgba(189, 0, 0, 0.7);
+    float: left;
+    margin-top: 50px;
+    color: black;
+    padding: 5px 5px 5px 5px; 
+    border-radius: 15px 15px 15px 15px;
+}
+/*fin estilos mensaje de alerta de estado del pedido*/
+
+/*estilos pedido*/
+#hora{
+    color: white;
+    text-align: right;
+    margin-right: 20px;
+    width: 97%;
+}
+#productositems{
+    width: 501px;
+    float: left;
+    text-align: center;
+}
+legend{
+    color: white;
+}
+.listaproductos{
+    border-left: 1px solid white;
+    float: left;
+    width: 800px;
+    text-align: center;
+}
+#mesasp{
+    background-color: rgba(000, 000, 000, .6 );
+    width: 100%;
+    height: 594px;
+}
+.report-module:hover .thumbnail img {
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.3);
+    transform: scale(1.1);
+    opacity: .9;
+}
+.report-module .thumbnail img {
+    display: block;
+    width: 150%;
+    -webkit-transition: all 0.3s linear 0s;
+    -moz-transition: all 0.3s linear 0s;
+    -ms-transition: all 0.3s linear 0s;
+    -o-transition: all 0.3s linear 0s;
+    transition: all 0.3s linear 0s;
+    opacity: .9;
+}
+#fotoperfilj{
+    margin-top: 5px;
+    width: 250px;
+    height: 250px;
+    margin-left: 40%;
+}
+.bienvenida{
+    background-color: rgba(000,000,000, .8);
+    margin-top: 30px;
+    float: left;
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}

@@ -1,0 +1,42 @@
+/*estilos de amcharts*/
+#chartdiv {
+	width: 50%;
+  	height: 400px;
+	margin-left: 20px;
+	border-right: 1px solid white;
+	float: left;
+}
+
+.amcharts-export-menu-top-right {
+  top: 10px;
+  right: 0;
+}		
+/*estilos propios*/
+#grafica{
+	background-color: rgba(106, 106, 106, .7 );
+	width: 100%;
+	height: 560px;
+}
+#grafica .row{
+	text-align: center;
+
+}
+
+#grafica h1{
+	margin: 40px 0 20px 0; 
+	color: black;
+}	
+/*estilos para los meses*/
+.informacion{
+	float: left;
+	width: 40%;
+	margin-left: 3%;
+	color: black;
+	text-align: center;
+
+}
+.informacion h2{
+	font-size: 20px;
+	color: black;
+
+}

@@ -1,0 +1,162 @@
+
+*{
+	box-sizing: border-box;
+}
+/*estilos ingresar pedido*/
+body{
+  background-image: url('#{resources["imgs/caballeros.jpg"]}');
+  font-family: 'Exo', sans-serif;
+  background-attachment: fixed;
+  -webkit-background-size: 100%; 
+  background-size: 100%;
+  /* centrar, fijar y tamaño 100% en imagen de fondo */
+  min-width: 300px;
+  min-height: 300px;
+  margin: 0 auto;
+  height: 2270px;
+  /* centrar -bloque- */
+}
+.encabezado{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#606c88+0,3f4c6b+100;Grey+3D+%232 */
+  background-color: #23282e ;
+  width: 100%;
+  height: 70px;
+  text-align: right;
+  color: white;
+}
+.encabezado div a{
+  color: white;
+  text-decoration: none;
+}
+.encabezado div a:hover{
+  color: #ccc;
+  font-size: 17px;
+}
+.migas{
+  background-color: #002B3C;
+  margin: 0 0 0 8px;
+  margin-top: 0;
+  padding-right: 0;
+
+}
+.ambientesnav{
+  background-color: rgba(000, 000, 000, .8  );
+  margin-top: 0px; 
+}
+.nav-pills{
+  background-color: rgba(000, 000, 000, .8  );
+  width: 98.5%;
+  min-width: 650px;
+  max-width: 1500px;
+  float: left;
+  margin-left: 1.5%;
+}
+
+.form-group label{
+  color: white;
+}
+#mesas{
+	background-color: rgba(000, 000, 000, .6 );
+	width: 100%;
+	height: 560px;
+}
+#datosmesa{
+	text-align: center;
+	width: 600px;
+	padding:0;
+	margin-left: 30%;
+}
+.form-horizontal{	
+	color: white;
+	
+}
+.pedido{
+	text-align: center;
+}
+.col-md-8{
+  margin-left: 110px;
+}
+.row{
+  margin-right: 0;
+  margin-left: 0;
+}
+/*estilos pedido*/
+#hora{
+  color: white;
+  text-align: right;
+  margin-right: 10px;
+}
+#productositems{
+  width: 501px;
+  float: left;
+  text-align: center;
+}
+legend{
+  color: white;
+}
+.listaproductos{
+  border-left: 1px solid white;
+  float: right;
+  width: 848px;
+  text-align: center;
+}
+/*inicio estilos lista productos*/
+.listaproductos table thead{
+  background-color: #3F3F3F;
+  color: black;
+}
+.listaproductos table tbody tr td{
+  background-color: #242424;
+  color: white;
+  text-align: left;
+}
+
+.tabla{
+  width: 700px;
+  margin: 3% 0 6% 3%;
+}
+.lista{
+  width: 800px;
+}
+/*fin estilos lista productos*/
+
+/*inidio estilos botones enviar pedido y eliminar pedido*/
+.botoneslista{
+  width: 800px;
+  float: left;
+  margin-left: 46px;
+  padding-right: 0;
+
+}.col-md-8{
+  float: left;
+}
+/*fin estilos botones enviar pedido y eliminar pedido*/
+
+/*inicio estilos mensaje de alerta de estado del pedido*/
+.alerta{
+  background-color: rgba(189, 0, 0, 0.7);
+  float: left;
+  margin-top: 50px;
+  color: black;
+  padding: 5px 5px 5px 5px; 
+  border-radius: 15px 15px 15px 15px;
+}
+/*fin estilos mensaje de alerta de estado del pedido*/
+
+/*inicio estilos bienvenida*/
+.bienvenida{
+  background-color: rgba(000, 000, 000, .8  );
+  margin-top: 30px;
+  float: left;
+  width: 100%;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+#fotoperfilj{
+  margin-top: 5px;
+  width: 250px;
+  height: 250px;
+  margin-left: 40%;
+}
+/*fin estilos bienvenida*/

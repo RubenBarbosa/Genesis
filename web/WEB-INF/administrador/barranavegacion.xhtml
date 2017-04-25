@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    
+    <!-- inicio barra de navegación -->
+    <aside>
+        <nav class="navbar navbar-inverse sidebar navbar-fixed-top" role="navigation">
+
+
+            <div class="nav-side-menu">
+               <div class="brand" >
+                    <h:graphicImage library="imgs" name="logo.png" alt="logo" height="80%" width="80%"/>
+                    <!--<img id="logo" src="images/logo.png" alt="logo" height="80%" width="80%">-->
+                </div>
+                <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+                <div class="menu-list">
+
+                    <ul id="menu-content" class="menu-content collapse out">
+                        <li class="collapsed " >
+                            <a href="#{request.contextPath}/app/administrador/usuarios/List.xhtml" >
+                                <i class="fa fa-user-plus fa-lg "></i> Gestións de usuarios <i class="fa fa-user-plus pull-right fa-lg" style="margin-top: 10px"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#{request.contextPath}/app/administrador/roles/List.xhtml">
+                                <i class="fa fa-user fa-lg"></i> Gestión de roles <i class="fa fa-user pull-right fa-lg" style="margin-top: 10px"></i>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="#{request.contextPath}/app/administrador/mesas/List.xhtml">
+                                <i class="fa fa-coffee fa-lg"></i> Mesas <i class="fa fa-coffee pull-right fa-lg" style="margin-top: 10px"></i>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="#{request.contextPath}/app/administrador/ambientes/List.xhtml">
+                                <i class="fa fa-university fa-lg"></i> Ambientes <i class="fa fa-university pull-right fa-lg" style="margin-top: 10px"></i>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="#{request.contextPath}/app//administrador/productos/List.xhtml">
+                                <i class="fa fa-cart-plus fa-lg"></i> Productos <i class="fa fa-cart-plus pull-right fa-lg" style="margin-top: 10px"></i>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="#{request.contextPath}/app//administrador/permisos/List.xhtml">
+                                <i class="fa fa-ban fa-lg"></i> Permisos <i class="fa fa-ban pull-right fa-lg" style="margin-top: 10px"></i>
+                            </a>
+
+                        </li>
+
+                        <li>
+                            <a href="#{request.contextPath}/app//administrador/reportes1.xhtml">
+                                <i class="fa fa-dashboard fa-lg"></i> Reportes <i class="fa fa-dashboard pull-right fa-lg" style="margin-top: 10px"></i>
+                            </a>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </aside>
+    <!-- fin barra de navegación -->
+
+</html>

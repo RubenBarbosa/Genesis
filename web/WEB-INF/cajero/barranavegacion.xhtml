@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+
+    <!-- inicio barra de navegación -->
+    <aside>
+        <nav class="navbar navbar-inverse sidebar navbar-fixed-top" role="navigation">
+            <div class="nav-side-menu">
+                <div class="brand" >
+                    <h:graphicImage library="imgs" name="logo.png" alt="logo" height="80%" width="80%"/>
+                </div>
+                <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+                <div class="menu-list">
+
+                    <ul id="menu-content" class="menu-content collapse out">
+                        <li class="collapsed " >
+                            <a href="#{request.contextPath}/app/cajero/factura/List.xhtml" >
+                                <i class="fa fa-cutlery fa-lg "></i> Gestionar Cuentas <i class="fa fa-cutlery pull-right fa-lg" style="margin-top: 10px"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </aside>
+    <!-- fin barra de navegación -->
+
+</html>

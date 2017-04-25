@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/WEB-INF/administrador/template.xhtml">
+        <ui:define name="migas">
+            <!-- inicio migas de pan -->
+            <section>
+                <div class="migas">
+                    <div class="row migas">
+                        <ol class="breadcrumb migas">
+                            <li><a href="../../inicioadministrador.xhtml">Inicio</a></li>
+                            <li><a href="../List.xhtml">Productos</a></li>
+                            <li class="active">Tipos productos</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <!-- fin migas de pan -->
+        </ui:define>
+        <ui:define name="contenido">
+            <section id="mesas">
+                <div class="container">
+                    <div class="row">
+                        <div class="">
+                            <h:form styleClass="jsfcrud_list_form">
+                                <h:panelGroup id="messagePanel" layout="block">
+                                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                </h:panelGroup>
+                                <h:outputText escape="false" value="#{bundle.ListTipoEmpty}" rendered="#{tipoController.items.rowCount == 0}"/>
+                                <h:panelGroup rendered="#{tipoController.items.rowCount > 0}">
+                                    <h:outputText style="margin-left: 10%; color: #fff; margin-top: 10px;" value="#{tipoController.pagination.pageFirstItem + 1}..#{tipoController.pagination.pageLastItem + 1}/#{tipoController.pagination.itemsCount}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{tipoController.previous}" value="#{bundle.Previous} #{tipoController.pagination.pageSize}" rendered="#{tipoController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{tipoController.next}" value="#{bundle.Next} #{tipoController.pagination.pageSize}" rendered="#{tipoController.pagination.hasNextPage}"/>&nbsp;
+                                    <br/>
+                                    <br/>
+                                    <h:commandLink  style="margin-left: 10%;" class="btn btn-primary" action="#{tipoController.prepareCreate}" value="#{bundle.ListTipoCreateLink}"/>
+                                    <h:dataTable value="#{tipoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px; margin-left: 30%;">
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{bundle.ListTipoTitle_idTipo}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idTipo}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{bundle.ListTipoTitle_descripcion}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.descripcion}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="&nbsp;"/>
+                                            </f:facet>
+                                            <h:commandLink class="btn btn-primary btn-sm fa fa-eye" action="#{tipoController.prepareView}" />
+                                            <h:outputText value=" "/>
+                                            <h:commandLink class="btn btn-warning btn-sm fa fa-pencil" action="#{tipoController.prepareEdit}" />
+                                            <h:outputText value=" "/>
+                                            <h:commandLink class="btn btn-danger btn-sm fa fa-trash" action="#{tipoController.destroy}"  />
+                                        </h:column>
+                                    </h:dataTable>
+                                </h:panelGroup>
+                                <!--<h:link outcome="/index" value="#{bundle.ListUsuarioIndexLink}"/>-->
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </ui:define>
+    </ui:composition>
+
+</html>

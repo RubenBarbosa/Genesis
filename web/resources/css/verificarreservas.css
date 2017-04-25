@@ -1,0 +1,195 @@
+*{
+	box-sizing: border-box;
+}
+/*estilos ingresar pedido*/
+body{
+  background-image: url('#{resources["imgs/029.jpg"]}');
+  font-family: 'Exo', sans-serif;
+   background-attachment: fixed;
+
+  -webkit-background-size: 100%; 
+  background-size: 100%;
+  /* centrar, fijar y tamaño 100% en imagen de fondo */
+  min-width: 300px;
+  min-height: 300px;
+  margin: 0 auto;
+  /* centrar -bloque- */
+}
+
+#mesas{
+	background-color: rgba(000, 000, 000, .6 );
+	width: 100%;
+	height: 750px;
+  color: white;
+
+
+}
+
+
+
+#historial{
+  margin-top: 0;
+  padding-top: 5px;
+  margin-left: 2.5%;
+  width: 226px;
+}
+#datosmesa{
+	text-align: center;
+	width: 600px;
+	padding:0;
+	margin-left: 30%;
+}
+.form-horizontal{	
+	color: white;
+	
+}
+.pedido{
+	text-align: center;
+}
+.col-md-8{
+  margin-left: 110px;
+}
+.row{
+  margin-right: 0;
+  margin-left: 0;
+}
+/*estilos pedido*/
+#hora{
+  color: white;
+  text-align: right;
+  margin-right: 10px;
+}
+#productositems{
+  width: 501px;
+  float: left;
+  text-align: center;
+}
+legend{
+  color: white;
+}
+.listaproductos{
+  border-left: 1px solid white;
+  float: right;
+  width: 848px;
+  text-align: center;
+}
+/*inicio estilos lista productos*/
+.custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    color: #20405A;
+    font-size: 20px;
+    }
+.lista{
+  width: 845px;
+}
+.tabla{
+  width: 700px;
+}
+/*fin estilos lista productos*/
+
+/*inidio estilos botones enviar pedido y eliminar pedido*/
+.botoneslista{
+  width: 800px;
+  float: left;
+  margin-left: 46px;
+  padding-right: 0;
+
+}
+/*fin estilos botones enviar pedido y eliminar pedido*/
+
+/*inicio estilos mensaje de alerta de estado del pedido*/
+.alerta{
+  background-color: rgba(189, 0, 0, 0.7);
+  float: left;
+  margin-top: 50px;
+  color: black;
+  padding: 5px 5px 5px 5px; 
+  border-radius: 15px 15px 15px 15px;
+}
+/*fin estilos mensaje de alerta de estado del pedido*/
+
+/*inicio estilos bienvenida*/
+.bienvenida{
+  background-color: rgba(000, 000, 000, .9  );
+  margin-top: 30px;
+  float: left;
+  width: 100%;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+#fotoperfilj{
+  margin-top: 5px;
+  width: 250px;
+  height: 250px;
+  margin-left: 40%;
+}
+/*fin estilos bienvenida*/
+
+/* ESTILOS TABLA */
+a {
+    color: white;
+    text-decoration: none;
+}
+ a:focus {
+    color: white;
+    text-decoration: underline;
+}
+
+/*{
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+  }*/
+    
+  #wrap {
+    width: 1100px;
+    margin: 0 auto;
+  }
+    
+  #external-events {
+    float: left;
+    width: 150px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    background: #eee;
+    text-align: left;
+    color: #8A0808;
+  }
+    
+  #external-events h4 {
+    font-size: 16px;
+    margin-top: 0;
+    padding-top: 1em;
+  }
+    
+  #external-events .fc-event {
+    margin: 10px 0;
+    cursor: pointer;
+  }
+    
+  #external-events p {
+    margin: 1.5em 0;
+    font-size: 11px;
+    color: #8A0808;
+  }
+    
+  #external-events p input {
+    margin: 0;
+    vertical-align: middle;
+  }
+
+  #calendar {
+    float: right;
+    width: 900px;
+  }
+#labelreservas {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #8A0808; 
+}

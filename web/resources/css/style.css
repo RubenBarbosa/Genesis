@@ -1,0 +1,266 @@
+*{
+  box-sizing: border-box;
+
+}
+#estilosindex{
+   background-image:url('#{resource["imgs/3.jpg"]}');
+    font-family: Exo-Regular;
+    background-attachment: fixed;
+    -webkit-background-size: 100%; 
+    background-size: 100%;
+    /* centrar, fijar y tamaño 100% en imagen de fondo */
+    min-width: 300px;
+    min-height: 300px;
+    margin: 0 auto;
+    height: auto;
+  /* centrar -bloque- */
+}
+#logo{
+  padding:20px 0px 20px 0px ;
+
+}
+
+#inicio{
+  background-color: transparent;
+  height: 650px;
+  width: 100%;
+  margin:0;
+}
+#intro {
+  background-color: rgba(000, 000, 000, .9 ) ;
+  width: 80%;
+  padding: 10px 80px 100px 80px;
+  margin-top: 8%;
+  text-align: center;
+  color: white; 
+  text-decoration: none;
+  float: left;
+  margin-left: 130px;
+}
+.blacks{
+    font-family: Blacksword;
+    color: rgb(172, 27, 24);
+}
+.exo{
+    font-family: Exo-Regular;
+    
+}
+h1 {
+  font-size: 7em;
+  font-family: Blacksword;
+  color: rgb(172, 27, 24);
+}
+h2{
+  font-size: 3em;
+}
+.botonesinicio{
+  font-size: 15px;
+}
+#seccion2 {
+  background-color: #ccc;
+  width: 100%;
+  height:  500px;
+  
+}
+.cajascentro{
+  background-color: rgba(000, 000, 000, .9  ) ;
+  width: 80%;
+  margin-top: 7%;
+  text-align: center;
+  float: left;
+  color: #05224A;
+  margin-left: 130px;
+}
+
+.cajascentroing{
+  background-color: rgba(000, 000, 000, .9 ) ;
+  width: 100%;
+  margin-top: 7%;
+  text-align: center;
+  float: left;
+  color: red;
+}
+.thumbnail{
+  margin-left: 300px;
+}
+
+.secciones{
+  background-color: transparent;
+  width: 100%;
+  height: 450px;
+}
+
+.thumbnail{
+  padding-left:0;
+  padding-right: 0;
+  width: 30%;
+  float: left;
+  margin: 20px 20px 20px 20px;
+  margin-left: 34%;
+
+}
+.componentes{
+  text-align: center;
+  background-color: rgba(000, 000, 000, .9  ) ;
+  color: white;
+  padding-top: 10px;
+  margin-top: 40px;
+  height: 50px;
+
+}
+/*estilos mision y visión*/
+.mv{
+  width: 100%;  
+  color: white;
+  font-size: 2em;
+  text-align: justify;
+  margin-bottom: 50px;
+}
+
+/*estilos mision y visión*/
+.titulocolor {
+  color: rgb(193, 39, 45);
+  text-align: center;
+}
+#politica{
+  font-size: 2em;
+  text-align: justify;
+  color: white;
+  margin: 50px 0px 50px 0px;  
+
+}
+.form-horizontal{
+  color: white;
+  margin-top: 50px; 
+}
+.col-md-8{
+  margin-left: 190px;
+}
+
+.row{
+  margin-top:40px;
+  padding: 0 10px;
+}
+.clickable{
+  cursor: pointer;   
+}
+
+.panel-heading div {
+  margin-top: -18px;
+  font-size: 15px;
+}
+.panel-heading div span{
+  margin-left:5px;
+}
+.panel-body{
+  display: none;
+}
+
+.btnabrir{
+  margin-top: 2px;
+
+}
+
+
+
+/*estilos footer*/
+footer{
+ 
+  background-image: url('#{resource["imgs/fondofooter.png"]}');
+  background-position: center;
+  -webkit-background-size: 100%; 
+  background-size: 100%;
+  /* centrar, fijar y tamaño 100% en imagen de fondo */
+  min-width: 300px;
+  min-height: 250px;
+  margin: 0 auto;
+  margin-top: 100px;
+  /*background-color: black;*/
+}
+footer div{
+  padding-top:0px;
+}
+/*   ESTILOS REDES SOCIALES */
+.col-md-12 {
+    width: 400px;
+}
+
+/*=========================
+  Icons
+ ================= */
+
+/* footer social icons */
+ul.social-network {
+  list-style: none;
+  display: inline;
+  margin-left:0 !important;
+  padding: 0;
+}
+ul.social-network li {
+  display: inline;
+  margin: 0 5px;
+}
+
+
+/* footer social icons */
+.social-network a.icoInstagram:hover {
+  background-color: #3f729b;
+}
+.social-network a.icoFacebook:hover {
+  background-color:#3B5998;
+}
+.social-network a.icoTwitter:hover {
+  background-color:#33ccff;
+}
+.social-network a.icoWhatsapp:hover {
+  background-color:#34af23;
+}
+.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
+  color:#fff;
+}
+a.socialIcon:hover, .socialHoverClass {
+  color:#44BCDD;
+}
+
+.social-circle li a {
+  display:inline-block;
+  position:relative;
+  margin:0 auto 0 auto;
+  background-color: black;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  border-radius:50%;
+  text-align:center;
+  width: 50px;
+  height: 50px;
+  font-size:20px;
+}
+.social-circle li i {
+  margin:0;
+  line-height:50px;
+  text-align: center;
+}
+
+.social-circle li a:hover i, .triggeredHover {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms--transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.social-circle i {
+  color: #fff;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  transition: all 0.8s;
+}
+.col-md-12 {
+    width: 10;
+}

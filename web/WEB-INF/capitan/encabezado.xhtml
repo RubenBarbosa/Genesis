@@ -1,11 +1,40 @@
 <?xml version='1.0' encoding='UTF-8' ?> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-
+      xmlns:h="http://xmlns.jcp.org/jsf/html"          
+      xmlns:f="http://xmlns.jcp.org/jsf/core"    
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"    
+      xmlns:b="http://bootsfaces.net/ui">
     <!--Inicio encabezado-->
     <section class="encabezado">
+        <div>
+            <f:view locale="#{sessionController.languageSelected}">
+        <b:container>
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+
+                <b:form id="form-login" horizontal="true" prependId="false">
+                     
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            #{msjApp.idioma} <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <c:forEach items="#{sessionController.supportLanguages}" var="l" >
+                                <li>
+                                    <h:commandLink  value="#{msjApp[l.displayLanguage]}" action="#{sessionController.cambiarIdioma(l)}">
+                                        <img src="#{request.contextPath}/resources/imgs/languages/#{l.language}.png" width="25px" alt="#{msjApp[l.displayLanguage]}"/>
+                                    </h:commandLink>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </div>
+                </b:form>
+            </div>
+            <div class="col-md-3"></div>
+        </b:container>
+    </f:view>
+        </div>
         <div class="container-fluid">
             <h4>Capitán - Rubén Barbosa</h4>
         </div>
@@ -15,5 +44,9 @@
         </div>
     </section>
     <!--Fin encabezado-->
+    <!--    Cambiar idioma-->
+    
+<!--    cambiar idioma lel-->
 
+    
 </html>

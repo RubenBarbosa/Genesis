@@ -7,17 +7,10 @@
     <ui:composition template="/WEB-INF/capitan/template.xhtml">
         <ui:define name="contenido">
             <!-- inicio migas de pan -->
-            <section>
-                <div class="migas">
-                    <div class="row migas">
-                        <ol class="breadcrumb migas">
-                            <li class="active">Inicio</li>
-                        </ol>
-                    </div>
-                </div>
-            </section>
+            
             <!-- fin migas de pan -->
             <!--inicio bienvenida -->
+           
             <section>
 
                 <div class="row">
@@ -27,8 +20,8 @@
                 <div class="container bienvenida">
                     <div class="row ">
 
-                        <h1><strong>Bienvenido Capitán</strong></h1>
-                        <h3><strong>Aquí podrá:</strong>
+                        <h1><strong>#{msjCapitan.BienvenidoCapitan}</strong></h1>
+                        <h3><strong>#{msjCapitan.aquiPodra}</strong>
                             <br/>
                             <br/> - Gestionar pedidos 
                             <br/> - Calificar al personal a cargo 

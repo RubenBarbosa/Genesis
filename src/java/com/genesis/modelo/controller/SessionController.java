@@ -145,7 +145,7 @@ public class SessionController implements Serializable {
         ec.invalidateSession();
         documento = null;
         clave = "";
-        return "Cerrar Sesion";
+        return " Cerrar Sesion ";
     }
 
     public void actionListener() {

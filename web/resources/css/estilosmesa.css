@@ -198,3 +198,7 @@ legend{
     color: white;
     text-decoration: none;
 }
+.idiomas{
+    float: right;
+    padding-right: 15px;
+}

@@ -82,10 +82,10 @@ public class PedidoController implements Serializable {
     public String create() {
         try {
             getFacade().create(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("PedidoCreated"));
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/com.genesis.modelo.languages.App").getString("PedidoCreated"));
             return prepareCreate();
         } catch (Exception e) {
-            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
+            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/com.genesis.modelo.languages.App").getString("PersistenceErrorOccured"));
             return null;
         }
     }

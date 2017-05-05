@@ -3,50 +3,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"          
       xmlns:f="http://xmlns.jcp.org/jsf/core"    
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"    
-      xmlns:b="http://bootsfaces.net/ui">
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <!--Inicio encabezado-->
-    <section class="encabezado">
-        <div>
-            <f:view locale="#{sessionController.languageSelected}">
-        <b:container>
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
 
-                <b:form id="form-login" horizontal="true" prependId="false">
-                     
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            #{msjApp.idioma} <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <c:forEach items="#{sessionController.supportLanguages}" var="l" >
-                                <li>
-                                    <h:commandLink  value="#{msjApp[l.displayLanguage]}" action="#{sessionController.cambiarIdioma(l)}">
-                                        <img src="#{request.contextPath}/resources/imgs/languages/#{l.language}.png" width="25px" alt="#{msjApp[l.displayLanguage]}"/>
-                                    </h:commandLink>
-                                </li>
-                            </c:forEach>
-                        </ul>
-                    </div>
-                </b:form>
-            </div>
-            <div class="col-md-3"></div>
-        </b:container>
-    </f:view>
-        </div>
+    <section class="encabezado">  
         <div class="container-fluid">
             <h4>Capitán - Rubén Barbosa</h4>
         </div>
         <div>
-            <a href="perfilcapitan.xhtml" class="fa fa-cog"> Perfil &nbsp;&nbsp;</a><a href=""></a>
+            <a href="#{request.contextPath}/app/capitan/perfilcapitan.xhtml" class="fa fa-cog"> Perfil &nbsp;&nbsp;</a><a href=""></a>
             <h:link class="fa fa-power-off" outcome="/login" value="#{sessionController.cerrarSesion()}" > </h:link>
         </div>
+
     </section>
     <!--Fin encabezado-->
-    <!--    Cambiar idioma-->
-    
-<!--    cambiar idioma lel-->
-
-    
+   
 </html>

@@ -11,9 +11,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="iniciocapitan.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Pedidos</a></li>
-                            <li class="active">Detalles</li>
+                            <li><a href="iniciocapitan.xhtml">#{msjCapitan.inicio}</a></li>
+                            <li><a href="List.xhtml">#{msjCapitan.pedidos}</a></li>
+                            <li class="active">#{msjCapitan.detalles}</li>
                         </ol>
                     </div>
                 </div>
@@ -27,32 +27,32 @@
                 </h:panelGroup>
                 <h:form class="col-sm-4 col-sm-offset-4 detalles">
                     <h:panelGrid columns="2">
-                        <h:outputText value="#{bundle.ViewPedidoLabel_idPedido}"/>
-                        <h:outputText value="#{pedidoController.selected.idPedido}" title="#{bundle.ViewPedidoTitle_idPedido}"/>
-                        <h:outputText value="#{bundle.ViewPedidoLabel_descripcion}"/>
-                        <h:outputText value="#{pedidoController.selected.descripcion}" title="#{bundle.ViewPedidoTitle_descripcion}"/>
-                        <h:outputText value="#{bundle.ViewPedidoLabel_cedulaCliente}"/>
-                        <h:outputText value="#{pedidoController.selected.cedulaCliente}" title="#{bundle.ViewPedidoTitle_cedulaCliente}"/>
-                        <h:outputText value="#{bundle.ViewPedidoLabel_fecha}"/>
-                        <h:outputText value="#{pedidoController.selected.fecha}" title="#{bundle.ViewPedidoTitle_fecha}">
+                        <h:outputText value="#{msjApp.ViewPedidoLabel_idPedido}"/>
+                        <h:outputText value="#{pedidoController.selected.idPedido}" title="#{msjApp.ViewPedidoTitle_idPedido}"/>
+                        <h:outputText value="#{msjApp.ViewPedidoLabel_descripcion}"/>
+                        <h:outputText value="#{pedidoController.selected.descripcion}" title="#{msjApp.ViewPedidoTitle_descripcion}"/>
+                        <h:outputText value="#{msjApp.ViewPedidoLabel_cedulaCliente}"/>
+                        <h:outputText value="#{pedidoController.selected.cedulaCliente}" title="#{msjApp.ViewPedidoTitle_cedulaCliente}"/>
+                        <h:outputText value="#{msjApp.ViewPedidoLabel_fecha}"/>
+                        <h:outputText value="#{pedidoController.selected.fecha}" title="#{msjApp.ViewPedidoTitle_fecha}">
                             <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                         </h:outputText>
-                        <h:outputText value="#{bundle.ViewPedidoLabel_calificacionServicio}"/>
-                        <h:outputText value="#{pedidoController.selected.calificacionServicio}" title="#{bundle.ViewPedidoTitle_calificacionServicio}"/>
-                        <h:outputText value="#{bundle.ViewPedidoLabel_observacionServicio}"/>
-                        <h:outputText value="#{pedidoController.selected.observacionServicio}" title="#{bundle.ViewPedidoTitle_observacionServicio}"/>
-                        <h:outputText value="#{bundle.ViewPedidoLabel_idEstado}"/>
-                        <h:outputText value="#{pedidoController.selected.idEstado}" title="#{bundle.ViewPedidoTitle_idEstado}"/>
-                        <h:outputText value="#{bundle.ViewPedidoLabel_idMesa}"/>
-                        <h:outputText value="#{pedidoController.selected.idMesa}" title="#{bundle.ViewPedidoTitle_idMesa}"/>
-                        <h:outputText value="#{bundle.ViewPedidoLabel_cedulaCapitan}"/>
-                        <h:outputText value="#{pedidoController.selected.cedulaCapitan}" title="#{bundle.ViewPedidoTitle_cedulaCapitan}"/>
+                        <h:outputText value="#{msjApp.ViewPedidoLabel_calificacionServicio}"/>
+                        <h:outputText value="#{pedidoController.selected.calificacionServicio}" title="#{msjApp.ViewPedidoTitle_calificacionServicio}"/>
+                        <h:outputText value="#{msjApp.ViewPedidoLabel_observacionServicio}"/>
+                        <h:outputText value="#{pedidoController.selected.observacionServicio}" title="#{msjApp.ViewPedidoTitle_observacionServicio}"/>
+                        <h:outputText value="#{msjApp.ViewPedidoLabel_idEstado}"/>
+                        <h:outputText value="#{pedidoController.selected.idEstado}" title="#{msjApp.ViewPedidoTitle_idEstado}"/>
+                        <h:outputText value="#{msjApp.ViewPedidoLabel_idMesa}"/>
+                        <h:outputText value="#{pedidoController.selected.idMesa}" title="#{msjApp.ViewPedidoTitle_idMesa}"/>
+                        <h:outputText value="#{msjApp.ViewPedidoLabel_cedulaCapitan}"/>
+                        <h:outputText value="#{pedidoController.selected.cedulaCapitan}" title="#{msjApp.ViewPedidoTitle_cedulaCapitan}"/>
                     </h:panelGrid>
                     <br />
-                    <h:commandLink class="btn btn-danger" action="#{pedidoController.destroyAndView}" value="#{bundle.ViewPedidoDestroyLink}"/>
+                    <h:commandLink class="btn btn-danger" action="#{pedidoController.destroyAndView}" value="#{msjApp.ViewPedidoDestroyLink}"/>
                     <br />
                     <br />
-                    <h:link class="btn btn-primary" outcome="Edit" value="#{bundle.ViewPedidoEditLink}"/>
+                    <h:link class="btn btn-primary" outcome="Edit" value="#{msjApp.ViewPedidoEditLink}"/>
                     
 
                 </h:form>

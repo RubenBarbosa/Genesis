@@ -12,9 +12,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="iniciocapitan.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Calificaciones</a></li>
-                            <li class="active">Detalles</li>
+                            <li><a href="iniciocapitan.xhtml">#{msjCapitan.inicio}</a></li>
+                            <li><a href="List.xhtml">#{msjCapitan.calificaciones}</a></li>
+                            <li class="active">#{msjCapitan.detalles}</li>
                         </ol>
                     </div>
                 </div>
@@ -28,26 +28,25 @@
             </h:panelGroup>
             <h:form class="col-sm-4 col-sm-offset-4 detalles">
                 <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewCalificacionLabel_idcalificacion}"/>
-                    <h:outputText value="#{calificacionController.selected.idcalificacion}" title="#{bundle.ViewCalificacionTitle_idcalificacion}"/>
-                    <h:outputText value="#{bundle.ViewCalificacionLabel_descripcion}"/>
-                    <h:outputText value="#{calificacionController.selected.descripcion}" title="#{bundle.ViewCalificacionTitle_descripcion}"/>
-                    <h:outputText value="#{bundle.ViewCalificacionLabel_fecha}"/>
-                    <h:outputText value="#{calificacionController.selected.fecha}" title="#{bundle.ViewCalificacionTitle_fecha}">
+                    <h:outputText value="#{msjApp.ViewCalificacionLabel_idcalificacion}"/>
+                    <h:outputText value="#{calificacionController.selected.idcalificacion}" title="#{msjApp.ViewCalificacionTitle_idcalificacion}"/>
+                    <h:outputText value="#{msjApp.ViewCalificacionLabel_descripcion}"/>
+                    <h:outputText value="#{calificacionController.selected.descripcion}" title="#{msjApp.ViewCalificacionTitle_descripcion}"/>
+                    <h:outputText value="#{msjApp.ViewCalificacionLabel_fecha}"/>
+                    <h:outputText value="#{calificacionController.selected.fecha}" title="#{msjApp.ViewCalificacionTitle_fecha}">
                         <f:convertDateTime pattern="MM/dd/yyyy" />
                     </h:outputText>
-                    <h:outputText value="#{bundle.ViewCalificacionLabel_cedulaMesero}"/>
-                    <h:outputText value="#{calificacionController.selected.cedulaMesero}" title="#{bundle.ViewCalificacionTitle_cedulaMesero}"/>
+                    <h:outputText value="#{msjApp.ViewCalificacionLabel_cedulaMesero}"/>
+                    <h:outputText value="#{calificacionController.selected.cedulaMesero}" title="#{msjApp.ViewCalificacionTitle_cedulaMesero}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink class="btn btn-danger" action="#{calificacionController.destroyAndView}" value="#{bundle.ViewCalificacionDestroyLink}"/>
+                <h:commandLink class="btn btn-danger" action="#{calificacionController.destroyAndView}" value="#{msjApp.ViewCalificacionDestroyLink}"/>
                 <br />
                 <br />
-                <h:link class="btn btn-primary" outcome="Edit" value="#{bundle.ViewCalificacionEditLink}"/>
+                <h:link class="btn btn-primary" outcome="Edit" value="#{msjApp.ViewCalificacionEditLink}"/>
               
             </h:form>
                 </section>
         </ui:define>
     </ui:composition>
-
 </html>

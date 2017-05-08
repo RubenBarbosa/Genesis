@@ -40,16 +40,11 @@ public class Ambiente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    
     @Column(name = "idAmbiente")
     private Integer idAmbiente;
-    @NotNull(message = "Este campo es obligatorio")
-    @Size(min = 1, max = 25, message = "Este campo debe estar entre 1 y 25 carácteres")
-    
-@Column(name = "nombre")
+    @Size(max = 25)
+    @Column(name = "nombre")
     private String nombre;
-    @NotNull(message = "Este campo es obligatorio")
-    
     @OneToMany(mappedBy = "idAmbiente", fetch = FetchType.LAZY)
     private List<Mesa> mesaList;
 

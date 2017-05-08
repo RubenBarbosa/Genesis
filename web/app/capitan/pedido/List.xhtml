@@ -12,8 +12,8 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li class="active">Productos</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjCapitan.inicio}</a></li>
+                            <li class="active">#{msjCapitan.productos}</li>
                         </ol>
                     </div>
                 </div>
@@ -29,38 +29,38 @@
                                 <h:panelGroup id="messagePanel" layout="block">
                                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                                 </h:panelGroup>
-                                <h:outputText escape="false" value="#{bundle.ListPedidoEmpty}" rendered="#{pedidoController.items.rowCount == 0}"/>
+                                <h:outputText escape="false" value="#{msjApp.ListPedidoEmpty}" rendered="#{pedidoController.items.rowCount == 0}"/>
                                 <h:panelGroup rendered="#{pedidoController.items.rowCount > 0}">
                                     <h:outputText style="margin-left: 10%; color: #fff; margin-top: 10px;" value="#{pedidoController.pagination.pageFirstItem + 1}..#{pedidoController.pagination.pageLastItem + 1}/#{pedidoController.pagination.itemsCount}"/>&nbsp;
-                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{pedidoController.previous}" value="#{bundle.Previous} #{pedidoController.pagination.pageSize}" rendered="#{pedidoController.pagination.hasPreviousPage}"/>&nbsp;
-                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{pedidoController.next}" value="#{bundle.Next} #{pedidoController.pagination.pageSize}" rendered="#{pedidoController.pagination.hasNextPage}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{pedidoController.previous}" value="#{msjApp.Previous} #{pedidoController.pagination.pageSize}" rendered="#{pedidoController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{pedidoController.next}" value="#{msjApp.Next} #{pedidoController.pagination.pageSize}" rendered="#{pedidoController.pagination.hasNextPage}"/>&nbsp;
                                     <br/>
                                     <br/>
-                                    <h:commandLink  style="margin-left: 10%;" class="btn btn-primary" action="#{pedidoController.prepareCreate}" value="#{bundle.ListPedidoCreateLink}"/>
+                                    <h:commandLink  style="margin-left: 10%;" class="btn btn-primary" action="#{pedidoController.prepareCreate}" value="#{msjApp.ListPedidoCreateLink}"/>
                                     <br/>
                                     <br/>
                                     <h:dataTable value="#{pedidoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="">
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListPedidoTitle_idPedido}"/>
+                                                <h:outputText value="#{msjApp.ListPedidoTitle_idPedido}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.idPedido}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListPedidoTitle_descripcion}"/>
+                                                <h:outputText value="#{msjApp.ListPedidoTitle_descripcion}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.descripcion}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListPedidoTitle_cedulaCliente}"/>
+                                                <h:outputText value="#{msjApp.ListPedidoTitle_cedulaCliente}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.cedulaCliente}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListPedidoTitle_fecha}"/>
+                                                <h:outputText value="#{msjApp.ListPedidoTitle_fecha}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.fecha}">
                                                 <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
@@ -68,31 +68,31 @@
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListPedidoTitle_calificacionServicio}"/>
+                                                <h:outputText value="#{msjApp.ListPedidoTitle_calificacionServicio}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.calificacionServicio}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListPedidoTitle_observacionServicio}"/>
+                                                <h:outputText value="#{msjApp.ListPedidoTitle_observacionServicio}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.observacionServicio}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListPedidoTitle_idEstado}"/>
+                                                <h:outputText value="#{msjApp.ListPedidoTitle_idEstado}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.idEstado}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListPedidoTitle_idMesa}"/>
+                                                <h:outputText value="#{msjApp.ListPedidoTitle_idMesa}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.idMesa}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListPedidoTitle_cedulaCapitan}"/>
+                                                <h:outputText value="#{msjApp.ListPedidoTitle_cedulaCapitan}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.cedulaCapitan}"/>
                                         </h:column>
@@ -108,7 +108,7 @@
                                         </h:column>
                                     </h:dataTable>
                                 </h:panelGroup>
-                                <!--<h:link outcome="/index" value="#{bundle.ListUsuarioIndexLink}"/>-->
+                                <!--<h:link outcome="/index" value="#{msjApp.ListUsuarioIndexLink}"/>-->
                             </h:form>
                         </div>
                     </div>

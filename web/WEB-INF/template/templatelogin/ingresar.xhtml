@@ -9,7 +9,7 @@
 
     <div class="card">
 
-        <h1 class="title">Iniciar Sesión</h1>
+        <h1 class="title">#{msjLogin.iniciarSesion}</h1>
 
         <!--    Div Usuarios-->
         <h:form id="loginUsuario" prependId="false">
@@ -20,7 +20,7 @@
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="icon_profile"></i></span>
-                        <h:inputText id="txtDocumento" class="form-control" pst:placeholder="Documento" pst:autofocus="true"  value="#{sessionController.documento}"/>
+                        <h:inputText id="txtDocumento" class="form-control" pst:placeholder="#{msjLogin.documento}" pst:autofocus="true"  value="#{sessionController.documento}"/>
                         <h:message for="txtDocumento" />
                     </div>
 
@@ -28,15 +28,15 @@
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="icon_key_alt"></i></span>
-                        <h:inputSecret class="form-control" pst:placeholder="Clave" value="#{sessionController.clave}"/>
+                        <h:inputSecret class="form-control" pst:placeholder="#{msjLogin.clave}" value="#{sessionController.clave}"/>
                     </div>
 
                 </div>
 
                 <div class="button-container">
                     <label class="checkbox">
-                        <input type="checkbox" value="remember-me"/> Recuerdame
-                        <span class="pull-right"> <a href="#" style="color: graytext;"> Olvidó su contraseña?</a></span>
+                        <input type="checkbox" value="remember-me"/> #{msjLogin.recuerdame}
+                        <span class="pull-right"> <a href="#" style="color: graytext;"> #{msjLogin.OlvidoContrasena}</a></span>
                     </label>
                     <h:commandButton value="Login" class="btn btn-gencess" action="#{sessionController.action()}" />
                 </div>

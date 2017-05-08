@@ -48,31 +48,41 @@ public class Pedido implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-    @NotNull
+    @NotNull  
     @Column(name = "idPedido")
     private Integer idPedido;
-    @Size(max = 45)
+    
+    
+    @Size(min=1, max = 45, message = "Maximo 45 caracteres")
     @Column(name = "descripcion")
     private String descripcion;
+    
     @Column(name = "cedulaCliente")
     private BigInteger cedulaCliente;
+    
     @Column(name = "fecha")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecha;
+    
     @Size(max = 25)
     @Column(name = "calificacionServicio")
+    
     private String calificacionServicio;
     @Size(max = 80)
     @Column(name = "observacionServicio")
     private String observacionServicio;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pedido", fetch = FetchType.LAZY)
     private List<Factura> facturaList;
+    
     @JoinColumn(name = "idEstado", referencedColumnName = "idEstado")
     @ManyToOne(fetch = FetchType.LAZY)
     private EstadoPedido idEstado;
+    
     @JoinColumn(name = "idMesa", referencedColumnName = "idMesa")
     @ManyToOne(fetch = FetchType.LAZY)
     private Mesa idMesa;
+    
     @JoinColumn(name = "cedulaCapitan", referencedColumnName = "cedula")
     @ManyToOne(fetch = FetchType.LAZY)
     private Usuario cedulaCapitan;

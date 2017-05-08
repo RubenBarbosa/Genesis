@@ -13,9 +13,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="inicioacapitan.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Calificaciones</a></li>
-                            <li class="active">Editar</li>
+                            <li><a href="inicioacapitan.xhtml">#{msjCapitan.inicio}</a></li>
+                            <li><a href="List.xhtml">#{msjCapitan.calificaciones}Calificaciones</a></li>
+                            <li class="active">#{msjCapitan.editar}</li>
                         </ol>
                     </div>
                 </div>
@@ -28,32 +28,34 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Actualización de datos</h2>
+                                <h2>#{msjCapitan.actualizaccionDatos}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" globalOnly="true"/>
                             </h:panelGroup>
                             <h:form id="defaultForm" a:method="post" class="form-horizontal">
 
                                 <div class="form-group">                  
                                     <h:outputLabel class="col-sm-3 control-label" value="Descripcion" for="descripcion" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Descripcion"  a:maxlength="45" a:minlength="0" a:pattern="[a-zA-Z]" id="descripcion" value="#{calificacionController.selected.descripcion}" title="#{bundle.EditCalificacionTitle_descripcion}" />
+                                        <h:inputText a:type="text" class="form-control"  a:maxlength="45" a:minlength="0" a:pattern="[a-zA-Z]" id="descripcion" value="#{calificacionController.selected.descripcion}" title="#{msjApp.EditCalificacionTitle_descripcion}" required="true" requiredMessage="#{msjApp.RequiredMessage}" />
+                                    <h:message for="idcalificacion"/>
                                     </div>
                                 </div>
                                 <div class="form-group">                  
                                     <h:outputLabel class="col-sm-3 control-label" value="Fecha" for="fecha" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:placeholder="DD/MM/AAAA" class="form-control"  a:maxlength="10" a:minlength="8" id="fecha" value="#{calificacionController.selected.fecha}" title="#{bundle.EditCalificacionTitle_fecha}" />
-                                            
+                                        <h:inputText class="form-control"  a:maxlength="10" a:minlength="8" id="fecha" value="#{calificacionController.selected.fecha}" title="#{msjApp.EditCalificacionTitle_fecha}" required="true" requiredMessage="#{msjApp.RequiredMessage}"/>
+                                        <h:message for="fecha"/>    
                                     </div>
                                 </div>
                                 <div class="form-group">                  
                                     <h:outputLabel class="col-sm-3 control-label" value="Cedula mesero" for="cedulaMesero" />
                                     <div class="col-sm-5">
-                                        <h:selectOneMenu a:type="text" class="form-control" a:placeholder="Seleccione Cedula" id="cedulaMesero" value="#{calificacionController.selected.cedulaMesero}" title="#{bundle.EditCalificacionTitle_cedulaMesero}" required="true" requiredMessage="#{bundle.EditCalificacionRequiredMessage_cedulaMesero}">
+                                        <h:selectOneMenu a:type="text" class="form-control" id="cedulaMesero" value="#{calificacionController.selected.cedulaMesero}" title="#{msjApp.EditCalificacionTitle_cedulaMesero}" required="true" requiredMessage="#{msjApp.EditCalificacionRequiredMessage_cedulaMesero}">
                                             <f:selectItems value="#{usuarioController.itemsAvailableSelectOne}"/>
                                         </h:selectOneMenu>
+                                        <h:message for="cedulaMesero"/>
                                     </div>
                                 </div>
                                 <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{calificacionController.update}" value="Guardar"/>
@@ -64,5 +66,4 @@
             </section>
         </ui:define>
     </ui:composition>
-
 </html>

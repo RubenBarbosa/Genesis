@@ -30,14 +30,14 @@
                                 <h:panelGroup id="messagePanel" layout="block">
                                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                                 </h:panelGroup>
-                                <h:outputText escape="false" value="#{bundle.ListCalificacionEmpty}" rendered="#{calificacionController.items.rowCount == 0}"/>
+                                <h:outputText escape="false" value="#{msjApp.ListCalificacionEmpty}" rendered="#{calificacionController.items.rowCount == 0}"/>
                                 <h:panelGroup  rendered="#{calificacionController.items.rowCount > 0}">
                                     <h:outputText style="margin-left: 10%; color: #fff; margin-top: 10px;" value="#{calificacionController.pagination.pageFirstItem + 1}..#{calificacionController.pagination.pageLastItem + 1}/#{calificacionController.pagination.itemsCount}"/>&nbsp;
-                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{calificacionController.previous}" value="#{bundle.Previous} #{calificacionController.pagination.pageSize}" rendered="#{calificacionController.pagination.hasPreviousPage}"/>&nbsp;
-                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{calificacionController.next}" value="#{bundle.Next} #{calificacionController.pagination.pageSize}" rendered="#{calificacionController.pagination.hasNextPage}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{calificacionController.previous}" value="#{msjApp.Previous} #{calificacionController.pagination.pageSize}" rendered="#{calificacionController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{calificacionController.next}" value="#{msjApp.Next} #{calificacionController.pagination.pageSize}" rendered="#{calificacionController.pagination.hasNextPage}"/>&nbsp;
                                     <br/>
                                     <br/>
-                                    <h:commandLink style="margin-left: 12%;" class="btn btn-primary" action="#{calificacionController.prepareCreate}" value="#{bundle.ListCalificacionCreateLink}"/>
+                                    <h:commandLink style="margin-left: 12%;" class="btn btn-primary" action="#{calificacionController.prepareCreate}" value="#{msjApp.ListCalificacionCreateLink}"/>
                                     <br/>
                                     <br/>
                                     <h:dataTable class="col-sm-4 col-sm-offset-4" value="#{calificacionController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="margin-left: 10%">
@@ -61,7 +61,7 @@
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListCalificacionTitle_cedulaMesero}"/>
+                                                <h:outputText value="#{msjApp.ListCalificacionTitle_cedulaMesero}"/>
                                             </f:facet>
                                             <h:outputText value="Cedula Mesero"/>
                                         </h:column>
@@ -78,7 +78,7 @@
 
                                     </h:dataTable>
                                 </h:panelGroup>
-                                <!--<h:link outcome="/index" value="#{bundle.ListUsuarioIndexLink}"/>-->
+                                <!--<h:link outcome="/index" value="#{msjApp.ListUsuarioIndexLink}"/>-->
                             </h:form>
                         </div>
                     </div>

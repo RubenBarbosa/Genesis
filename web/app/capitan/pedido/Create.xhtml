@@ -15,9 +15,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../iniciocapitan.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Pedidos</a></li>
-                            <li class="active">Gestión de pedidos</li>
+                            <li><a href="../iniciocapitan.xhtml">#{msjCapitan.inicio}</a></li>
+                            <li><a href="List.xhtml">#{msjCapitan.pedidos}</a></li>
+                            <li class="active">#{msjCapitan.gestionarPedidos}</li>
                         </ol>
                     </div>
                 </div>
@@ -31,91 +31,100 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Nuevo pedido</h2>
+                                <h2>#{msjCapitan.nuevoPedido}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" globalOnly="true"/>
                             </h:panelGroup>
                             <h:form id="defaultForm" a:method="post" class="form-horizontal">
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreatePedidoLabel_idPedido}" for="idPedido" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.CreatePedidoLabel_idPedido}" for="idPedido" />
                                     <div  class="col-sm-5"> 
-                                        <h:inputText a:type="numer" class="form-control" a:placeholder="Codigo pedido" a:pattern="[0-9]"  a:maxlength="11" a:minlength="0" id="idPedido" value="#{pedidoController.selected.idPedido}" title="#{bundle.CreatePedidoTitle_idPedido}" required="true" requiredMessage="#{bundle.CreatePedidoRequiredMessage_idPedido}"/>
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="#{msjCapitan.codigoPedido}" a:pattern="[0-9]"  a:maxlength="11" a:minlength="0" id="idPedido" value="#{pedidoController.selected.idPedido}" title="#{msjApp.CreatePedidoTitle_idPedido}" required="true" requiredMessage="#{msjApp.CreatePedidoRequiredMessage_idPedido}"/>
                                         <h:message for="idPedido"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreatePedidoLabel_descripcion}" for="descripcion" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.CreatePedidoLabel_descripcion}" for="descripcion" />
                                     <div  class="col-sm-5"> 
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Escriba la descripcion pertinente." a:pattern="[a-zA-Z]" a:maxlength="45" a:minlength="0" id="descripcion" value="#{pedidoController.selected.descripcion}" title="#{bundle.CreatePedidoTitle_descripcion}" /> 
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="#{msjCapitan.descripcionPertinente}" a:pattern="[a-zA-Z]" a:maxlength="45"  a:minlength="0" id="descripcion" value="#{pedidoController.selected.descripcion}" title="#{msjApp.CreatePedidoTitle_descripcion}" required="true" requiredMessage="#{msjApp.RequiredMessage}"/>
+                                        <h:message for="descripcion"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreatePedidoLabel_cedulaCliente}" for="cedulaCliente" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.CreatePedidoLabel_cedulaCliente}" for="cedulaCliente" />
                                     <div  class="col-sm-5"> 
-                                        <h:inputText a:type="numer" class="form-control" a:placeholder="Cedula del cliente" a:pattern="[0-9]" a:maxlength="20" a:minlength="0" id="cedulaCliente" value="#{pedidoController.selected.cedulaCliente}" title="#{bundle.CreatePedidoTitle_cedulaCliente}" /> 
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="#{msjCapitan.cedulaCliente}" a:pattern="[0-9]" a:maxlength="20" a:minlength="0" id="cedulaCliente" value="#{pedidoController.selected.cedulaCliente}" title="#{msjApp.CreatePedidoTitle_cedulaCliente}" required="true" requiredMessage="#{msjApp.RequiredMessage}"/> 
+                                        <h:message for="cedulaCliente"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreatePedidoLabel_fecha}" for="fecha" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.CreatePedidoLabel_fecha}" for="fecha" />
                                     <div  class="col-sm-5"> 
-                                        <h:inputText a:placeholder="DD/MM/AAAA HH:MM:SS" class="form-control" id="fecha" value="#{pedidoController.selected.fecha}" title="#{bundle.CreatePedidoTitle_fecha}" >
+                                        <h:inputText a:placeholder="DD/MM/AAAA HH:MM:SS" class="form-control" id="fecha" value="#{pedidoController.selected.fecha}" title="#{msjApp.CreatePedidoTitle_fecha}" required="true" requiredMessage="#{msjApp.RequiredMessage}">
                                             <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                                         </h:inputText>
+                                        <h:message for="fecha"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreatePedidoLabel_calificacionServicio}" for="calificacionServicio" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.CreatePedidoLabel_calificacionServicio}" for="calificacionServicio" />
                                     <div  class="col-sm-5"> 
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Calificacion del servicio" a:pattern="[a-zA-Z]" a:maxlength="25" a:minlength="0" id="calificacionServicio" value="#{pedidoController.selected.calificacionServicio}" title="#{bundle.CreatePedidoTitle_calificacionServicio}" />
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="#{msjCapitan.calificacionServicio}" a:pattern="[a-zA-Z]" a:maxlength="25" a:minlength="0" id="calificacionServicio" value="#{pedidoController.selected.calificacionServicio}" title="#{msjApp.CreatePedidoTitle_calificacionServicio}" required="true" requiredMessage="#{msjApp.RequiredMessage}"/>
+                                        <h:message for="calificacionServicio"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreatePedidoLabel_observacionServicio}" for="observacionServicio" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.CreatePedidoLabel_observacionServicio}" for="observacionServicio" />
                                     <div  class="col-sm-5"> 
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Observación" a:pattern="[a-zA-Z]" a:maxlength="80" a:minlength="0" id="observacionServicio" value="#{pedidoController.selected.observacionServicio}" title="#{bundle.CreatePedidoTitle_observacionServicio}" />
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="#{msjCapitan.observacionPedido}" a:pattern="[a-zA-Z]" a:maxlength="80" a:minlength="0" id="observacionServicio" value="#{pedidoController.selected.observacionServicio}" title="#{msjApp.CreatePedidoTitle_observacionServicio}" required="true" requiredMessage="#{msjApp.RequiredMessage}"/>
+                                        <h:message for="observacionServicio"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreatePedidoLabel_idEstado}" for="idEstado" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.CreatePedidoLabel_idEstado}" for="idEstado" />
                                     <div  class="col-sm-5"> 
-                                        <h:selectOneMenu class="form-control" a:placeholder="Seleccione un estado" id="idEstado" value="#{pedidoController.selected.idEstado}" title="#{bundle.CreatePedidoTitle_idEstado}" >
+                                        <h:selectOneMenu class="form-control" id="idEstado" value="#{pedidoController.selected.idEstado}" title="#{msjApp.CreatePedidoTitle_idEstado}" required="true" requiredMessage="#{msjApp.RequiredMessage}" >
                                             <f:selectItems value="#{estadoPedidoController.itemsAvailableSelectOne}"/>
                                         </h:selectOneMenu>
+                                        <h:message for="idEstado"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreatePedidoLabel_idMesa}" for="idMesa" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.CreatePedidoLabel_idMesa}" for="idMesa" />
                                     <div  class="col-sm-5"> 
-                                        <h:selectOneMenu a:type="text" class="form-control" a:placeholder="Seleccione mesa" a:pattern="[0-9]" id="idMesa" value="#{pedidoController.selected.idMesa}" title="#{bundle.CreatePedidoTitle_idMesa}" >
+                                        <h:selectOneMenu a:type="text" class="form-control"  a:pattern="[0-9]" id="idMesa" value="#{pedidoController.selected.idMesa}" title="#{msjApp.CreatePedidoTitle_idMesa}" required="true" requiredMessage="#{msjApp.RequiredMessage}" >
                                             <f:selectItems value="#{mesaController.itemsAvailableSelectOne}"/>
                                         </h:selectOneMenu> 
+                                        <h:message for="idMesa"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreatePedidoLabel_cedulaCapitan}" for="cedulaCapitan" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.CreatePedidoLabel_cedulaCapitan}" for="cedulaCapitan" />
                                     <div  class="col-sm-5"> 
-                                        <h:selectOneMenu a:type="text" class="form-control" a:placeholder="Cedula capitan" id="cedulaCapitan" value="#{pedidoController.selected.cedulaCapitan}" title="#{bundle.CreatePedidoTitle_cedulaCapitan}" >
+                                        <h:selectOneMenu a:type="text" class="form-control" id="cedulaCapitan" value="#{pedidoController.selected.cedulaCapitan}" title="#{msjApp.CreatePedidoTitle_cedulaCapitan}" required="true" requiredMessage="#{msjApp.RequiredMessage}">
 
                                             <f:selectItems value="#{usuarioController.itemsAvailableSelectOne}"/>
                                         </h:selectOneMenu>
+                                        <h:message for="cedulaCapitan"/>
                                     </div>
                                 </div>
 
                                 <br />
-                                <h:commandLink type="submit" style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{pedidoController.create}" value="#{bundle.CreatePedidoSaveLink}" />
+                                <h:commandLink  type="submit" style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{pedidoController.create}" value="#{msjApp.CreatePedidoSaveLink}" />
+                                
                                 <br />
                                 <br />
-                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-primary" action="#{pedidoController.prepareList}" value="#{bundle.CreatePedidoShowAllLink}" immediate="true"/>
+                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-primary" action="#{pedidoController.prepareList}" value="#{msjApp.CreatePedidoShowAllLink}" immediate="true"/>
                                 <br />
                             </h:form>
                         </div>    

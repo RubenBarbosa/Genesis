@@ -36,19 +36,15 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "EstadoMesa.findByNombre", query = "SELECT e FROM EstadoMesa e WHERE e.nombre = :nombre")})
 public class EstadoMesa implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-
     @Column(name = "idEstado")
     private Integer idEstado;
-    @NotNull(message = "Este campo es obligatorio")
-    @Size(min = 1, max = 45, message = "Este campo debe estar entre 1 y 45 carácteres")
-
+    @Size(max = 45)
     @Column(name = "nombre")
     private String nombre;
-    @NotNull(message = "Este campo es obligatorio")
     @OneToMany(mappedBy = "idEstados", fetch = FetchType.LAZY)
     private List<Mesa> mesaList;
 

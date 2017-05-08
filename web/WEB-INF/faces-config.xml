@@ -21,5 +21,13 @@
             <base-name>com.genesis.modelo.languages.iniciocap</base-name>
             <var>msjCapitan</var>
         </resource-bundle>
+         <resource-bundle>
+            <base-name>com.genesis.modelo.languages.Login</base-name>
+            <var>msjLogin</var>
+        </resource-bundle>
+         <resource-bundle>
+            <base-name>com.genesis.modelo.languages.index</base-name>
+            <var>msjIndex</var>
+        </resource-bundle>
     </application>
 </faces-config>

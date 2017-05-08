@@ -14,9 +14,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../iniciocapitan.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Pedidos</a></li>
-                            <li class="active">Editar</li>
+                            <li><a href="../iniciocapitan.xhtml">#{msjCapitan.inicio}</a></li>
+                            <li><a href="List.xhtml">#{msjCapitan.pedidos}</a></li>
+                            <li class="active">#{msjCapitan.editar}</li>
                         </ol>
                     </div>
                 </div>
@@ -29,217 +29,93 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Actualizacci�n de pedidos</h2>
+                                <h2>#{msjCapitan.actualizaccionPedidos}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" globalOnly="true"/>
                             </h:panelGroup>
                             <h:form id="defaultForm" a:method="post" class="form-horizontal" >
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.EditPedidoLabel_descripcion}" for="descripcion" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.EditPedidoLabel_descripcion}" for="descripcion" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Nombre" id="descripcion" value="#{pedidoController.selected.descripcion}" title="#{bundle.EditPedidoTitle_descripcion}" />
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="#{msjCapitan.descripcionPertinente}" id="descripcion" value="#{pedidoController.selected.descripcion}" title="#{msjApp.EditPedidoTitle_descripcion}" required="true" requiredMessage="#{msjApp.RequiredMessage}"/>
+                                    <h:message for="descripcion"/>
                                     </div>                    
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.EditPedidoLabel_cedulaCliente}" for="cedulaCliente" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.EditPedidoLabel_cedulaCliente}" for="cedulaCliente" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Precio" id="cedulaCliente" value="#{pedidoController.selected.cedulaCliente}" title="#{bundle.EditPedidoTitle_cedulaCliente}" />
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="#{msjCapitan.cedulaCliente}" id="cedulaCliente" value="#{pedidoController.selected.cedulaCliente}" title="#{msjApp.EditPedidoTitle_cedulaCliente}" required="true" requiredMessage="#{msjApp.RequiredMessage}"/>
+                                    <h:message for="cedulaCliente"/>
                                     </div>                    
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.EditPedidoLabel_fecha}" for="fecha" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.EditPedidoLabel_fecha}" for="fecha" />
                                     <div class="col-sm-5">
-                                         <h:inputText a:type="datetime-local" class="form-control" a:placeholder="Fecha pedido"  a:maxlength="14" a:minlength="14" id="fecha" value="#{pedidoController.selected.fecha}" title="#{bundle.EditPedidoTitle_fecha}" >
+                                        <h:inputText a:type="datetime-local" class="form-control" a:placeholder="Fecha pedido"  a:maxlength="14" a:minlength="14" id="fecha" value="#{pedidoController.selected.fecha}" title="#{msjApp.EditPedidoTitle_fecha}" required="true" requiredMessage="#{msjApp.RequiredMessage}">
                                             <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                                         </h:inputText>
+                                    <h:message for="fecha"/>
                                     </div>                    
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.EditPedidoLabel_calificacionServicio}" for="calificacionServicio" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.EditPedidoLabel_calificacionServicio}" for="calificacionServicio" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Calificacion" id="calificacionServicio" value="#{pedidoController.selected.calificacionServicio}" title="#{bundle.EditPedidoTitle_calificacionServicio}" />
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="#{msjCapitan.calificacionServicio}" id="calificacionServicio" value="#{pedidoController.selected.calificacionServicio}" title="#{msjApp.EditPedidoTitle_calificacionServicio}" required="true" requiredMessage="#{msjApp.RequiredMessage}"/>
+                                    <h:message for="calificacionServicio"/>
                                     </div>                    
                                 </div>
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.EditPedidoLabel_observacionServicio}" for="observacionServicio" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.EditPedidoLabel_observacionServicio}" for="observacionServicio" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Observacion" id="observacionServicio" value="#{pedidoController.selected.observacionServicio}" title="#{bundle.EditPedidoTitle_observacionServicio}" />
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="#{msjCapitan.observacionPedido}" id="observacionServicio" value="#{pedidoController.selected.observacionServicio}" title="#{msjApp.EditPedidoTitle_observacionServicio}" required="true" requiredMessage="#{msjApp.RequiredMessage}"/>
+                                   <h:message for="observacionServicio"/>
                                     </div>                    
                                 </div>
-                                
+
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.EditPedidoLabel_idEstado}" for="idEstado" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.EditPedidoLabel_idEstado}" for="idEstado" />
                                     <div class="col-sm-5">
-                                        
-                                    <h:selectOneMenu class="form-control" id="idEstado" value="#{pedidoController.selected.idEstado}" title="#{bundle.EditPedidoTitle_idEstado}" >
-                                        <f:selectItems class="form-control" value="#{estadoPedidoController.itemsAvailableSelectOne}"/>
-                                    </h:selectOneMenu>                   
+
+                                        <h:selectOneMenu class="form-control" id="idEstado" value="#{pedidoController.selected.idEstado}" title="#{msjApp.EditPedidoTitle_idEstado}" required="true" requiredMessage="#{msjApp.RequiredMessage}">
+                                            <f:selectItems class="form-control" value="#{estadoPedidoController.itemsAvailableSelectOne}"/>
+                                        </h:selectOneMenu>                   
+                                    <h:message for="idEstado"/>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.EditPedidoLabel_idMesa}" for="idMesa" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.EditPedidoLabel_idMesa}" for="idMesa" />
                                     <div class="col-sm-5">
-                                        
-                                    <h:selectOneMenu class="form-control" id="idMesa" value="#{pedidoController.selected.idMesa}" title="#{bundle.EditPedidoTitle_idMesa}" >
-                                        <f:selectItems value="#{mesaController.itemsAvailableSelectOne}"/>
-                                    </h:selectOneMenu>                   
+
+                                        <h:selectOneMenu class="form-control" id="idMesa" value="#{pedidoController.selected.idMesa}" title="#{msjApp.EditPedidoTitle_idMesa}" required="true" requiredMessage="#{msjApp.RequiredMessage}">
+                                            <f:selectItems value="#{mesaController.itemsAvailableSelectOne}"/>
+                                        </h:selectOneMenu>                   
+                                   <h:message for="idMesa"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.EditPedidoLabel_cedulaCapitan}" for="cedulaCapitan" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.EditPedidoLabel_cedulaCapitan}" for="cedulaCapitan" />
                                     <div class="col-sm-5">
-                                        
-                                        <h:selectOneMenu class="form-control" id="cedulaCapitan" value="#{pedidoController.selected.cedulaCapitan}" title="#{bundle.EditPedidoTitle_cedulaCapitan}" >
+
+                                        <h:selectOneMenu class="form-control" id="cedulaCapitan" value="#{pedidoController.selected.cedulaCapitan}" title="#{msjApp.EditPedidoTitle_cedulaCapitan}" required="true" requiredMessage="#{msjApp.RequiredMessage}">
                                             <f:selectItems value="#{usuarioController.itemsAvailableSelectOne}"/>
                                         </h:selectOneMenu>                   
+                                    <h:message for="cedulaCapitan"/>
                                     </div>
                                 </div>
-                                
-
-                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{pedidoController.update}" value="#{bundle.EditPedidoSaveLink}"/>
 
 
+                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{pedidoController.update}" value="#{msjApp.EditPedidoSaveLink}"/>
                             </h:form>
                         </div>
                     </div>
                 </div>
             </section>
-
-
-
-
-            <script type="text/javascript">
-                $(document).ready(function () {
-                // Generate a simple captcha
-                function randomNumber(min, max) {
-                return Math.floor(Math.random() * (max - min + 1) + min);
-                }
-                ;
-                $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
-                $('#defaultForm').formValidation({
-                message: 'Este valor no es válido',
-                        icon: {
-                        valid: 'glyphicon glyphicon-ok',
-                                invalid: 'glyphicon glyphicon-remove',
-                                validating: 'glyphicon glyphicon-refresh'
-                        },
-                        fields: {
-                        firstName: {
-                        row: '.col-sm-4',
-                                validators: {
-                                notEmpty: {
-                                message: 'Este campo es requerido'
-                                }
-                                }
-                        },
-                                lastName: {
-                                row: '.col-sm-4',
-                                        validators: {
-                                        notEmpty: {
-                                        message: 'Este campo es requerido'
-                                        }
-                                        }
-                                },
-                                username: {
-                                message: 'El documento no es válido',
-                                        validators: {
-                                        notEmpty: {
-                                        message: 'Este campo es requerido'
-                                        },
-                                                stringLength: {
-                                                min: 6,
-                                                        max: 30,
-                                                        message: 'El nombre de usuario debe ser entre más de 6 y menos de 30 caracteres'
-                                                },
-                                                regexp: {
-                                                regexp: /^[a-zA-Z0-9_\.]+$/,
-                                                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                                                }
-                                        }
-                                },
-                                email: {
-                                validators: {
-                                notEmpty: {
-                                message: 'Este campo es requerido'
-                                },
-                                        emailAddress: {
-                                        message: 'Esto no es un correo electrónico valido'
-                                        }
-                                }
-                                },
-                                area: {
-                                validators: {
-                                notEmpty: {
-                                message: 'Este campo es requerido'
-                                },
-                                        emailAddress: {
-                                        message: 'Esto no es un correo electrónico valido'
-                                        }
-                                regexp: {
-                                regexp: /^[a-zA-Z0-9_\.]+$/,
-                                        message: 'Este campo no puede contener n�meros'
-                                }
-                                }
-                                },
-                                password: {
-                                validators: {
-                                notEmpty: {
-                                message: 'Este campo es requerido'
-                                },
-                                        different: {
-                                        field: 'username',
-                                                message: 'La contraseña no coincide con este usuario'
-                                        }
-                                }
-                                },
-                                gender: {
-                                validators: {
-                                notEmpty: {
-                                message: 'Este campo es requerido'
-                                }
-                                }
-                                },
-                                captcha: {
-                                validators: {
-                                callback: {
-                                message: 'Respuesta incorrecta',
-                                        callback: function (value, validator, $field) {
-                                        var items = $('#captchaOperation').html().split(' '), sum = parseInt(items[0]) + parseInt(items[2]);
-                                        return value == sum;
-                                        }
-                                }
-                                }
-                                },
-                                /*agree: {
-                                 validators: {
-                                 notEmpty: {
-                                 message: 'You must agree with the terms and conditions'
-                                 }
-                                 }
-                                 }*/
-                        }
-                }).on('success.form.fv', function (event) {
-                event.preventDefault();
-                swal({
-                title: "Registro éxitoso",
-                        text: "El usuario se ha registrado correctámente!"
-                }, function () {
-                location.href = "registrarPersonal.html"
-                });
-                });
-                });
-            </script>
-            <script>
-            </script>
-
         </ui:define>
-
     </ui:composition>
-
 </html>

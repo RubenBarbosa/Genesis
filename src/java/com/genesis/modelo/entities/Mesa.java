@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Mesa.findByIdMesa", query = "SELECT m FROM Mesa m WHERE m.idMesa = :idMesa")})
 public class Mesa implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull

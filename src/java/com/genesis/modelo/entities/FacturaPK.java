@@ -18,7 +18,7 @@ import javax.validation.constraints.NotNull;
 @Embeddable
 public class FacturaPK implements Serializable {
 
-    @Basic(optional = false)
+   @Basic(optional = false)
     @NotNull
     @Column(name = "idProducto")
     private int idProducto;

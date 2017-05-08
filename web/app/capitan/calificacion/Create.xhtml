@@ -14,9 +14,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../iniciocapitan.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Calificaciones</a></li>
-                            <li class="active">Registrar Calificaciones</li>
+                            <li><a href="../iniciocapitan.xhtml">#{msjCapitan.inicio}</a></li>
+                            <li><a href="List.xhtml">#{msjCapitan.calificaciones}</a></li>
+                            <li class="active">#{msjCapitan.registrarCalificaciones}</li>
                         </ol>
                     </div>
                 </div>
@@ -29,173 +29,47 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Crear Calificacion</h2>
+                                <h2>#{msjCapitan.crearCalificacion}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" globalOnly=""/>
                             </h:panelGroup>
                             <h:form id="defaultForm" a:method="post" class="form-horizontal" >
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateCalificacionLabel_idcalificacion}" for="idcalificacion" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.CreateCalificacionLabel_idcalificacion}" for="idcalificacion" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Id" id="idcalificacion" value="#{calificacionController.selected.idcalificacion}" title="#{bundle.CreateCalificacionTitle_idcalificacion}" required="true" requiredMessage="#{bundle.CreateCalificacionRequiredMessage_idcalificacion}"/>
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="#{msjCapitan.id}" id="idcalificacion" value="#{calificacionController.selected.idcalificacion}" title="#{msjApp.CreateCalificacionTitle_idcalificacion}" required="true" requiredMessage="#{msjApp.CreateCalificacionRequiredMessage_idcalificacion}"/>
+                                        <h:message for="idcalificacion"/>
                                     </div>                    
                                 </div>
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateCalificacionLabel_descripcion}" for="descripcion" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.CreateCalificacionLabel_descripcion}" for="descripcion" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Descripcion" id="descripcion" value="#{calificacionController.selected.descripcion}" title="#{bundle.CreateCalificacionTitle_descripcion}" />
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="#{msjCapitan.descripcionPertinente}" id="descripcion" value="#{calificacionController.selected.descripcion}" title="#{msjApp.CreateCalificacionTitle_descripcion}" required="true" requiredMessage="#{msjApp.RequiredMessage}"/>
                                     </div>                    
                                 </div>
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateCalificacionLabel_fecha}" for="fecha" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.CreateCalificacionLabel_fecha}" for="fecha" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Fecha" id="fecha" value="#{calificacionController.selected.fecha}" title="#{bundle.CreateCalificacionTitle_fecha}" />
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="#{msjCapitan.fecha}" id="fecha" value="#{calificacionController.selected.fecha}" title="#{msjApp.CreateCalificacionTitle_fecha}" required="true" requiredMessage="#{msjApp.RequiredMessage}"/>
                                     </div>                    
                                 </div>
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateCalificacionLabel_cedulaMesero}" for="cedulaMesero" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjApp.CreateCalificacionLabel_cedulaMesero}" for="cedulaMesero" />
                                     <div class="col-sm-5">
-                                        <h:selectOneMenu id="cedulaMesero" value="#{calificacionController.selected.cedulaMesero}" title="#{bundle.CreateCalificacionTitle_cedulaMesero}" >
+                                        <h:selectOneMenu id="cedulaMesero" value="#{calificacionController.selected.cedulaMesero}" title="#{msjApp.CreateCalificacionTitle_cedulaMesero}" required="true" requiredMessage="#{msjApp.RequiredMessage}" >
                                             <f:selectItems value="#{usuarioController.itemsAvailableSelectOne}"/>
                                         </h:selectOneMenu>
                                     </div>                    
                                 </div>
                                 <br />
-                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success"  action="#{calificacionController.create}" value="#{bundle.CreateCalificacionSaveLink}" />
-
-
+                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success"  action="#{calificacionController.create}" value="#{msjApp.CreateCalificacionSaveLink}" />
                             </h:form>
                         </div>
                     </div>
                 </div>
             </section>
-
-
-
-
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    // Generate a simple captcha
-                    function randomNumber(min, max) {
-                        return Math.floor(Math.random() * (max - min + 1) + min);
-                    }
-                    ;
-                    $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
-
-                    $('#defaultForm').formValidation({
-                        message: 'Este valor no es válido',
-                        icon: {
-                            valid: 'glyphicon glyphicon-ok',
-                            invalid: 'glyphicon glyphicon-remove',
-                            validating: 'glyphicon glyphicon-refresh'
-                        },
-                        fields: {
-                            firstName: {
-                                row: '.col-sm-4',
-                                validators: {
-                                    notEmpty: {
-                                        message: 'Este campo es requerido'
-                                    }
-                                }
-                            },
-                            lastName: {
-                                row: '.col-sm-4',
-                                validators: {
-                                    notEmpty: {
-                                        message: 'Este campo es requerido'
-                                    }
-                                }
-                            },
-                            username: {
-                                message: 'El documento no es válido',
-                                validators: {
-                                    notEmpty: {
-                                        message: 'Este campo es requerido'
-                                    },
-                                    stringLength: {
-                                        min: 6,
-                                        max: 30,
-                                        message: 'El nombre de usuario debe ser entre más de 6 y menos de 30 caracteres'
-                                    },
-                                    regexp: {
-                                        regexp: /^[a-zA-Z0-9_\.]+$/,
-                                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                                    }
-                                }
-                            },
-                            email: {
-                                validators: {
-                                    notEmpty: {
-                                        message: 'Este campo es requerido'
-                                    },
-                                    emailAddress: {
-                                        message: 'Esto no es un correo electrónico valido'
-                                    }
-                                }
-                            },
-                            password: {
-                                validators: {
-                                    notEmpty: {
-                                        message: 'Este campo es requerido'
-                                    },
-                                    different: {
-                                        field: 'username',
-                                        message: 'La contraseña no coincide con este usuario'
-                                    }
-                                }
-                            },
-                            confirmPassword: {
-                                validators: {
-                                    notEmpty: {},
-                                    identical: {
-                                        field: 'password'
-                                    }
-                                }
-                            },
-                            gender: {
-                                validators: {
-                                    notEmpty: {
-                                        message: 'Este campo es requerido'
-                                    }
-                                }
-                            },
-                            captcha: {
-                                validators: {
-                                    callback: {
-                                        message: 'Respuesta incorrecta',
-                                        callback: function (value, validator, $field) {
-                                            var items = $('#captchaOperation').html().split(' '), sum = parseInt(items[0]) + parseInt(items[2]);
-                                            return value == sum;
-                                        }
-                                    }
-                                }
-                            },
-                            /*agree: {
-                             validators: {
-                             notEmpty: {
-                             message: 'You must agree with the terms and conditions'
-                             }
-                             }
-                             }*/
-                        }
-                    }).on('success.form.fv', function (event) {
-                        event.preventDefault();
-                        swal({
-                            title: "Registro éxitoso",
-                            text: "El usuario se ha registrado correctámente!"
-                        }, function () {
-                            location.href = "registrarPersonal.html"
-                        });
-                    });
-                });
-            </script>
-            <script>
-            </script>
-
         </ui:define>
-
     </ui:composition>
-
 </html>

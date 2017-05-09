@@ -12,9 +12,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="../List.xhtml">Usuarios</a></li>
-                            <li class="active">Tipos documentos</li>
+                            <li><a href="../../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="../List.xhtml">#{msjAdmin.usuariosM}</a></li>
+                            <li class="active">#{msjAdmin.tiposM}</li>
                         </ol>
                     </div>
                 </div>
@@ -30,30 +30,30 @@
                                 <h:panelGroup id="messagePanel" layout="block">
                                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                                 </h:panelGroup>
-                                <h:outputText escape="false" value="#{bundle.ListTipodocumentoEmpty}" rendered="#{tipodocumentoController.items.rowCount == 0}"/>
+                                <h:outputText escape="false" value="#{msjAdmin.ListTipodocumentoEmpty}" rendered="#{tipodocumentoController.items.rowCount == 0}"/>
                                 <h:panelGroup rendered="#{tipodocumentoController.items.rowCount > 0}">
                                     <h:outputText style="margin-left: 10%; color: #fff; margin-top: 10px;" value="#{tipodocumentoController.pagination.pageFirstItem + 1}..#{tipodocumentoController.pagination.pageLastItem + 1}/#{tipodocumentoController.pagination.itemsCount}"/>&nbsp;
-                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{tipodocumentoController.previous}" value="#{bundle.Previous} #{tipodocumentoController.pagination.pageSize}" rendered="#{tipodocumentoController.pagination.hasPreviousPage}"/>&nbsp;
-                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{tipodocumentoController.next}" value="#{bundle.Next} #{tipodocumentoController.pagination.pageSize}" rendered="#{tipodocumentoController.pagination.hasNextPage}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{tipodocumentoController.previous}" value="#{msjAdmin.Previous} #{tipodocumentoController.pagination.pageSize}" rendered="#{tipodocumentoController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{tipodocumentoController.next}" value="#{msjAdmin.Next} #{tipodocumentoController.pagination.pageSize}" rendered="#{tipodocumentoController.pagination.hasNextPage}"/>&nbsp;
                                     <br/>
                                     <br/>
-                                    <h:commandLink  style="margin-left: 10%;" class="btn btn-primary" action="#{tipoController.prepareCreate}" value="#{bundle.ListTipoCreateLink}"/>
+                                    <h:commandLink  style="margin-left: 10%;" class="btn btn-primary" action="#{tipoController.prepareCreate}" value="#{msjAdmin.ListTipoCreateLink}"/>
                                     <h:dataTable value="#{tipodocumentoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px; margin-left: 30%;">
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListTipodocumentoTitle_id}"/>
+                                                <h:outputText value="#{msjAdmin.ListTipodocumentoTitle_id}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.id}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListTipodocumentoTitle_tipo}"/>
+                                                <h:outputText value="#{msjAdmin.ListTipodocumentoTitle_tipo}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.tipo}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListTipodocumentoTitle_sigla}"/>
+                                                <h:outputText value="#{msjAdmin.ListTipodocumentoTitle_sigla}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.sigla}"/>
                                         </h:column>

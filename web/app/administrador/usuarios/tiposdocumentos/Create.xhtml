@@ -14,10 +14,10 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="../List.xhtml">Usuarios</a></li>
-                            <li><a href="List.xhtml">Tipos documentos</a></li>
-                            <li class="active">Registrar tipo de documento</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="../List.xhtml">#{msjAdmin.usuariosM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.tiposM}</a></li>
+                            <li class="active">#{msjAdmin.registroDocM}</li>
                         </ol>
                     </div>
                 </div>
@@ -30,35 +30,37 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Registro tipo de documento</h2>
+                                <h2>#{msjAdmin.registroTipoDoc}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" globalOnly="true"/>
                             </h:panelGroup>
                             <h:form id="defaultForm" a:method="post" class="form-horizontal" >
 <!--                                <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateTipodocumentoLabel_id}" for="id" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.CreateTipodocumentoLabel_id}" for="id" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Documento" a:pattern="[0-9]"  id="id" value="#{tipodocumentoController.selected.id}" title="#{bundle.CreateTipodocumentoTitle_id}" required="" requiredMessage="#{bundle.CreateTipodocumentoRequiredMessage_id}"/>
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="Documento" a:pattern="[0-9]"  id="id" value="#{tipodocumentoController.selected.id}" title="#{msjAdmin.CreateTipodocumentoTitle_id}" required="" requiredMessage="#{msjAdmin.CreateTipodocumentoRequiredMessage_id}"/>
                                     </div>
                                 </div>-->
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateTipodocumentoLabel_tipo}" for="tipo" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.CreateTipodocumentoLabel_tipo}" for="tipo" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Tipo documentos" id="tipo" value="#{tipodocumentoController.selected.tipo}" title="#{bundle.CreateTipodocumentoTitle_tipo}" />
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="Tipo documentos" id="tipo" required="true" requiredMessage="#{msjAdmin.requerido}" value="#{tipodocumentoController.selected.tipo}" title="#{msjAdmin.CreateTipodocumentoTitle_tipo}" />
+                                        <h:message for="tipo"/>
                                     </div>                    
                                 </div>
                                 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateTipodocumentoLabel_sigla}" for="sigla" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.CreateTipodocumentoLabel_sigla}" for="sigla" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Sigla" id="sigla" value="#{tipodocumentoController.selected.sigla}" title="#{bundle.CreateTipodocumentoTitle_sigla}" />
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="Sigla" id="sigla" required="true" requiredMessage="#{msjAdmin.requerido}" value="#{tipodocumentoController.selected.sigla}" title="#{msjAdmin.CreateTipodocumentoTitle_sigla}" />
+                                        <h:message for="sigla"/>
                                     </div>                    
                                 </div>
 
                                 <br />
-                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{tipodocumentoController.create}" value="#{bundle.CreateTipodocumentoSaveLink}" />
+                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{tipodocumentoController.create}" value="#{msjAdmin.CreateTipodocumentoSaveLink}" />
 
 
                             </h:form>

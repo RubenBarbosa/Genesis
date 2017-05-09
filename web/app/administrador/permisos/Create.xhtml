@@ -14,9 +14,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Permisos</a></li>
-                            <li class="active">Crear permiso</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.permisosM}</a></li>
+                            <li class="active">#{msjAdmin.crearPermiso}</li>
                         </ol>
                     </div>
                 </div>
@@ -29,36 +29,32 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Crear permiso</h2>
+                                <h2>#{msjAdmin.crearPermiso}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" globalOnly="true"/>
                             </h:panelGroup>
                             <h:form id="defaultForm" a:method="post" class="form-horizontal" >
 
-<!--                                <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreatePermisoLabel_idpermisos}" for="idpermisos" />
-                                    <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="MM/DD/AA" id="idpermisos" value="#{permisoController.selected.idpermisos}" title="#{bundle.CreatePermisoTitle_idpermisos}" required="true" requiredMessage="#{bundle.CreatePermisoRequiredMessage_idpermisos}"/>
-                                    </div>                    
-                                </div>-->
-
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreatePermisoLabel_nombre}" for="nombre" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.CreatePermisoLabel_nombre}" for="nombrePermiso" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Nombre" id="nombre" value="#{permisoController.selected.nombre}" title="#{bundle.CreatePermisoTitle_nombre}" />
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="Nombre" id="nombrePermiso" required="true" requiredMessage="#{msjAdmin.requerido}" value="#{permisoController.selected.nombre}" title="#{msjAdmin.CreatePermisoTitle_nombre}" />
+                                        <h:message for="nombrePermiso" />
+                                                   
                                     </div>                    
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreatePermisoLabel_url}" for="url" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.CreatePermisoLabel_url}" for="url" />
                                     <div class="col-sm-5">
-                                        <h:inputTextarea a:type="text" class="form-control" a:placeholder="Url" rows="4" cols="30" id="url" value="#{permisoController.selected.url}" title="#{bundle.CreatePermisoTitle_url}" />
+                                        <h:inputTextarea a:type="text" class="form-control" a:placeholder="Url" rows="4" cols="30" id="url" required="true" requiredMessage="#{msjAdmin.requerido}" value="#{permisoController.selected.url}" title="#{msjAdmin.CreatePermisoTitle_url}" />
+                                        <h:message for="url"/>
                                     </div>                    
                                 </div>
 
                                 <br />
-                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{rolusuarioController.create}" value="#{bundle.CreateRolusuarioSaveLink}" />
+                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{rolusuarioController.create}" value="#{msjAdmin.CreateRolusuarioSaveLink}" />
 
 
                             </h:form>

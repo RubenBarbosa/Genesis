@@ -13,10 +13,10 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="../List.xhtml">Usuarios</a></li>
-                            <li><a href="List.xhtml">Tipo de documentos</a></li>
-                            <li class="active">Detalles</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="../List.xhtml">#{msjAdmin.usuariosM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.tipoDcoumentoM}</a></li>
+                            <li class="active">#{msjAdmin.detalles}</li>
                         </ol>
                     </div>
                 </div>
@@ -29,28 +29,28 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Detalles</h2>
+                                <h2>#{msjAdmin.detalles}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
                                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                             </h:panelGroup>
                             <h:form class="col-sm-4 col-sm-offset-4 detalles" >
                                 <h:panelGrid columns="2">
-                                    <h:outputText value="#{bundle.ViewTipodocumentoLabel_id}"/>
-                                    <h:outputText value="#{tipodocumentoController.selected.id}" title="#{bundle.ViewTipodocumentoTitle_id}"/>
-                                    <h:outputText value="#{bundle.ViewTipodocumentoLabel_tipo}"/>
-                                    <h:outputText value="#{tipodocumentoController.selected.tipo}" title="#{bundle.ViewTipodocumentoTitle_tipo}"/>
-                                    <h:outputText value="#{bundle.ViewTipodocumentoLabel_sigla}"/>
-                                    <h:outputText value="#{tipodocumentoController.selected.sigla}" title="#{bundle.ViewTipodocumentoTitle_sigla}"/>
+                                    <h:outputText value="#{msjAdmin.ViewTipodocumentoLabel_id}"/>
+                                    <h:outputText value="#{tipodocumentoController.selected.id}" title="#{msjAdmin.ViewTipodocumentoTitle_id}"/>
+                                    <h:outputText value="#{msjAdmin.ViewTipodocumentoLabel_tipo}"/>
+                                    <h:outputText value="#{tipodocumentoController.selected.tipo}" title="#{msjAdmin.ViewTipodocumentoTitle_tipo}"/>
+                                    <h:outputText value="#{msjAdmin.ViewTipodocumentoLabel_sigla}"/>
+                                    <h:outputText value="#{tipodocumentoController.selected.sigla}" title="#{msjAdmin.ViewTipodocumentoTitle_sigla}"/>
                                 </h:panelGrid>
                                 <br />
-                                <h:commandLink class="btn btn-danger" action="#{tipodocumentoController.destroyAndView}" value="#{bundle.ViewTipodocumentoDestroyLink}"/>
+                                <h:commandLink class="btn btn-danger" action="#{tipodocumentoController.destroyAndView}" value="#{msjAdmin.ViewTipodocumentoDestroyLink}"/>
                                 <br />
                                 <br />
-                                <h:link class="btn btn-primary" outcome="Edit" value="#{bundle.ViewTipodocumentoEditLink}"/>
+                                <h:link class="btn btn-primary" outcome="Edit" value="#{msjAdmin.ViewTipodocumentoEditLink}"/>
                                 <br />
                                 <br />
-                                <h:commandLink class="btn btn-success" action="#{tipodocumentoController.prepareCreate}" value="#{bundle.ViewTipodocumentoCreateLink}" />" />
+                                <h:commandLink class="btn btn-success" action="#{tipodocumentoController.prepareCreate}" value="#{msjAdmin.ViewTipodocumentoCreateLink}" />" />
 
 
 

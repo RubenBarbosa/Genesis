@@ -13,10 +13,10 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="../List.xhtml">Usuarios</a></li>
-                            <li><a href="List.xhtml">Estados</a></li>
-                            <li class="active">Detalles</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="../List.xhtml">#{msjAdmin.usuariosM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.estadosM}</a></li>
+                            <li class="active">#{msjAdmin.detalles}</li>
                         </ol>
                     </div>
                 </div>
@@ -29,26 +29,26 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Detalles</h2>
+                                <h2>#{msjAdmin.detalles}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
                                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                             </h:panelGroup>
                             <h:form class="col-sm-4 col-sm-offset-4 detalles" >
                                 <h:panelGrid columns="2">
-                                    <h:outputText value="#{bundle.ViewEstadoMesaLabel_idEstado}"/>
-                                    <h:outputText value="#{estadoMesaController.selected.idEstado}" title="#{bundle.ViewEstadoMesaTitle_idEstado}"/>
-                                    <h:outputText value="#{bundle.ViewEstadoMesaLabel_nombre}"/>
-                                    <h:outputText value="#{estadoMesaController.selected.nombre}" title="#{bundle.ViewEstadoMesaTitle_nombre}"/>
+                                    <h:outputText value="#{msjAdmin.ViewEstadoMesaLabel_idEstado}"/>
+                                    <h:outputText value="#{estadoMesaController.selected.idEstado}" title="#{msjAdmin.ViewEstadoMesaTitle_idEstado}"/>
+                                    <h:outputText value="#{msjAdmin.ViewEstadoMesaLabel_nombre}"/>
+                                    <h:outputText value="#{estadoMesaController.selected.nombre}" title="#{msjAdmin.ViewEstadoMesaTitle_nombre}"/>
                                 </h:panelGrid>
                                 <br />
-                                <h:commandLink class="btn btn-danger" action="#{estadoMesaController.destroyAndView}" value="#{bundle.ViewEstadoMesaDestroyLink}"/>
+                                <h:commandLink class="btn btn-danger" action="#{estadoMesaController.destroyAndView}" value="#{msjAdmin.ViewEstadoMesaDestroyLink}"/>
                                 <br />
                                 <br />
-                                <h:link class="btn btn-primary" outcome="Edit" value="#{bundle.ViewEstadoMesaEditLink}"/>
+                                <h:link class="btn btn-primary" outcome="Edit" value="#{msjAdmin.ViewEstadoMesaEditLink}"/>
                                 <br />
                                 <br />
-                                <h:commandLink class="btn btn-success" action="#{estadoMesaController.prepareCreate}" value="#{bundle.ViewEstadoMesaCreateLink}" />
+                                <h:commandLink class="btn btn-success" action="#{estadoMesaController.prepareCreate}" value="#{msjAdmin.ViewEstadoMesaCreateLink}" />
 
 
 

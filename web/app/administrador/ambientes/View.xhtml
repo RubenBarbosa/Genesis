@@ -13,9 +13,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Ambientes</a></li>
-                            <li class="active">Detalles</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.ambientemM}</a></li>
+                            <li class="active">#{msjAdmin.detalles}</li>
                         </ol>
                     </div>
                 </div>
@@ -35,19 +35,19 @@
                             </h:panelGroup>
                             <h:form class="col-sm-4 col-sm-offset-4 detalles" >
                                 <h:panelGrid columns="2">
-                                    <h:outputText value="#{bundle.ViewAmbienteLabel_idAmbiente}"/>
-                                    <h:outputText value="#{ambienteController.selected.idAmbiente}" title="#{bundle.ViewAmbienteTitle_idAmbiente}"/>
-                                    <h:outputText value="#{bundle.ViewAmbienteLabel_nombre}"/>
-                                    <h:outputText value="#{ambienteController.selected.nombre}" title="#{bundle.ViewAmbienteTitle_nombre}"/>
+                                    <h:outputText value="#{msjAdmin.ViewAmbienteLabel_idAmbiente}"/>
+                                    <h:outputText value="#{ambienteController.selected.idAmbiente}" title="#{msjAdmin.EditAmbienteLabel_idAmbiente}"/>
+                                    <h:outputText value="#{msjAdmin.EditAmbienteLabel_nombre}"/>
+                                    <h:outputText value="#{ambienteController.selected.nombre}" title="#{msjAdmin.EditAmbienteLabel_nombre}"/>
                                 </h:panelGrid>
                                 <br />
-                                <h:commandLink class="btn btn-danger" action="#{ambienteController.destroyAndView}" value="#{bundle.ViewAmbienteDestroyLink}"/>
+                                <h:commandLink class="btn btn-danger" action="#{ambienteController.destroyAndView}" value="#{msjAdmin.eliminar}"/>
                                 <br />
                                 <br />
-                                <h:link class="btn btn-success" outcome="Edit" value="#{bundle.ViewAmbienteEditLink}"/>
+                                <h:link class="btn btn-success" outcome="Edit" value="#{msjAdmin.ViewAmbienteEditLink}"/>
                                 <br />
                                 <br />
-                                <h:commandLink class="btn btn-primary" action="#{ambienteController.prepareCreate}" value="#{bundle.ViewAmbienteCreateLink}" />
+                                <h:commandLink class="btn btn-primary" action="#{ambienteController.prepareCreate}" value="#{msjAdmin.ViewAmbienteCreateLink}" />
 
 
                             </h:form>

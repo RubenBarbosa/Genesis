@@ -14,9 +14,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Ambientes</a></li>
-                            <li class="active">Registrar ambiente</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.ambientemM}</a></li>
+                            <li class="active">#{msjAdmin.registrarAmbiente}</li>
                         </ol>
                     </div>
                 </div>
@@ -29,24 +29,25 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Registro de ambiente</h2>
+                                <h2>#{msjAdmin.registroAmbienteC}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" globalOnly="true" />
                             </h:panelGroup>
                             <h:form id="defaultForm" a:method="post" class="form-horizontal" >
                                 
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateAmbienteLabel_nombre}" for="nombre" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin .CreateAmbienteLabel_nombre}" for="nombreAmbiente" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Nombre" a:pattern="[A-Za-z]{3}" id="nombre" value="#{ambienteController.selected.nombre}" title="#{bundle.CreateAmbienteTitle_nombre}"/>
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="Nombre" a:pattern="[A-Za-z]{3}" required="true" requiredMessage="#{msjAdmin.requerido}" id="nombreAmbiente" value="#{ambienteController.selected.nombre}" title="#{msjAdmin .CreateAmbienteTitle_nombre}"/>
+                                        <h:message for="nombreAmbiente"/>
                                     </div>                    
                                 </div>
 
                               
                                 <br />
-                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{ambienteController.create}" value="#{bundle.CreateAmbienteSaveLink}" />
+                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{ambienteController.create}" value="#{msjAdmin.guardar}" />
 
 
                             </h:form>

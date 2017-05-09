@@ -13,8 +13,8 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li class="active">Roles</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li class="active">#{msjAdmin.rolM}</li>
                         </ol>
                     </div>
                 </div>
@@ -30,12 +30,12 @@
                                 <h:panelGroup id="messagePanel" layout="block">
                                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                                 </h:panelGroup>
-                                <h:outputText escape="false" value="#{bundle.ListRolEmpty}" rendered="#{rolController.items.rowCount == 0}"/>
+                                <h:outputText escape="false" value="#{msjAdmin.ListRolEmpty}" rendered="#{rolController.items.rowCount == 0}"/>
                                 <h:panelGroup rendered="#{rolController.items.rowCount > 0}">
                                     <h:outputText value="#{rolController.pagination.pageFirstItem + 1}..#{rolController.pagination.pageLastItem + 1}/#{rolController.pagination.itemsCount}"/>&nbsp;
-                                    <h:commandLink action="#{rolController.previous}" value="#{bundle.Previous} #{rolController.pagination.pageSize}" rendered="#{rolController.pagination.hasPreviousPage}"/>&nbsp;
-                                    <h:commandLink action="#{rolController.next}" value="#{bundle.Next} #{rolController.pagination.pageSize}" rendered="#{rolController.pagination.hasNextPage}"/>&nbsp;
-                                    <h:commandLink action="#{rolController.prepareCreate}" value="#{bundle.ListRolCreateLink}" class="btn btn-primary" style="margin-top: 2%; margin-left: 20%;"/>
+                                    <h:commandLink action="#{rolController.previous}" value="#{msjAdmin.Previous} #{rolController.pagination.pageSize}" rendered="#{rolController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink action="#{rolController.next}" value="#{msjAdmin.Next} #{rolController.pagination.pageSize}" rendered="#{rolController.pagination.hasNextPage}"/>&nbsp;
+                                    <h:commandLink action="#{rolController.prepareCreate}" value="#{msjAdmin.ListRolCreateLink}" class="btn btn-primary" style="margin-top: 2%; margin-left: 20%;"/>
                                     <br/>
                                     <br/>
                                     <li><a class="btn btn-success" style="margin-left: 25%;" href="rolesusuarios/List.xhtml">Asignar rol</a></li>

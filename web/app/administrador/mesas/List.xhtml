@@ -12,8 +12,8 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li class="active">Mesas</li>
+                            <li><a href="../inicioadministrador.xhtml">#{inicioM}</a></li>
+                            <li class="active">#{msjAdmin.mesasM}</li>
                         </ol>
                     </div>
                 </div>
@@ -30,33 +30,33 @@
                                 <h:panelGroup id="messagePanel" layout="block">
                                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                                 </h:panelGroup>
-                                <h:outputText escape="false" value="#{bundle.ListMesaEmpty}" rendered="#{mesaController.items.rowCount == 0}"/>
+                                <h:outputText escape="false" value="#{msjAdmin.ListMesaEmpty}" rendered="#{mesaController.items.rowCount == 0}"/>
                                 <h:panelGroup  rendered="#{mesaController.items.rowCount > 0}">
                                     <h:outputText style="margin-left: 10%; color: #fff; margin-top: 10px;" value="#{mesaController.pagination.pageFirstItem + 1}..#{mesaController.pagination.pageLastItem + 1}/#{mesaController.pagination.itemsCount}"/>&nbsp;
-                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{mesaController.previous}" value="#{bundle.Previous} #{mesaController.pagination.pageSize}" rendered="#{mesaController.pagination.hasPreviousPage}"/>&nbsp;
-                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{mesaController.next}" value="#{bundle.Next} #{mesaController.pagination.pageSize}" rendered="#{mesaController.pagination.hasNextPage}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{mesaController.previous}" value="#{msjAdmin.Previous} #{mesaController.pagination.pageSize}" rendered="#{mesaController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{mesaController.next}" value="#{msjAdmin.Next} #{mesaController.pagination.pageSize}" rendered="#{mesaController.pagination.hasNextPage}"/>&nbsp;
                                     <br/>
                                     <br/>
-                                    <h:commandLink style="margin-left: 12%;" class="btn btn-primary" action="#{mesaController.prepareCreate}" value="#{bundle.ListMesaCreateLink}"/>
+                                    <h:commandLink style="margin-left: 12%;" class="btn btn-primary" action="#{mesaController.prepareCreate}" value="#{msjAdmin.ListMesaCreateLink}"/>
                                     <br/>
                                     <br/>
-                                    <li><a class="btn btn-success" style="margin-left: 15%;" href="estadomesa/List.xhtml">Estados</a></li>
+                                    <li><a class="btn btn-success" style="margin-left: 15%;" href="estadomesa/List.xhtml">#{msjAdmin.estadosM}</a></li>
                                     <h:dataTable class="col-sm-4 col-sm-offset-4" value="#{mesaController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px;">
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListMesaTitle_idMesa}"/>
+                                                <h:outputText value="#{msjAdmin.ListMesaTitle_idMesa}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.idMesa}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListMesaTitle_idAmbiente}"/>
+                                                <h:outputText value="#{msjAdmin.ListMesaTitle_idAmbiente}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.idAmbiente.nombre}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListMesaTitle_idEstados}"/>
+                                                <h:outputText value="#{msjAdmin.ListMesaTitle_idEstados}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.idEstados.nombre}"/>
                                         </h:column>
@@ -70,16 +70,10 @@
                                             <h:outputText value=" "/>
                                             <h:commandLink class="btn btn-danger btn-sm fa fa-trash"  action="#{mesaController.destroy}" />
                                         </h:column>
-                                        <!--                        <h:column>
-                                                                    <f:facet name="header">
-                                                                        <h:outputText value="#{bundle.ListUsuarioTitle_tipoDocumento}"/>
-                                                                    </f:facet>
-                                                                    <h:outputText value="#{item.tipoDocumento}"/>
-                                                                </h:column>-->
+                                        
 
                                     </h:dataTable>
                                 </h:panelGroup>
-                                <!--<h:link outcome="/index" value="#{bundle.ListUsuarioIndexLink}"/>-->
                             </h:form>
                         </div>
                     </div>

@@ -7,10 +7,10 @@
     <!-- encabezado perfil de usuario -->
     <section class="encabezado">
         <div class="container-fluid">
-            <h4>Cajero - Sergio Camargo</h4>
+            <h4>#{msjCaja.cajero} #{sessionController.usuarioSesion.primerNombre} #{sessionController.usuarioSesion.primerApellido}</h4>
         </div>
         <div>
-            <a href="perfilcajero.xhtml" class="fa fa-cog"> Perfil &nbsp;&nbsp;</a>
+            <a href="perfilcajero.xhtml" class="fa fa-cog"> #{msjCaja.perfil} &nbsp;&nbsp;</a>
             <h:link class="fa fa-power-off" outcome="/login" value="#{sessionController.cerrarSesion()}"></h:link>
         </div>
     </section>

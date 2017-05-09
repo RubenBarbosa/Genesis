@@ -11,8 +11,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                           <li><a href="../iniciocajero.xhtml">Inicio</a></li>
-                            <li class="active">Cuentas</li>
+                           <li><a href="../iniciocajero.xhtml">#{msjCaja.inicio}</a></li>
+                            <li class="active">#{msjCaja.factura}</li>
+                            <li class="active">#{msjCaja.listarFactura}</li>
                         </ol>
                     </div>
                 </div>
@@ -21,33 +22,36 @@
         
         <ui:define name="contenido">
             <section id="mesas">
-                <div class="">
-                    <div class="">
-                        <div class="">
+                <div class="container">
+                    <div class="row">
+                       <div class="col-sm-8 col-sm-off set-2">
+                            <div class="page-header">
+                                <h2>#{msjCaja.listarFactura}</h2>
+                            </div>
                             
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
-                <h:outputText escape="false" value="#{bundle.ListFacturaEmpty}" rendered="#{facturaController.items.rowCount == 0}"/>
+                <h:outputText escape="false" value="#{msjApp.ListFacturaEmpty}" rendered="#{facturaController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{facturaController.items.rowCount > 0}">
                     <h:outputText style="margin-left: 10%; color: #fff; margin-top: 10px;" value="#{facturaController.pagination.pageFirstItem + 1}..#{facturaController.pagination.pageLastItem + 1}/#{facturaController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{facturaController.previous}" value="#{bundle.Previous} #{facturaController.pagination.pageSize}" rendered="#{facturaController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{facturaController.next}" value="#{bundle.Next} #{facturaController.pagination.pageSize}" rendered="#{facturaController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{facturaController.previous}" value="#{msjApp.Previous} #{facturaController.pagination.pageSize}" rendered="#{facturaController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{facturaController.next}" value="#{msjApp.Next} #{facturaController.pagination.pageSize}" rendered="#{facturaController.pagination.hasNextPage}"/>&nbsp;
                     <br/>
                     <br/>
-                    <h:commandLink style="margin-left: 10%;" class="btn btn-primary" action="#{facturaController.prepareCreate}" value="#{bundle.ListFacturaCreateLink}"/>
+                    <h:commandLink style="margin-left: 10%;" class="btn btn-primary" action="#{facturaController.prepareCreate}" value="#{msjApp.ListFacturaCreateLink}"/>
                     
                     <h:dataTable value="#{facturaController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px; margin-left: 25%;">
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListFacturaTitle_cantidad}"/>
+                                <h:outputText value="#{msjApp.ListFacturaTitle_cantidad}"/>
                             </f:facet>
                             <h:outputText value="#{item.cantidad}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListFacturaTitle_fecha}"/>
+                                <h:outputText value="#{msjApp.ListFacturaTitle_fecha}"/>
                             </f:facet>
                             <h:outputText value="#{item.fecha}">
                                 <f:convertDateTime pattern="MM/dd/yyyy" />
@@ -55,13 +59,13 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListFacturaTitle_pedido}"/>
+                                <h:outputText value="#{msjApp.ListFacturaTitle_pedido}"/>
                             </f:facet>
                             <h:outputText value="#{item.pedido}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListFacturaTitle_producto}"/>
+                                <h:outputText value="#{msjApp.ListFacturaTitle_producto}"/>
                             </f:facet>
                             <h:outputText value="#{item.producto}"/>
                         </h:column>
@@ -81,7 +85,7 @@
                 
                 <br />
                 <br />
-<!--                <h:link outcome="/index" value="#{bundle.ListFacturaIndexLink}"/>-->
+<!--                <h:link outcome="/index" value="#{msjApp.ListFacturaIndexLink}"/>-->
             </h:form>
                          </div>
                     </div>

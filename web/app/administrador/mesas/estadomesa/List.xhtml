@@ -12,9 +12,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="../List.xhtml">Mesas</a></li>
-                            <li class="active">Estados</li>
+                            <li><a href="../../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="../List.xhtml">#{msjAdmin.mesasM}</a></li>
+                            <li class="active">#{msjAdmin.estadosMk}</li>
                         </ol>
                     </div>
                 </div>
@@ -30,24 +30,24 @@
                                 <h:panelGroup id="messagePanel" layout="block">
                                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                                 </h:panelGroup>
-                                <h:outputText escape="false" value="#{bundle.ListEstadoMesaEmpty}" rendered="#{estadoMesaController.items.rowCount == 0}"/>
+                                <h:outputText escape="false" value="#{msjAdmin.ListEstadoMesaEmpty}" rendered="#{estadoMesaController.items.rowCount == 0}"/>
                                 <h:panelGroup rendered="#{estadoMesaController.items.rowCount > 0}">
                                     <h:outputText style="margin-left: 10%; color: #fff; margin-top: 10px;" value="#{estadoMesaController.pagination.pageFirstItem + 1}..#{estadoMesaController.pagination.pageLastItem + 1}/#{estadoMesaController.pagination.itemsCount}"/>&nbsp;
-                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{estadoMesaController.previous}" value="#{bundle.Previous} #{estadoMesaController.pagination.pageSize}" rendered="#{estadoMesaController.pagination.hasPreviousPage}"/>&nbsp;
-                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{estadoMesaController.next}" value="#{bundle.Next} #{estadoMesaController.pagination.pageSize}" rendered="#{estadoMesaController.pagination.hasNextPage}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{estadoMesaController.previous}" value="#{msjAdmin.Previous} #{estadoMesaController.pagination.pageSize}" rendered="#{estadoMesaController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{estadoMesaController.next}" value="#{msjAdmin.Next} #{estadoMesaController.pagination.pageSize}" rendered="#{estadoMesaController.pagination.hasNextPage}"/>&nbsp;
                                     <br/>
                                     <br/>
-                                    <h:commandLink  style="margin-left: 10%;" class="btn btn-primary" action="#{tipoController.prepareCreate}" value="#{bundle.ListTipoCreateLink}"/>
+                                    <h:commandLink  style="margin-left: 10%;" class="btn btn-primary" action="#{tipoController.prepareCreate}" value="#{msjAdmin.ListTipoCreateLink}"/>
                                     <h:dataTable value="#{estadoMesaController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px; margin-left: 30%;">
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListEstadoMesaTitle_idEstado}"/>
+                                                <h:outputText value="#{msjAdmin.ListEstadoMesaTitle_idEstado}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.idEstado}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListEstadoMesaTitle_nombre}"/>
+                                                <h:outputText value="#{msjAdmin.ListEstadoMesaTitle_nombre}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.nombre}"/>
                                         </h:column>

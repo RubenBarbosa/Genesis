@@ -12,8 +12,8 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../../inicioadministrador.xhtml">Inicio</a></li>
-                            <li class="active">Permisos</li>
+                            <li><a href="../../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li class="active">#{msjAdmin.permisosM}</li>
                         </ol>
                     </div>
                 </div>
@@ -30,30 +30,30 @@
                                 <h:panelGroup id="messagePanel" layout="block">
                                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                                 </h:panelGroup>
-                                <h:outputText escape="false" value="#{bundle.ListPermisoEmpty}" rendered="#{permisoController.items.rowCount == 0}"/>
+                                <h:outputText escape="false" value="#{msjAdmin.ListPermisoEmpty}" rendered="#{permisoController.items.rowCount == 0}"/>
                                 <h:panelGroup  rendered="#{permisoController.items.rowCount > 0}">
                                     <h:outputText style=" color: #fff; margin-top: 10px;" value="#{permisoController.pagination.pageFirstItem + 1}..#{permisoController.pagination.pageLastItem + 1}/#{permisoController.pagination.itemsCount}"/>&nbsp;
-                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{permisoController.previous}" value="#{bundle.Previous} #{permisoController.pagination.pageSize}" rendered="#{permisoController.pagination.hasPreviousPage}"/>&nbsp;
-                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{permisoController.next}" value="#{bundle.Next} #{permisoController.pagination.pageSize}" rendered="#{permisoController.pagination.hasNextPage}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{permisoController.previous}" value="#{msjAdmin.Previous} #{permisoController.pagination.pageSize}" rendered="#{permisoController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{permisoController.next}" value="#{msjAdmin.Next} #{permisoController.pagination.pageSize}" rendered="#{permisoController.pagination.hasNextPage}"/>&nbsp;
                                     <br/>
                                     <br/>
-                                    <h:commandLink  class="btn btn-primary" action="#{permisoController.prepareCreate}" value="#{bundle.ListPermisoCreateLink}"/>
+                                    <h:commandLink  class="btn btn-primary" action="#{permisoController.prepareCreate}" value="#{msjAdmin.ListPermisoCreateLink}"/>
                                                     <h:dataTable value="#{permisoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px; ">
                                             <h:column>
                                                 <f:facet name="header">
-                                                    <h:outputText value="#{bundle.ListPermisoTitle_idpermisos}"/>
+                                                    <h:outputText value="#{msjAdmin.ListPermisoTitle_idpermisos}"/>
                                                 </f:facet>
                                                 <h:outputText value="#{item.idpermisos}"/>
                                             </h:column>
                                             <h:column>
                                                 <f:facet name="header">
-                                                    <h:outputText value="#{bundle.ListPermisoTitle_nombre}"/>
+                                                    <h:outputText value="#{msjAdmin.ListPermisoTitle_nombre}"/>
                                                 </f:facet>
                                                 <h:outputText value="#{item.nombre}"/>
                                             </h:column>
                                             <h:column>
                                                 <f:facet name="header">
-                                                    <h:outputText value="#{bundle.ListPermisoTitle_url}"/>
+                                                    <h:outputText value="#{msjAdmin.ListPermisoTitle_url}"/>
                                                 </f:facet>
                                                 <h:outputText value="#{item.url}"/>
                                             </h:column>
@@ -61,15 +61,14 @@
                                                 <f:facet name="header">
                                                     <h:outputText value="&nbsp;"/>
                                                 </f:facet>
-                                                <h:commandLink class="btn btn-primary btn-sm fa fa-eye" action="#{permisoController.prepareView}" value="#{bundle.ListUsuarioViewLink}"/>
+                                                <h:commandLink class="btn btn-primary btn-sm fa fa-eye" action="#{permisoController.prepareView}" value=""/>
                                                 <h:outputText value=" "/>
-                                                <h:commandLink class="btn btn-warning btn-sm fa fa-pencil" action="#{permisoController.prepareEdit}" value="#{bundle.ListUsuarioEditLink}"/>
+                                                <h:commandLink class="btn btn-warning btn-sm fa fa-pencil" action="#{permisoController.prepareEdit}" value=""/>
                                                 <h:outputText value=" "/>
-                                                <h:commandLink class="btn btn-danger btn-sm fa fa-trash" action="#{permisoController.destroy}" value="#{bundle.ListUsuarioDestroyLink}"/>
+                                                <h:commandLink class="btn btn-danger btn-sm fa fa-trash" action="#{permisoController.destroy}" value=""/>
                                             </h:column>
                                         </h:dataTable>
                                 </h:panelGroup>
-                                <!--<h:link outcome="/index" value="#{bundle.ListUsuarioIndexLink}"/>-->
                             </h:form>
                         </div>
                     </div>

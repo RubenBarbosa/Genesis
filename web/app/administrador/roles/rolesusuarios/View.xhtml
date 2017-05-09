@@ -13,10 +13,10 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="../inicioadministrador.xhtml">roles</a></li>
-                            <li><a href="List.xhtml">Roles usuarios</a></li>
-                            <li class="active">Detalles</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.rolM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.usuarioRM}</a></li>
+                            <li class="active">#{msjAdmin.detalles}</li>
                         </ol>
                     </div>
                 </div>
@@ -29,32 +29,32 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Detalles</h2>
+                                <h2>#{msjAdmin.detalles}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
                                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                             </h:panelGroup>
                             <h:form class="col-sm-4 col-sm-offset-4 detalles" >
                                 <h:panelGrid columns="2">
-                                    <h:outputText value="#{bundle.ViewRolusuarioLabel_id}"/>
-                                    <h:outputText value="#{rolusuarioController.selected.id}" title="#{bundle.ViewRolusuarioTitle_id}"/>
-                                    <h:outputText value="#{bundle.ViewRolusuarioLabel_fecha}"/>
-                                    <h:outputText value="#{rolusuarioController.selected.fecha}" title="#{bundle.ViewRolusuarioTitle_fecha}">
+                                    <h:outputText value="#{msjAdmin.ViewRolusuarioLabel_id}"/>
+                                    <h:outputText value="#{rolusuarioController.selected.id}" title="#{msjAdmin.ViewRolusuarioTitle_id}"/>
+                                    <h:outputText value="#{msjAdmin.ViewRolusuarioLabel_fecha}"/>
+                                    <h:outputText value="#{rolusuarioController.selected.fecha}" title="#{msjAdmin.ViewRolusuarioTitle_fecha}">
                                         <f:convertDateTime pattern="MM/dd/yyyy" />
                                     </h:outputText>
-                                    <h:outputText value="#{bundle.ViewRolusuarioLabel_idRol}"/>
-                                    <h:outputText value="#{rolusuarioController.selected.idRol}" title="#{bundle.ViewRolusuarioTitle_idRol}"/>
-                                    <h:outputText value="#{bundle.ViewRolusuarioLabel_cedula}"/>
-                                    <h:outputText value="#{rolusuarioController.selected.cedula}" title="#{bundle.ViewRolusuarioTitle_cedula}"/>
+                                    <h:outputText value="#{msjAdmin.ViewRolusuarioLabel_idRol}"/>
+                                    <h:outputText value="#{rolusuarioController.selected.idRol}" title="#{msjAdmin.ViewRolusuarioTitle_idRol}"/>
+                                    <h:outputText value="#{msjAdmin.ViewRolusuarioLabel_cedula}"/>
+                                    <h:outputText value="#{rolusuarioController.selected.cedula}" title="#{msjAdmin.ViewRolusuarioTitle_cedula}"/>
                                 </h:panelGrid>
                                 <br />
-                                <h:commandLink class="btn btn-danger" action="#{rolusuarioController.destroyAndView}" value="#{bundle.ViewRolusuarioDestroyLink}"/>
+                                <h:commandLink class="btn btn-danger" action="#{rolusuarioController.destroyAndView}" value="#{msjAdmin.ViewRolusuarioDestroyLink}"/>
                                 <br />
                                 <br />
-                                <h:link class="btn btn-success" outcome="Edit" value="#{bundle.ViewRolusuarioEditLink}"/>
+                                <h:link class="btn btn-success" outcome="Edit" value="#{msjAdmin.ViewRolusuarioEditLink}"/>
                                 <br />
                                 <br />
-                                <h:commandLink class="btn btn-primary" action="#{rolusuarioController.prepareCreate}" value="#{bundle.ViewRolusuarioCreateLink}" />
+                                <h:commandLink class="btn btn-primary" action="#{rolusuarioController.prepareCreate}" value="#{msjAdmin.ViewRolusuarioCreateLink}" />
 
 
                             </h:form>

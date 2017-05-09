@@ -14,10 +14,10 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="../List.xhtml">Roles</a></li>
-                            <li><a href="List.xhtml">Usuario roles</a></li>
-                            <li class="active">Asignar rol</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="../List.xhtml">#{msjAdmin.rolM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.usuarioRM}</a></li>
+                            <li class="active">#{msjAdmin.asignarRM}</li>
                         </ol>
                     </div>
                 </div>
@@ -30,50 +30,53 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Registro de usuario</h2>
+                                <h2>#{msjAdmin.registroUsuario}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" globalOnly="true"/>
                             </h:panelGroup>
                             <h:form id="defaultForm" a:method="post" class="form-horizontal" >
 <!--                                <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateRolusuarioLabel_id}" for="id" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.CreateRolusuarioLabel_id}" for="id" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Id" a:pattern="[0-9]" id="id" value="#{rolusuarioController.selected.id}" title="#{bundle.CreateRolusuarioTitle_id}" required="true" requiredMessage="#{bundle.CreateRolusuarioRequiredMessage_id}"/>
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="Id" a:pattern="[0-9]" id="id" value="#{rolusuarioController.selected.id}" title="#{msjAdmin.CreateRolusuarioTitle_id}" required="true" requiredMessage="#{msjAdmin.CreateRolusuarioRequiredMessage_id}"/>
                                     </div>
                                 </div>-->
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateRolusuarioLabel_fecha}" for="fecha" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.CreateRolusuarioLabel_fecha}" for="fecha" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="MM/DD/AA"  id="fecha" value="#{rolusuarioController.selected.fecha}" title="#{bundle.CreateRolusuarioTitle_fecha}" >
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="MM/DD/AA"  id="fecha" required="true" requiredMessage="#{msjAdmin.requerido}" value="#{rolusuarioController.selected.fecha}" title="#{msjAdmin.CreateRolusuarioTitle_fecha}" >
                                             <f:convertDateTime pattern="MM/dd/yyyy" />
+                                            <h:message for="fecha"/>
                                         </h:inputText>
                                     </div>                    
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateRolusuarioLabel_idRol}" for="idRol" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.CreateRolusuarioLabel_idRol}" for="idRol" />
                                     <div class="col-sm-5">
-                                        <h:selectOneMenu id="idRol" value="#{rolusuarioController.selected.idRol}" title="#{bundle.CreateRolusuarioTitle_idRol}" required="true" requiredMessage="#{bundle.CreateRolusuarioRequiredMessage_idRol}">
+                                        <h:selectOneMenu id="idRol" value="#{rolusuarioController.selected.idRol}" title="#{msjAdmin.CreateRolusuarioTitle_idRol}" required="true" requiredMessage="#{msjAdmin.requerido}">
                                             <f:selectItems value="#{rolController.itemsAvailableSelectOne}"/>
                                         </h:selectOneMenu>
+                                        <h:message for="idRol"/>
                                     </div>                    
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateRolusuarioLabel_cedula}" for="cedula" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.CreateRolusuarioLabel_cedula}" for="cedula" />
                                     <div class="col-sm-5">
-                                        <h:selectOneMenu id="cedula" value="#{rolusuarioController.selected.cedula}" title="#{bundle.CreateRolusuarioTitle_cedula}" required="true" requiredMessage="#{bundle.CreateRolusuarioRequiredMessage_cedula}">
+                                        <h:selectOneMenu id="cedula" value="#{rolusuarioController.selected.cedula}" title="#{msjAdmin.CreateRolusuarioTitle_cedula}" required="true" requiredMessage="#{msjAdmin.requerido}">
                                             <f:selectItems value="#{usuarioController.itemsAvailableSelectOne}"/>
                                         </h:selectOneMenu>
+                                        <h:message for="cedula"/>
                                     </div>                    
                                 </div>
 
 
 
                                 <br />
-                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{rolusuarioController.create}" value="#{bundle.CreateRolusuarioSaveLink}" />
+                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{rolusuarioController.create}" value="#{msjAdmin.CreateRolusuarioSaveLink}" />
 
 
                             </h:form>

@@ -11,9 +11,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../iniciocajero.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Cuentas</a></li>
-                            <li class="active">Detalles</li>
+                            <li><a href="../iniciocajero.xhtml">#{msjCaja.inicio}</a></li>
+                            <li><a href="List.xhtml">#{msjCaja.factura}</a></li>
+                            <li class="active">#{msjCaja.verFactura}</li>
                         </ol>
                     </div>
                 </div>
@@ -27,32 +27,32 @@
 
                         <div class="col-sm-8 col-sm-off set-2">
                             <div class="page-header">
-                                <h2>Crear Factura</h2>
+                                <h2>#{msjCaja.verFactura}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
                                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                             </h:panelGroup>
                             <h:form class="col-sm-4 col-sm-offset-4 detalles">
-                                <h:panelGrid columns="2">
-                                    <h:outputText value="#{bundle.ViewFacturaLabel_cantidad}"/>
-                                    <h:outputText value="#{facturaController.selected.cantidad}" title="#{bundle.ViewFacturaTitle_cantidad}"/>
-                                    <h:outputText value="#{bundle.ViewFacturaLabel_fecha}"/>
-                                    <h:outputText value="#{facturaController.selected.fecha}" title="#{bundle.ViewFacturaTitle_fecha}">
+                                <h:panelGrid columns="2">   
+                                    <h:outputText value="#{msjApp.ViewFacturaLabel_cantidad}"/>
+                                    <h:outputText value="#{facturaController.selected.cantidad}" title="#{msjApp.ViewFacturaTitle_cantidad}"/>
+                                    <h:outputText value="#{msjApp.ViewFacturaLabel_fecha}"/>
+                                    <h:outputText value="#{facturaController.selected.fecha}" title="#{msjApp.ViewFacturaTitle_fecha}">
                                         <f:convertDateTime pattern="MM/dd/yyyy" />
                                     </h:outputText>
-                                    <h:outputText value="#{bundle.ViewFacturaLabel_pedido}"/>
-                                    <h:outputText value="#{facturaController.selected.pedido}" title="#{bundle.ViewFacturaTitle_pedido}"/>
-                                    <h:outputText value="#{bundle.ViewFacturaLabel_producto}"/>
-                                    <h:outputText value="#{facturaController.selected.producto}" title="#{bundle.ViewFacturaTitle_producto}"/>
+                                    <h:outputText value="#{msjApp.ViewFacturaLabel_pedido}"/>
+                                    <h:outputText value="#{facturaController.selected.pedido}" title="#{msjApp.ViewFacturaTitle_pedido}"/>
+                                    <h:outputText value="#{msjApp.ViewFacturaLabel_producto}"/>
+                                    <h:outputText value="#{facturaController.selected.producto}" title="#{msjApp.ViewFacturaTitle_producto}"/>
                                 </h:panelGrid>
                                 <br />
-                                <h:commandLink class="btn btn-danger" action="#{facturaController.destroyAndView}" value="#{bundle.ViewFacturaDestroyLink}"/>
+                                <h:commandLink class="btn btn-danger" action="#{facturaController.destroyAndView}" value="#{msjApp.ViewFacturaDestroyLink}"/>
                                 <br />
                                 <br />
-                                <h:link class="btn btn-success" outcome="Edit" value="#{bundle.ViewFacturaEditLink}"/>
+                                <h:link class="btn btn-success" outcome="Edit" value="#{msjApp.ViewFacturaEditLink}"/>
                                 <br />
                                 <br />
-                                <h:commandLink class="btn btn-primary" action="#{facturaController.prepareCreate}" value="#{bundle.ViewFacturaCreateLink}" />
+                                <h:commandLink class="btn btn-primary" action="#{facturaController.prepareCreate}" value="#{msjApp.ViewFacturaCreateLink}" />
                                 
                             </h:form>
                         </div>

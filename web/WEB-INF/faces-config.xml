@@ -29,5 +29,13 @@
             <base-name>com.genesis.modelo.languages.index</base-name>
             <var>msjIndex</var>
         </resource-bundle>
+         <resource-bundle>
+            <base-name>com.genesis.modelo.languages.administrador</base-name>
+            <var>msjAdmin</var>
+        </resource-bundle>
+         <resource-bundle>
+            <base-name>com.genesis.modelo.languages.cajero</base-name>
+            <var>msjCaja</var>
+        </resource-bundle>
     </application>
 </faces-config>

@@ -12,9 +12,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../iniciocajero.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Cuentas</a></li>
-                            <li class="active">Editar</li>
+                            <li><a href="../iniciocajero.xhtml">#{msjCaja.inicio}</a></li>
+                            <li><a href="List.xhtml">#{msjCaja.factura}</a></li>
+                            <li class="active">#{msjCaja.modificarFactura}</li>
                         </ol>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
 
                         <div class="col-sm-8 col-sm-off set-2">
                             <div class="page-header">
-                                <h2>Modificar Factura</h2>
+                                <h2>#{msjCaja.modificarFactura}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
                                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" globalOnly="true"/>
@@ -39,12 +39,12 @@
 
                                         <div class="form-group">
                                         
-                                        <h:outputLabel value="#{bundle.CreateFacturaLabel_fecha}"  for="fecha"/>
+                                        <h:outputLabel value="#{msjApp.CreateFacturaLabel_fecha}"  for="fecha"/>
                                         <br/>
 
 
                                         <div class="col-md-5">
-                                            <h:inputText id="fecha" class="form-control" value="#{facturaController.selected.fecha}" title="#{bundle.CreateFacturaTitle_fecha}">  
+                                            <h:inputText id="fecha" class="form-control" value="#{facturaController.selected.fecha}" title="#{msjApp.CreateFacturaTitle_fecha}">  
                                                 <f:convertDateTime pattern="MM/dd/yyyy"/>
                                             </h:inputText>
                                         </div>
@@ -52,11 +52,11 @@
                                 
                                  <div class="form-group">
                                         
-                                        <h:outputLabel value="#{bundle.CreateFacturaLabel_pedido}"  for="pedido"/>
+                                        <h:outputLabel value="#{msjApp.CreateFacturaLabel_pedido}"  for="pedido"/>
                                         <br/>
 
                                         <div class="col-md-5">
-                                            <h:selectOneMenu id="pedido" value="#{facturaController.selected.pedido}" title="#{bundle.CreateFacturaTitle_pedido}" required="true" requiredMessage="#{bundle.CreateFacturaRequiredMessage_pedido}">
+                                            <h:selectOneMenu id="pedido" value="#{facturaController.selected.pedido}" title="#{msjApp.CreateFacturaTitle_pedido}" required="true" requiredMessage="#{msjApp.CreateFacturaRequiredMessage_pedido}">
                                                 <f:selectItems value="#{pedidoController.itemsAvailableSelectOne}"/>
                                                 <h:message for="pedido"/>
                                             </h:selectOneMenu>                               
@@ -64,11 +64,11 @@
                                     </div>
                                 
                                     <div class="form-group">
-                                        <h:outputLabel value="#{bundle.CreateFacturaLabel_cantidad}"  for="cantidad"/>  
+                                        <h:outputLabel value="#{msjApp.CreateFacturaLabel_cantidad}"  for="cantidad"/>  
                                         <br/>
 
                                         <div class="col-md-5">
-                                            <h:inputText id="cantidad"  class="form-control " value="#{facturaController.selected.cantidad}" title="#{bundle.CreateFacturaTitle_cantidad}" required="" a:minlenght="0" a:maxlength="2" a:type="number"/>
+                                            <h:inputText id="cantidad"  class="form-control " value="#{facturaController.selected.cantidad}" title="#{msjApp.CreateFacturaTitle_cantidad}" required="" a:minlenght="0" a:maxlength="2" a:type="number"/>
                                         </div>
 
                                     </div>
@@ -76,11 +76,11 @@
 
                                     <div class="form-group">
                                         
-                                        <h:outputLabel value="#{bundle.CreateFacturaLabel_producto}"  for="producto" />
+                                        <h:outputLabel value="#{msjApp.CreateFacturaLabel_producto}"  for="producto" />
                                         <br/>
 
                                         <div class="col-md-5">
-                                            <h:selectOneMenu id="producto" value="#{facturaController.selected.producto}" title="#{bundle.CreateFacturaTitle_producto}" required="true" requiredMessage="#{bundle.CreateFacturaRequiredMessage_producto}">
+                                            <h:selectOneMenu id="producto" value="#{facturaController.selected.producto}" title="#{msjApp.CreateFacturaTitle_producto}" required="true" requiredMessage="#{msjApp.CreateFacturaRequiredMessage_producto}">
                                                 <f:selectItems value="#{productoController.itemsAvailableSelectOne}"/>
                                                 <h:message for="producto"/>
                                             </h:selectOneMenu>
@@ -89,13 +89,13 @@
                                 
                                 
                                 <br />
-                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success col-md-6" action="#{facturaController.create}" value="#{bundle.CreateFacturaSaveLink}" />
+                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success col-md-6" action="#{facturaController.create}" value="#{msjApp.CreateFacturaSaveLink}" />
                                 <br />
                                 <br />
                                 <br />
                                 
 
-                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-primary col-md-10" action="#{facturaController.prepareList}" value="#{bundle.CreateFacturaShowAllLink}" immediate="true"/>
+                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-primary col-md-10" action="#{facturaController.prepareList}" value="#{msjApp.CreateFacturaShowAllLink}" immediate="true"/>
                                 <br />
                                 
 

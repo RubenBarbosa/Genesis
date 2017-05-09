@@ -14,9 +14,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Productos</a></li>
-                            <li class="active">Registrar producto</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.productoM}</a></li>
+                            <li class="active">#{msjAdmin.registrarProducto}</li>
                         </ol>
                     </div>
                 </div>
@@ -29,37 +29,39 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Registro de producto</h2>
+                                <h2>#{msjAdmin.registroProducto}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" globalOnly="true"/>
                             </h:panelGroup>
                             <h:form id="defaultForm" a:method="post" class="form-horizontal" >
 <!--                                <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateProductoLabel_idProducto}" for="idProducto" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.CreateProductoLabel_idProducto}" for="idProducto" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Documento" a:pattern="[0-9]" id="idProducto" value="#{productoController.selected.idProducto}" title="#{bundle.CreateProductoTitle_idProducto}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_idProducto}"/>
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="Documento" a:pattern="[0-9]" id="idProducto" value="#{productoController.selected.idProducto}" title="#{msjAdmin.CreateProductoTitle_idProducto}" required="true" requiredMessage="#{msjAdmin.CreateProductoRequiredMessage_idProducto}"/>
                                     </div>
                                 </div>-->
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateProductoLabel_nombre}" for="nombre" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.CreateProductoLabel_nombre}" for="nombreProducto" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Nombre" id="nombre" value="#{productoController.selected.nombre}" title="#{bundle.CreateProductoTitle_nombre}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_nombre}"/>
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="Nombre" id="nombre"  value="#{productoController.selected.nombre}" title="#{msjAdmin.CreateProductoTitle_nombre}" required="true" requiredMessage="#{msjAdmin.requerido}"/>
+                                        <h:message for="nombreProducto"/>
                                     </div>                    
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateProductoLabel_precio}" for="precio" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.CreateProductoLabel_precio}" for="precio" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" a:placeholder="Precio" class="form-control" id="precio" value="#{productoController.selected.precio}" title="#{bundle.CreateProductoTitle_precio}" />
+                                        <h:inputText a:type="text" a:placeholder="Precio" class="form-control" id="precio" required="true" requiredMessage="#{msjAdmin.requerido}" value="#{productoController.selected.precio}" title="#{msjAdmin.CreateProductoTitle_precio}" />
+                                        <h:message for="precio"/>
                                     </div>                    
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateProductoLabel_idTipoProducto}" for="idTipoProducto" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.CreateProductoLabel_idTipoProducto}" for="idTipoProducto" />
                                     <div class="col-sm-5">
-                                        <h:selectOneMenu id="idTipoProducto" value="#{productoController.selected.idTipoProducto}" title="#{bundle.CreateProductoTitle_idTipoProducto}" >
+                                        <h:selectOneMenu id="idTipoProducto" value="#{productoController.selected.idTipoProducto}" title="#{msjAdmin.CreateProductoTitle_idTipoProducto}" >
                                             <f:selectItems value="#{tipoController.itemsAvailableSelectOne}"/>
                                         </h:selectOneMenu>
                                     </div>                    
@@ -67,7 +69,7 @@
 
 
                                 <br />
-                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{productoController.create}" value="#{bundle.CreateProductoSaveLink}"  />
+                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{productoController.create}" value="#{msjAdmin.CreateProductoSaveLink}"  />
 
 
                             </h:form>

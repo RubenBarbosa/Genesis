@@ -11,12 +11,13 @@
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" globalOnly="true"/>
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
                     <h:outputLabel value="#{bundle.CreateFacturaLabel_cantidad}" for="cantidad" />
-                    <h:inputText id="cantidad" value="#{facturaController.selected.cantidad}" title="#{bundle.CreateFacturaTitle_cantidad}" />
+                    <h:inputText id="cantidad" value="#{facturaController.selected.cantidad}" title="#{bundle.CreateFacturaTitle_cantidad}" required="true" requiredMessage="#{msjApp.requiredMessage}"/>
+                    <h:message for="cantidad"/>
                     <h:outputLabel value="#{bundle.CreateFacturaLabel_fecha}" for="fecha" />
                     <h:inputText id="fecha" value="#{facturaController.selected.fecha}" title="#{bundle.CreateFacturaTitle_fecha}" >
                         <f:convertDateTime pattern="MM/dd/yyyy" />

@@ -13,9 +13,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Permisos</a></li>
-                            <li class="active">Detalles</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.permisosM}</a></li>
+                            <li class="active">#{msjAdmin.detalles}</li>
                         </ol>
                     </div>
                 </div>
@@ -28,28 +28,28 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Detalles</h2>
+                                <h2>#{msjAdmin.detalles}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
                                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                             </h:panelGroup>
                             <h:form class="col-sm-4 col-sm-offset-4 detalles" >
                                 <h:panelGrid columns="2">
-                                    <h:outputText value="#{bundle.ViewPermisoLabel_idpermisos}"/>
-                                    <h:outputText value="#{permisoController.selected.idpermisos}" title="#{bundle.ViewPermisoTitle_idpermisos}"/>
-                                    <h:outputText value="#{bundle.ViewPermisoLabel_nombre}"/>
-                                    <h:outputText value="#{permisoController.selected.nombre}" title="#{bundle.ViewPermisoTitle_nombre}"/>
-                                    <h:outputText value="#{bundle.ViewPermisoLabel_url}"/>
-                                    <h:outputText value="#{permisoController.selected.url}" title="#{bundle.ViewPermisoTitle_url}"/>
+                                    <h:outputText value="#{msjAdmin.ViewPermisoLabel_idpermisos}"/>
+                                    <h:outputText value="#{permisoController.selected.idpermisos}" title="#{msjAdmin.ViewPermisoTitle_idpermisos}"/>
+                                    <h:outputText value="#{msjAdmin.ViewPermisoLabel_nombre}"/>
+                                    <h:outputText value="#{permisoController.selected.nombre}" title="#{msjAdmin.ViewPermisoTitle_nombre}"/>
+                                    <h:outputText value="#{msjAdmin.ViewPermisoLabel_url}"/>
+                                    <h:outputText value="#{permisoController.selected.url}" title="#{msjAdmin.ViewPermisoTitle_url}"/>
                                 </h:panelGrid>
                                 <br />
-                                <h:commandLink class="btn btn-danger" action="#{permisoController.destroyAndView}" value="#{bundle.ViewPermisoDestroyLink}"/>
+                                <h:commandLink class="btn btn-danger" action="#{permisoController.destroyAndView}" value="#{msjAdmin.ViewPermisoDestroyLink}"/>
                                 <br />
                                 <br />
-                                <h:link class="btn btn-success" outcome="Edit" value="#{bundle.ViewPermisoEditLink}"/>
+                                <h:link class="btn btn-success" outcome="Edit" value="#{msjAdmin.ViewPermisoEditLink}"/>
                                 <br />
                                 <br />
-                                <h:commandLink class="btn btn-primary" action="#{permisoController.prepareCreate}" value="#{bundle.ViewPermisoCreateLink}" />
+                                <h:commandLink class="btn btn-primary" action="#{permisoController.prepareCreate}" value="#{msjAdmin.ViewPermisoCreateLink}" />
 
 
                             </h:form>

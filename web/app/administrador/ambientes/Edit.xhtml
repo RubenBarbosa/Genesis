@@ -14,9 +14,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Ambientes</a></li>
-                            <li class="active">Editar</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.ambientemM}</a></li>
+                            <li class="active">#{msjAdmin.editraM}</li>
                         </ol>
                     </div>
                 </div>
@@ -29,28 +29,30 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Actualizacci�n</h2>
+                                <h2>#{msjAdmin.actualizacion}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" globalOnly="true"/>
                             </h:panelGroup>
                             <h:form id="defaultForm" a:method="post" class="form-horizontal" >
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.EditAmbienteLabel_idAmbiente}" for="idAmbiente" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.EditAmbienteLabel_idAmbiente}" for="idAmbiente" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:placeholder="N�mero ambiente" a:type="text" class="form-control" a:pattern="[0-9]" id="idAmbiente" value="#{ambienteController.selected.idAmbiente}" title="#{bundle.EditAmbienteTitle_idAmbiente}" required="true" requiredMessage="#{bundle.EditAmbienteRequiredMessage_idAmbiente}"/>
+                                        <h:inputText a:placeholder="N�mero ambiente" a:type="text" class="form-control" a:pattern="[0-9]" id="idAmbiente" value="#{ambienteController.selected.idAmbiente}" title="#{bundle.EditAmbienteTitle_idAmbiente}" required="true" requiredMessage="#{msjAdmin.requerido}"/>
+                                        <h:message for="idAmbiente"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.EditAmbienteLabel_nombre}" for="nombre" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.EditAmbienteLabel_nombre}" for="nombreAmbiente" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Nombre" id="nombre" value="#{ambienteController.selected.nombre}" title="#{bundle.EditAmbienteTitle_nombre}" />
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="Nombre" id="nombreAmbiente" required="true" requiredMessage="#{msjAdmin.requerido}" value="#{ambienteController.selected.nombre}" title="#{msjAdmin.requerido}" />
+                                        <h:message for="nombreAmbiente"/>
                                     </div>                    
                                 </div>
 
                                 <br />
-                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{ambienteController.update}" value="#{bundle.EditAmbienteSaveLink}"/>
+                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{ambienteController.update}" value="#{msjAdmin.guardar}"/>
 
 
                             </h:form>

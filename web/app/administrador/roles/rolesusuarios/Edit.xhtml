@@ -13,10 +13,10 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="../List.xhtml">Roles</a></li>
-                            <li><a href="List.xhtml">Usuario roles</a></li>
-                            <li class="active">Editar</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="../List.xhtml">#{msjAdmin.rolM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.usuarioRM}</a></li>
+                            <li class="active">#{msjAdmin.editarM}</li>
                         </ol>
                     </div>
                 </div>
@@ -29,49 +29,51 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Actualizacci�n </h2>
+                                <h2>#{msjAdmin.actualizacion}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" globalOnly="true"/>
                             </h:panelGroup>
                             <h:form id="defaultForm" a:method="post" class="form-horizontal" >
 <!--                                <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.EditRolusuarioLabel_id}" for="id" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.EditRolusuarioLabel_id}" for="id" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Id" a:pattern="[0-9]" id="id" value="#{rolusuarioController.selected.id}" title="#{bundle.EditRolusuarioTitle_id}" required="true" requiredMessage="#{bundle.EditRolusuarioRequiredMessage_id}"/>
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="Id" a:pattern="[0-9]" id="id" value="#{rolusuarioController.selected.id}" title="#{msjAdmin.EditRolusuarioTitle_id}" required="true" requiredMessage="#{msjAdmin.EditRolusuarioRequiredMessage_id}"/>
                                     </div>
                                 </div>-->
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.EditRolusuarioLabel_fecha}" for="fecha" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.EditRolusuarioLabel_fecha}" for="fecha" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="MM/DD/AA" id="fecha" value="#{rolusuarioController.selected.fecha}" title="#{bundle.EditRolusuarioTitle_fecha}" >
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="MM/DD/AA" id="fecha" value="#{rolusuarioController.selected.fecha}" title="#{msjAdmin.EditRolusuarioTitle_fecha}" >
                                             <f:convertDateTime pattern="MM/dd/yyyy" />
                                         </h:inputText>
                                     </div>                    
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.EditRolusuarioLabel_idRol}" for="idRol" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.EditRolusuarioLabel_idRol}" for="idRol" />
                                     <div class="col-sm-5">
-                                        <h:selectOneMenu id="idRol" value="#{rolusuarioController.selected.idRol}" title="#{bundle.EditRolusuarioTitle_idRol}" required="true" requiredMessage="#{bundle.EditRolusuarioRequiredMessage_idRol}">
+                                        <h:selectOneMenu id="idRol" value="#{rolusuarioController.selected.idRol}" title="#{msjAdmin.EditRolusuarioTitle_idRol}" required="true" requiredMessage="#{msjAdmin.requerido}">
                                             <f:selectItems value="#{rolController.itemsAvailableSelectOne}"/>
                                         </h:selectOneMenu>
+                                        <h:message for="idRol"/>
                                     </div>                    
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.EditRolusuarioLabel_cedula}" for="cedula" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.EditRolusuarioLabel_cedula}" for="cedula" />
                                     <div class="col-sm-5">
-                                        <h:selectOneMenu id="cedula" value="#{rolusuarioController.selected.cedula}" title="#{bundle.EditRolusuarioTitle_cedula}" required="true" requiredMessage="#{bundle.EditRolusuarioRequiredMessage_cedula}">
+                                        <h:selectOneMenu id="cedula" value="#{rolusuarioController.selected.cedula}" title="#{msjAdmin.EditRolusuarioTitle_cedula}" required="true" requiredMessage="#{msjAdmin.requerido}">
                                             <f:selectItems value="#{usuarioController.itemsAvailableSelectOne}"/>
                                         </h:selectOneMenu>
+                                        <h:message for="cedula"/>
                                     </div>                    
                                 </div>
 
                                
                                 <br />
-                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{rolusuarioController.update}" value="#{bundle.EditRolusuarioSaveLink}"/>
+                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{rolusuarioController.update}" value="#{msjAdmin.EditRolusuarioSaveLink}"/>
 
 
                             </h:form>

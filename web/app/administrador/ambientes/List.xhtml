@@ -12,8 +12,8 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li class="active">Ambientes</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li class="active">#{msjAdmin.ambientemM}</li>
                         </ol>
                     </div>
                 </div>
@@ -30,24 +30,24 @@
                                 <h:panelGroup id="messagePanel" layout="block">
                                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                                 </h:panelGroup>
-                                <h:outputText escape="false" value="#{bundle.ListAmbienteEmpty}" rendered="#{ambienteController.items.rowCount == 0}"/>
+                                <h:outputText escape="false" value="#{msjAdmin.ListAmbienteEmpty}" rendered="#{ambienteController.items.rowCount == 0}"/>
                                 <h:panelGroup  rendered="#{ambienteController.items.rowCount > 0}">
                                     <h:outputText style="color: #fff; margin-top: 10px;" value="#{ambienteController.pagination.pageFirstItem + 1}..#{ambienteController.pagination.pageLastItem + 1}/#{ambienteController.pagination.itemsCount}"/>&nbsp;
-                                    <h:commandLink class="btn btn-warning" action="#{ambienteController.previous}" value="#{bundle.Previous} #{ambienteController.pagination.pageSize}" rendered="#{ambienteController.pagination.hasPreviousPage}"/>&nbsp;
-                                    <h:commandLink class="btn btn-warning" action="#{ambienteController.next}" value="#{bundle.Next} #{ambienteController.pagination.pageSize}" rendered="#{ambienteController.pagination.hasNextPage}"/>&nbsp;
+                                    <h:commandLink class="btn btn-warning" action="#{ambienteController.previous}" value="#{msjAdmin.Previous} #{ambienteController.pagination.pageSize}" rendered="#{ambienteController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink class="btn btn-warning" action="#{ambienteController.next}" value="#{msjAdmin.Next} #{ambienteController.pagination.pageSize}" rendered="#{ambienteController.pagination.hasNextPage}"/>&nbsp;
                                     <br/>
                                     <br/>
-                                    <h:commandLink  class="btn btn-primary" action="#{ambienteController.prepareCreate}" value="#{bundle.ListAmbienteCreateLink}"/>
+                                    <h:commandLink  class="btn btn-primary" action="#{ambienteController.prepareCreate}" value="#{msjAdmin.ListAmbienteCreateLink}"/>
                                     <h:dataTable value="#{ambienteController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListAmbienteTitle_idAmbiente}"/>
+                                                <h:outputText value="#{msjAdmin.ListAmbienteTitle_idAmbiente}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.idAmbiente}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListAmbienteTitle_nombre}"/>
+                                                <h:outputText value="#{msjAdmin.ListAmbienteTitle_nombre}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.nombre}"/>
                                         </h:column>
@@ -63,7 +63,7 @@
                                         </h:column>
                                     </h:dataTable>
                                 </h:panelGroup>
-                                <!--<h:link outcome="/index" value="#{bundle.ListUsuarioIndexLink}"/>-->
+                                <!--<h:link outcome="/index" value="#{msjAdmin.ListUsuarioIndexLink}"/>-->
                             </h:form>
                         </div>
                     </div>

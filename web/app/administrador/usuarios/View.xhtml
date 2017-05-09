@@ -13,9 +13,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Usuarios</a></li>
-                            <li class="active">Detalles</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.usuariosM}</a></li>
+                            <li class="active">#{msjAdmin.detalles}</li>
                         </ol>
                     </div>
                 </div>
@@ -28,44 +28,44 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Detalles</h2>
+                                <h2>#{msjAdmin.detalles}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
                                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                             </h:panelGroup>
                             <h:form class="col-sm-4 col-sm-offset-4 detalles" >
                                 <h:panelGrid columns="2">
-                                    <h:outputText value="#{bundle.ViewUsuarioLabel_cedula}"/>
-                                    <h:outputText value="#{usuarioController.selected.cedula}" title="#{bundle.ViewUsuarioTitle_cedula}"/>
-                                    <h:outputText value="#{bundle.ViewUsuarioLabel_primerNombre}"/>
-                                    <h:outputText value="#{usuarioController.selected.primerNombre}" title="#{bundle.ViewUsuarioTitle_primerNombre}"/>
-                                    <h:outputText value="#{bundle.ViewUsuarioLabel_segundoNombre}"/>
-                                    <h:outputText value="#{usuarioController.selected.segundoNombre}" title="#{bundle.ViewUsuarioTitle_segundoNombre}"/>
-                                    <h:outputText value="#{bundle.ViewUsuarioLabel_primerApellido}"/>
-                                    <h:outputText value="#{usuarioController.selected.primerApellido}" title="#{bundle.ViewUsuarioTitle_primerApellido}"/>
-                                    <h:outputText value="#{bundle.ViewUsuarioLabel_segundoApellido}"/>
-                                    <h:outputText value="#{usuarioController.selected.segundoApellido}" title="#{bundle.ViewUsuarioTitle_segundoApellido}"/>
-                                    <h:outputText value="#{bundle.ViewUsuarioLabel_telefono}"/>
-                                    <h:outputText value="#{usuarioController.selected.telefono}" title="#{bundle.ViewUsuarioTitle_telefono}"/>
-                                    <h:outputText value="#{bundle.ViewUsuarioLabel_correo}"/>
-                                    <h:outputText value="#{usuarioController.selected.correo}" title="#{bundle.ViewUsuarioTitle_correo}"/>
-                                    <h:outputText value="#{bundle.ViewUsuarioLabel_direccion}"/>
-                                    <h:outputText value="#{usuarioController.selected.direccion}" title="#{bundle.ViewUsuarioTitle_direccion}"/>
-                                    <h:outputText value="#{bundle.ViewUsuarioLabel_clave}"/>
-                                    <h:outputText value="#{usuarioController.selected.clave}" title="#{bundle.ViewUsuarioTitle_clave}"/>
-                                    <h:outputText value="#{bundle.ViewUsuarioLabel_area}"/>
-                                    <h:outputText value="#{usuarioController.selected.area}" title="#{bundle.ViewUsuarioTitle_area}"/>
-                                    <h:outputText value="#{bundle.ViewUsuarioLabel_tipoDocumento}"/>
-                                    <h:outputText value="#{usuarioController.selected.tipoDocumento}" title="#{bundle.ViewUsuarioTitle_tipoDocumento}"/>
+                                    <h:outputText value="#{msjAdmin.ViewUsuarioLabel_cedula}"/>
+                                    <h:outputText value="#{usuarioController.selected.cedula}" title="#{msjAdmin.ViewUsuarioTitle_cedula}"/>
+                                    <h:outputText value="#{msjAdmin.ViewUsuarioLabel_primerNombre}"/>
+                                    <h:outputText value="#{usuarioController.selected.primerNombre}" title="#{msjAdmin.ViewUsuarioTitle_primerNombre}"/>
+                                    <h:outputText value="#{msjAdmin.ViewUsuarioLabel_segundoNombre}"/>
+                                    <h:outputText value="#{usuarioController.selected.segundoNombre}" title="#{msjAdmin.ViewUsuarioTitle_segundoNombre}"/>
+                                    <h:outputText value="#{msjAdmin.ViewUsuarioLabel_primerApellido}"/>
+                                    <h:outputText value="#{usuarioController.selected.primerApellido}" title="#{msjAdmin.ViewUsuarioTitle_primerApellido}"/>
+                                    <h:outputText value="#{msjAdmin.ViewUsuarioLabel_segundoApellido}"/>
+                                    <h:outputText value="#{usuarioController.selected.segundoApellido}" title="#{msjAdmin.ViewUsuarioTitle_segundoApellido}"/>
+                                    <h:outputText value="#{msjAdmin.ViewUsuarioLabel_telefono}"/>
+                                    <h:outputText value="#{usuarioController.selected.telefono}" title="#{msjAdmin.ViewUsuarioTitle_telefono}"/>
+                                    <h:outputText value="#{msjAdmin.ViewUsuarioLabel_correo}"/>
+                                    <h:outputText value="#{usuarioController.selected.correo}" title="#{msjAdmin.ViewUsuarioTitle_correo}"/>
+                                    <h:outputText value="#{msjAdmin.ViewUsuarioLabel_direccion}"/>
+                                    <h:outputText value="#{usuarioController.selected.direccion}" title="#{msjAdmin.ViewUsuarioTitle_direccion}"/>
+                                    <h:outputText value="#{msjAdmin.ViewUsuarioLabel_clave}"/>
+                                    <h:outputText value="#{usuarioController.selected.clave}" title="#{msjAdmin.ViewUsuarioTitle_clave}"/>
+                                    <h:outputText value="#{msjAdmin.ViewUsuarioLabel_area}"/>
+                                    <h:outputText value="#{usuarioController.selected.area}" title="#{msjAdmin.ViewUsuarioTitle_area}"/>
+                                    <h:outputText value="#{msjAdmin.ViewUsuarioLabel_tipoDocumento}"/>
+                                    <h:outputText value="#{usuarioController.selected.tipoDocumento}" title="#{msjAdmin.ViewUsuarioTitle_tipoDocumento}"/>
                                 </h:panelGrid>
                                 <br />
-                                <h:commandLink class="btn btn-danger" action="#{usuarioController.destroyAndView}" value="#{bundle.ViewUsuarioDestroyLink}"/>
+                                <h:commandLink class="btn btn-danger" action="#{usuarioController.destroyAndView}" value="#{msjAdmin.ViewUsuarioDestroyLink}"/>
                                 <br />
                                 <br />
-                                <h:link class="btn btn-success" outcome="Edit" value="#{bundle.ViewUsuarioEditLink}"/>
+                                <h:link class="btn btn-success" outcome="Edit" value="#{msjAdmin.ViewUsuarioEditLink}"/>
                                 <br />
                                 <br />
-                                <h:commandLink class="btn btn-primary" action="#{usuarioController.prepareCreate}" value="#{bundle.ViewUsuarioCreateLink}" />
+                                <h:commandLink class="btn btn-primary" action="#{usuarioController.prepareCreate}" value="#{msjAdmin.ViewUsuarioCreateLink}" />
 
 
                             </h:form>

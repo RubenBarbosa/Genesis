@@ -13,9 +13,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Roles</a></li>
-                            <li class="active">Detalles</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.rolM}</a></li>
+                            <li class="active">#{msjAdmin.detalles}</li>
                         </ol>
                     </div>
                 </div>
@@ -28,26 +28,26 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Detalles</h2>
+                                <h2>#{msjAdmin.detalles}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
                                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                             </h:panelGroup>
                             <h:form class="col-sm-4 col-sm-offset-4 detalles" >
                                 <h:panelGrid columns="2">
-                                    <h:outputText value="#{bundle.ViewRolLabel_idRol}"/>
-                                    <h:outputText value="#{rolController.selected.idRol}" title="#{bundle.ViewRolTitle_idRol}"/>
-                                    <h:outputText value="#{bundle.ViewRolLabel_descripcion}"/>
-                                    <h:outputText value="#{rolController.selected.descripcion}" title="#{bundle.ViewRolTitle_descripcion}"/>
+                                    <h:outputText value="#{msjAdmin.ViewRolLabel_idRol}"/>
+                                    <h:outputText value="#{rolController.selected.idRol}" title="#{msjAdmin.ViewRolTitle_idRol}"/>
+                                    <h:outputText value="#{msjAdmin.ViewRolLabel_descripcion}"/>
+                                    <h:outputText value="#{rolController.selected.descripcion}" title="#{msjAdmin.ViewRolTitle_descripcion}"/>
                                 </h:panelGrid>
                                 <br />
-                                <h:commandLink class="btn btn-danger"  action="#{rolController.destroyAndView}" value="#{bundle.ViewRolDestroyLink}"/>
+                                <h:commandLink class="btn btn-danger"  action="#{rolController.destroyAndView}" value="#{msjAdmin.ViewRolDestroyLink}"/>
                                 <br />
                                 <br />
-                                <h:link class="btn btn-success" outcome="Edit" value="#{bundle.ViewRolEditLink}"/>
+                                <h:link class="btn btn-success" outcome="Edit" value="#{msjAdmin.ViewRolEditLink}"/>
                                 <br />
                                 <br />
-                                <h:commandLink class="btn btn-primary" action="#{rolController.prepareCreate}" value="#{bundle.ViewRolCreateLink}" />
+                                <h:commandLink class="btn btn-primary" action="#{rolController.prepareCreate}" value="#{msjAdmin.ViewRolCreateLink}" />
 
 
                             </h:form>

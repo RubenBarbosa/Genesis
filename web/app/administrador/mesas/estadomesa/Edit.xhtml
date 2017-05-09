@@ -14,10 +14,10 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="../List.xhtml">Mesas</a></li>
-                            <li><a href="List.xhtml">Estados</a></li>
-                            <li class="active">Editar</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="../List.xhtml">#{msjAdmin.mesasM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.estadosM}</a></li>
+                            <li class="active">#{msjAdmin.editarM}</li>
                         </ol>
                     </div>
                 </div>
@@ -30,20 +30,21 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Actualizacci�n</h2>
+                                <h2>#{msjAdmin.actualizacion}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" globalOnly="true"/>
                             </h:panelGroup>
                             <h:form id="defaultForm" a:method="post" class="form-horizontal" >
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.EditEstadoMesaLabel_nombre}" for="nombre" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.EditEstadoMesaLabel_nombre}" for="nombreEstado" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Nombre" a:pattern="[0-9]" id="nombre" value="#{estadoMesaController.selected.nombre}" title="#{bundle.EditEstadoMesaTitle_nombre}" />
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="Nombre" a:pattern="[0-9]" id="nombreEstado" required="true" requiredMessage="#{msjAdmin.requerido}" value="#{estadoMesaController.selected.nombre}" title="#{msjAdmin.EditEstadoMesaTitle_nombre}" />
+                                        <h:message for="nombreEstado"/>
                                     </div>
                                 </div>
 
-                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{estadoMesaController.update}" value="#{bundle.EditEstadoMesaSaveLink}"/>
+                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{estadoMesaController.update}" value="#{msjAdmin.EditEstadoMesaSaveLink}"/>
 
 
                             </h:form>

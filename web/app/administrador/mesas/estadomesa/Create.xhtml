@@ -14,10 +14,10 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="../List.xhtml">Mesas</a></li>
-                            <li><a href="List.xhtml">Estados</a></li>
-                            <li class="active">Registrar nuevo estado</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="../List.xhtml">#{msjAdmin.mesasM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.estadosM}</a></li>
+                            <li class="active">#{msjAdmin.registroNuevoEstado}</li>
                         </ol>
                     </div>
                 </div>
@@ -30,22 +30,23 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Registro estado</h2>
+                                <h2>#{msjAdmin.registroEstado}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" globalOnly="true"/>
                             </h:panelGroup>
                             <h:form id="defaultForm" a:method="post" class="form-horizontal" >
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateEstadoMesaLabel_nombre}" for="nombre" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.CreateEstadoMesaLabel_nombre}" for="nombreEstadoMesa" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:placeholder="Nombre" a:type="text" class="form-control"  id="nombre" value="#{estadoMesaController.selected.nombre}" title="#{bundle.CreateEstadoMesaTitle_nombre}" />
+                                        <h:inputText a:placeholder="Nombre" a:type="text" class="form-control"  id="nombreEstadoMesa" required="true" requiredMessage="#{msjAdmin.requerido}" value="#{estadoMesaController.selected.nombre}" title="#{msjAdmin.CreateEstadoMesaTitle_nombre}" />
+                                        <h:message for="nombreEstadoMesa"/>
                                     </div>                    
                                 </div>
                                 
                                 <br />
-                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{estadoMesaController.create}" value="#{bundle.CreateEstadoMesaSaveLink}" />
+                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{estadoMesaController.create}" value="#{msjAdmin.guardar}" />
 
 
                             </h:form>

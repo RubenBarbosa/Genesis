@@ -12,8 +12,8 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li class="active">Gestión usuarios</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li class="active">#{msjAdmin.gestionUsuaM}</li>
                         </ol>
                     </div>
                 </div>
@@ -30,69 +30,69 @@
                                 <h:panelGroup id="messagePanel" layout="block">
                                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                                 </h:panelGroup>
-                                <h:outputText escape="false" value="#{bundle.ListUsuarioEmpty}" rendered="#{usuarioController.items.rowCount == 0}"/>
+                                <h:outputText escape="false" value="#{msjAdmin.ListUsuarioEmpty}" rendered="#{usuarioController.items.rowCount == 0}"/>
                                 <h:panelGroup  rendered="#{usuarioController.items.rowCount > 0}">
                                     <h:outputText style="margin-left: 10%; color: #fff; margin-top: 10px;" value="#{usuarioController.pagination.pageFirstItem + 1}..#{usuarioController.pagination.pageLastItem + 1}/#{usuarioController.pagination.itemsCount}"/>&nbsp;
                                     <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{usuarioController.previous}" value="Anteriori #{usuarioController.pagination.pageSize}" rendered="#{usuarioController.pagination.hasPreviousPage}"/>&nbsp;
                                     <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{usuarioController.next}" value="#Siguiente #{usuarioController.pagination.pageSize}" rendered="#{usuarioController.pagination.hasNextPage}"/>&nbsp;
                                     <br/>
                                     <br/>
-                                    <h:commandLink style="margin-left: 10%;" class="btn btn-primary" action="#{usuarioController.prepareCreate}" value="#{bundle.ListUsuarioCreateLink}"/>
+                                    <h:commandLink style="margin-left: 10%;" class="btn btn-primary" action="#{usuarioController.prepareCreate}" value="#{msjAdmin.ListUsuarioCreateLink}"/>
                                     <br/>
                                     <br/>
                                     <li><a class="btn btn-success" style="margin-left: 10%;" href="tiposdocumentos/List.xhtml">Tipos de documento</a></li>
                                     <h:dataTable value="#{usuarioController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px; margin-left: 20%;">
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListUsuarioTitle_cedula}"/>
+                                                <h:outputText value="#{msjAdmin.ListUsuarioTitle_cedula}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.cedula}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListUsuarioTitle_primerNombre}"/>
+                                                <h:outputText value="#{msjAdmin.ListUsuarioTitle_primerNombre}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.primerNombre}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListUsuarioTitle_segundoNombre}"/>
+                                                <h:outputText value="#{msjAdmin.ListUsuarioTitle_segundoNombre}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.segundoNombre}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListUsuarioTitle_primerApellido}"/>
+                                                <h:outputText value="#{msjAdmin.ListUsuarioTitle_primerApellido}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.primerApellido}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListUsuarioTitle_segundoApellido}"/>
+                                                <h:outputText value="#{msjAdmin.ListUsuarioTitle_segundoApellido}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.segundoApellido}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListUsuarioTitle_telefono}"/>
+                                                <h:outputText value="#{msjAdmin.ListUsuarioTitle_telefono}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.telefono}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListUsuarioTitle_correo}"/>
+                                                <h:outputText value="#{msjAdmin.ListUsuarioTitle_correo}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.correo}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListUsuarioTitle_direccion}"/>
+                                                <h:outputText value="#{msjAdmin.ListUsuarioTitle_direccion}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.direccion}"/>
                                         </h:column>
                                         <!--                        <h:column>
                                                                     <f:facet name="header">
-                                                                        <h:outputText value="#{bundle.ListUsuarioTitle_tipoDocumento}"/>
+                                                                        <h:outputText value="#{msjAdmin.ListUsuarioTitle_tipoDocumento}"/>
                                                                     </f:facet>
                                                                     <h:outputText value="#{item.tipoDocumento}"/>
                                                                 </h:column>-->
@@ -108,7 +108,7 @@
                                         </h:column>
                                     </h:dataTable>
                                 </h:panelGroup>
-                                <!--<h:link outcome="/index" value="#{bundle.ListUsuarioIndexLink}"/>-->
+                                <!--<h:link outcome="/index" value="#{msjAdmin.ListUsuarioIndexLink}"/>-->
                             </h:form>
                         </div>
                     </div>

@@ -13,9 +13,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Mesas</a></li>
-                            <li class="active">Detalles</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.InicioM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.mesasM}</a></li>
+                            <li class="active">#{msjAdmin.detalles}</li>
                         </ol>
                     </div>
                 </div>
@@ -36,21 +36,21 @@
                             </h:panelGroup>
                             <h:form class="col-sm-4 col-sm-offset-4 detalles" >
                                 <h:panelGrid columns="2">
-                                    <h:outputText value="#{bundle.ViewMesaLabel_idMesa}"/>
-                                    <h:outputText value="#{mesaController.selected.idMesa}" title="#{bundle.ViewMesaTitle_idMesa}"/>
-                                    <h:outputText value="#{bundle.ViewMesaLabel_idAmbiente}"/>
-                                    <h:outputText value="#{mesaController.selected.idAmbiente.nombre}" title="#{bundle.ViewMesaTitle_idAmbiente}"/>
-                                    <h:outputText value="#{bundle.ViewMesaLabel_idEstados}"/>
-                                    <h:outputText value="#{mesaController.selected.idEstados.nombre}" title="#{bundle.ViewMesaTitle_idEstados}"/>
+                                    <h:outputText value="#{msjAdmin.ViewMesaLabel_idMesa}"/>
+                                    <h:outputText value="#{mesaController.selected.idMesa}" title="#{msjAdmin.ViewMesaTitle_idMesa}"/>
+                                    <h:outputText value="#{msjAdmin.ViewMesaLabel_idAmbiente}"/>
+                                    <h:outputText value="#{mesaController.selected.idAmbiente.nombre}" title="#{msjAdmin.ViewMesaTitle_idAmbiente}"/>
+                                    <h:outputText value="#{msjAdmin.ViewMesaLabel_idEstados}"/>
+                                    <h:outputText value="#{mesaController.selected.idEstados.nombre}" title="#{msjAdmin.ViewMesaTitle_idEstados}"/>
                                 </h:panelGrid>
                                 <br />
-                                <h:commandLink class="btn btn-danger" action="#{mesaController.destroyAndView}" value="#{bundle.ViewMesaDestroyLink}"/>
+                                <h:commandLink class="btn btn-danger" action="#{mesaController.destroyAndView}" value="#{msjAdmin.ViewMesaDestroyLink}"/>
                                 <br />
                                 <br />
-                                <h:link class="btn btn-primary" outcome="Edit" value="#{bundle.ViewMesaEditLink}"/>
+                                <h:link class="btn btn-primary" outcome="Edit" value="#{msjAdmin.ViewMesaEditLink}"/>
                                 <br />
                                 <br />
-                                <h:commandLink class="btn btn-success" action="#{mesaController.prepareCreate}" value="#{bundle.ViewMesaCreateLink}"/>
+                                <h:commandLink class="btn btn-success" action="#{mesaController.prepareCreate}" value="#{msjAdmin.ViewMesaCreateLink}"/>
                             </h:form>
                         </div>
                     </div>

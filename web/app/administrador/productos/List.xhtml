@@ -12,8 +12,8 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li class="active">Productos</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li class="active">#{msjAdmin.productoM}</li>
                         </ol>
                     </div>
                 </div>
@@ -29,39 +29,39 @@
                                 <h:panelGroup id="messagePanel" layout="block">
                                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                                 </h:panelGroup>
-                                <h:outputText escape="false" value="#{bundle.ListProductoEmpty}" rendered="#{productoController.items.rowCount == 0}"/>
+                                <h:outputText escape="false" value="#{msjAdmin.ListProductoEmpty}" rendered="#{productoController.items.rowCount == 0}"/>
                                 <h:panelGroup rendered="#{productoController.items.rowCount > 0}">
                                     <h:outputText style="margin-left: 10%; color: #fff; margin-top: 10px;" value="#{productoController.pagination.pageFirstItem + 1}..#{productoController.pagination.pageLastItem + 1}/#{productoController.pagination.itemsCount}"/>&nbsp;
-                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{productoController.previous}" value="#{bundle.Previous} #{productoController.pagination.pageSize}" rendered="#{productoController.pagination.hasPreviousPage}"/>&nbsp;
-                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{productoController.next}" value="#{bundle.Next} #{productoController.pagination.pageSize}" rendered="#{productoController.pagination.hasNextPage}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{productoController.previous}" value="#{msjAdmin.Previous} #{productoController.pagination.pageSize}" rendered="#{productoController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink style="margin-top: 10px;" class="btn btn-warning" action="#{productoController.next}" value="#{msjAdmin.Next} #{productoController.pagination.pageSize}" rendered="#{productoController.pagination.hasNextPage}"/>&nbsp;
                                     <br/>
                                     <br/>
-                                    <h:commandLink  style="margin-left: 10%;" class="btn btn-primary" action="#{productoController.prepareCreate}" value="#{bundle.ListProductoCreateLink}"/>
+                                    <h:commandLink  style="margin-left: 10%;" class="btn btn-primary" action="#{productoController.prepareCreate}" value="#{msjAdmin.ListProductoCreateLink}"/>
                                     <br/>
                                     <br/>
                                     <li><a class="btn btn-success" style="margin-left: 10%;" href="tiposproductos/List.xhtml">Tipos de producto</a></li>
                                     <h:dataTable value="#{productoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px; margin-left: 30%;">
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListProductoTitle_idProducto}"/>
+                                                <h:outputText value="#{msjAdmin.ListProductoTitle_idProducto}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.idProducto}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListProductoTitle_nombre}"/>
+                                                <h:outputText value="#{msjAdmin.ListProductoTitle_nombre}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.nombre}"/>
                                         </h:column>
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="#{bundle.ListProductoTitle_precio}"/>
+                                                <h:outputText value="#{msjAdmin.ListProductoTitle_precio}"/>
                                             </f:facet>
                                             <h:outputText value="#{item.precio}"/>
                                         </h:column>
                                         <!--                        <h:column>
                                                                     <f:facet name="header">
-                                                                        <h:outputText value="#{bundle.ListProductoTitle_idTipoProducto}"/>
+                                                                        <h:outputText value="#{msjAdmin.ListProductoTitle_idTipoProducto}"/>
                                                                     </f:facet>
                                                                     <h:outputText value="#{item.idTipoProducto}"/>
                                                                 </h:column>-->
@@ -77,7 +77,7 @@
                                         </h:column>
                                     </h:dataTable>
                                 </h:panelGroup>
-                                <!--<h:link outcome="/index" value="#{bundle.ListUsuarioIndexLink}"/>-->
+                                <!--<h:link outcome="/index" value="#{msjAdmin.ListUsuarioIndexLink}"/>-->
                             </h:form>
                         </div>
                     </div>

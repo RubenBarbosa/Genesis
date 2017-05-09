@@ -14,9 +14,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Mesas</a></li>
-                            <li class="active">Registrar mesa</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.mesasM}</a></li>
+                            <li class="active">#{msjAdmin.registrarM}</li>
                         </ol>
                     </div>
                 </div>
@@ -29,38 +29,39 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Registro</h2>
+                                <h2>#{msjAdmin.registro}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" globalOnly="true"/>
                             </h:panelGroup>
                             <h:form id="defaultForm" a:method="post" class="form-horizontal" >
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateMesaLabel_idMesa}" for="idMesa" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.CreateMesaLabel_idMesa}" for="idMesa" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Numero de mesa" a:pattern="[0-9]" id="idMesa" value="#{mesaController.selected.idMesa}" title="#{bundle.CreateMesaTitle_idMesa}" required="true" requiredMessage="#{bundle.CreateMesaRequiredMessage_idMesa}"/>
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="Numero de mesa" a:pattern="[0-9]" id="idMesa" value="#{mesaController.selected.idMesa}" title="#{msjAdmin.CreateMesaTitle_idMesa}" required="true" requiredMessage="#{msjAdmin.requerido}"/>
+                                        <h:message for="idMesa"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateMesaLabel_idAmbiente}" for="idAmbiente" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.CreateMesaLabel_idAmbiente}" for="idAmbiente" />
                                     <div class="col-sm-5">
-                                        <h:selectOneMenu id="idAmbiente" value="#{mesaController.selected.idAmbiente}" title="#{bundle.CreateMesaTitle_idAmbiente}" >
+                                        <h:selectOneMenu id="idAmbiente" value="#{mesaController.selected.idAmbiente}" title="#{msjAdmin.CreateMesaTitle_idAmbiente}" >
                                             <f:selectItems value="#{ambienteController.itemsAvailableSelectOne}"/>
                                         </h:selectOneMenu>
                                     </div>                    
                                 </div>
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateMesaLabel_idEstados}" for="idEstados" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.CreateMesaLabel_idEstados}" for="idEstados" />
                                     <div class="col-sm-5">
-                                        <h:selectOneMenu id="idEstados" value="#{mesaController.selected.idEstados}" title="#{bundle.CreateMesaTitle_idEstados}" >
+                                        <h:selectOneMenu id="idEstados" value="#{mesaController.selected.idEstados}" title="#{msjAdmin.CreateMesaTitle_idEstados}" >
                                             <f:selectItems value="#{estadoMesaController.itemsAvailableSelectOne}"/>
                                         </h:selectOneMenu>
                                     </div>                    
                                 </div>
                                 <br/>
-                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{mesaController.create}" value="#{bundle.CreateMesaSaveLink}" />
+                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{mesaController.create}" value="#{msjAdmin.CreateMesaSaveLink}" />
 
                             </h:form>
                         </div>                    

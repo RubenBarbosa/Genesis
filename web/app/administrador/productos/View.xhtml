@@ -13,9 +13,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Productos</a></li>
-                            <li class="active">Detalles</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.productoM}</a></li>
+                            <li class="active">#{msjAdmin.detalles}</li>
                         </ol>
                     </div>
                 </div>
@@ -28,30 +28,30 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Detalles</h2>
+                                <h2>#{msjAdmin.detalles}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
                                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                             </h:panelGroup>
                             <h:form class="col-sm-4 col-sm-offset-4 detalles" >
                                 <h:panelGrid columns="2">
-                                    <h:outputText value="#{bundle.ViewProductoLabel_idProducto}"/>
-                                    <h:outputText value="#{productoController.selected.idProducto}" title="#{bundle.ViewProductoTitle_idProducto}"/>
-                                    <h:outputText value="#{bundle.ViewProductoLabel_nombre}"/>
-                                    <h:outputText value="#{productoController.selected.nombre}" title="#{bundle.ViewProductoTitle_nombre}"/>
-                                    <h:outputText value="#{bundle.ViewProductoLabel_precio}"/>
-                                    <h:outputText value="#{productoController.selected.precio}" title="#{bundle.ViewProductoTitle_precio}"/>
-                                    <h:outputText value="#{bundle.ViewProductoLabel_idTipoProducto}"/>
-                                    <h:outputText value="#{productoController.selected.idTipoProducto}" title="#{bundle.ViewProductoTitle_idTipoProducto}"/>
+                                    <h:outputText value="#{msjAdmin.ViewProductoLabel_idProducto}"/>
+                                    <h:outputText value="#{productoController.selected.idProducto}" title="#{msjAdmin.ViewProductoTitle_idProducto}"/>
+                                    <h:outputText value="#{msjAdmin.ViewProductoLabel_nombre}"/>
+                                    <h:outputText value="#{productoController.selected.nombre}" title="#{msjAdmin.ViewProductoTitle_nombre}"/>
+                                    <h:outputText value="#{msjAdmin.ViewProductoLabel_precio}"/>
+                                    <h:outputText value="#{productoController.selected.precio}" title="#{msjAdmin.ViewProductoTitle_precio}"/>
+                                    <h:outputText value="#{msjAdmin.ViewProductoLabel_idTipoProducto}"/>
+                                    <h:outputText value="#{productoController.selected.idTipoProducto}" title="#{msjAdmin.ViewProductoTitle_idTipoProducto}"/>
                                 </h:panelGrid>
                                 <br />
-                                <h:commandLink class="btn btn-danger" action="#{productoController.destroyAndView}" value="#{bundle.ViewProductoDestroyLink}"/>
+                                <h:commandLink class="btn btn-danger" action="#{productoController.destroyAndView}" value="#{msjAdmin.ViewProductoDestroyLink}"/>
                                 <br />
                                 <br />
-                                <h:link class="btn btn-primary" outcome="Edit" value="#{bundle.ViewProductoEditLink}"/>
+                                <h:link class="btn btn-primary" outcome="Edit" value="#{msjAdmin.ViewProductoEditLink}"/>
                                 <br />
                                 <br />
-                                <h:commandLink class="btn btn-success" action="#{productoController.prepareCreate}" value="#{bundle.ViewProductoCreateLink}" />
+                                <h:commandLink class="btn btn-success" action="#{productoController.prepareCreate}" value="#{msjAdmin.ViewProductoCreateLink}" />
 
 
 

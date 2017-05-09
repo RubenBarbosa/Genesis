@@ -14,9 +14,9 @@
                 <div class="migas">
                     <div class="row migas">
                         <ol class="breadcrumb migas">
-                            <li><a href="../inicioadministrador.xhtml">Inicio</a></li>
-                            <li><a href="List.xhtml">Tipos productos</a></li>
-                            <li class="active">Registrar tipo de producto</li>
+                            <li><a href="../inicioadministrador.xhtml">#{msjAdmin.inicioM}</a></li>
+                            <li><a href="List.xhtml">#{msjAdmin.tipoProductosM}</a></li>
+                            <li class="active">#{msjAdmin.registrarTipoM}</li>
                         </ol>
                     </div>
                 </div>
@@ -29,28 +29,29 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="page-header">
-                                <h2>Registro de tipo producto</h2>
+                                <h2>#{msjAdmin.registroTipo}</h2>
                             </div>
                             <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" globalOnly="true"/>
                             </h:panelGroup>
                             <h:form id="defaultForm" a:method="post" class="form-horizontal" >
 <!--                                <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateTipoLabel_idTipo}" for="idTipo" />  
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.CreateTipoLabel_idTipo}" for="idTipo" />  
                                     <div class="col-sm-5">
-                                        <h:inputText a:type="text" class="form-control" a:placeholder="Documento" a:pattern="[0-9]" id="idTipo" value="#{tipoController.selected.idTipo}" title="#{bundle.CreateTipoTitle_idTipo}" required="true" requiredMessage="#{bundle.CreateTipoRequiredMessage_idTipo}"/>
+                                        <h:inputText a:type="text" class="form-control" a:placeholder="Documento" a:pattern="[0-9]" id="idTipo" value="#{tipoController.selected.idTipo}" title="#{msjAdmin.CreateTipoTitle_idTipo}" required="true" requiredMessage="#{msjAdmin.CreateTipoRequiredMessage_idTipo}"/>
                                     </div>
                                 </div>-->
 
                                 <div class="form-group">
-                                    <h:outputLabel class="col-sm-3 control-label" value="#{bundle.CreateTipoLabel_descripcion}" for="descripcion" />
+                                    <h:outputLabel class="col-sm-3 control-label" value="#{msjAdmin.CreateTipoLabel_descripcion}" for="descripcion" />
                                     <div class="col-sm-5">
-                                        <h:inputText a:placeholder="Descripci�n" a:type="text" class="form-control" id="descripcion" value="#{tipoController.selected.descripcion}" title="#{bundle.CreateTipoTitle_descripcion}" />
+                                        <h:inputText a:placeholder="Descripci�n" a:type="text" class="form-control" id="descripcion" required="true" requiredMessage="#{msjAdmin.requerido}" value="#{tipoController.selected.descripcion}" title="#{msjAdmin.CreateTipoTitle_descripcion}" />
+                                        <h:message for="descripcion"/>
                                     </div>                    
                                 </div>
 
                                 <br />
-                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{tipoController.create}" value="#{bundle.CreateTipoSaveLink}" />
+                                <h:commandLink style="margin-top: 4px; padding: 2px 30px 2px 30px; font-size: 20px;" class="btn  btn-success" action="#{tipoController.create}" value="#{msjAdmin.CreateTipoSaveLink}" />
 
 
                             </h:form>

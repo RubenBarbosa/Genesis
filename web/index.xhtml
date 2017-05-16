@@ -21,10 +21,12 @@ and open the template in the editor.
     <!-- Bootstrap Core CSS -->
     <link href="resources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
    <!-- Custom Fonts -->
-   <link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
-   <link href="resources/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+   <h:outputStylesheet library="css" name="font-awesome.css"/>
+   <h:outputStylesheet library="css" name="font-awesome.min.css"/>
     <!-- Theme CSS -->
-    <link href="resources/css/indexgenesis.css" rel="stylesheet" type="text/css"/>
+    <h:outputStylesheet library="css" name="indexgenesis.css"/>
+<!--    <link href="resources/css/indexgenesis.css" rel="stylesheet" type="text/css"/>-->
     <link rel="shortcut icon" href="#{request.contextPath}/resources/imgs/favicon.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     
@@ -161,7 +163,7 @@ and open the template in the editor.
             <div class="row">
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <h:graphicImage value="imgs/daniel.jpg" class="img-responsive img-circle" alt=""/>
+                        <h:graphicImage value="/resources/imgs/daniel.jpg" class="img-responsive img-circle" alt=""/>
                         
                         <h4>Daniel Campos</h4>
                         <p class="text-muted">#{msjIndex.AnalistaDeSistemas}</p>
@@ -177,7 +179,7 @@ and open the template in the editor.
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <h:graphicImage value="imgs/sergio.jpg" class="img-responsive img-circle" alt=""/>
+                        <h:graphicImage value="resources/imgs/sergio.jpg" class="img-responsive img-circle" alt=""/>
                         <h4>Sergio Camargo</h4>
                         <p class="text-muted">#{msjIndex.AnalistaDeSistemas}</p>
                         <ul class="list-inline social-buttons">
@@ -192,7 +194,7 @@ and open the template in the editor.
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <h:graphicImage value="imgs/ruben.jpg" class="img-responsive img-circle" alt=""/>
+                        <h:graphicImage value="resources/imgs/ruben.jpg" class="img-responsive img-circle" alt=""/>
                         <h4>Rubén Barbosa</h4>
                         <p class="text-muted">#{msjIndex.AnalistaDeSistemas}</p>
                         <ul class="list-inline social-buttons">
@@ -352,3 +354,4 @@ and open the template in the editor.
         
     </h:body>
 </html>
+

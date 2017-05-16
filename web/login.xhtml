@@ -1,40 +1,81 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"      
+      xmlns:b="http://bootsfaces.net/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-      xmlns:b="http://bootsfaces.net/ui">
-    
-    <f:view locale="#{sessionController.languageSelected}">
-           
-           
-                <div class="col-md-6">
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
 
-                    <b:form id="form-login" horizontal="true" prependId="false">
-                        <!-- Single button -->
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                #{msjIdioma.idioma} <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <c:forEach items="#{sessionController.supportLanguages}" var="l" >
-                                    <li>
-                                        <h:commandLink  value="#{msjApp[l.displayLanguage]}" action="#{sessionController.cambiarIdioma(l)}">
-                                            <img src="#{request.contextPath}/resources/imgs/languages/#{l.language}.png" width="25px" alt="#{msjApp[l.displayLanguage]}"/>
-                                        </h:commandLink>
-                                    </li>
-                                </c:forEach>
-                            </ul>
-                        </div>
-                    </b:form>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+
+        <title>Ingresar | Genesis</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="resources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <!-- Custom Fonts -->
+        <h:outputStylesheet library="css" name="font-awesome.css"/>
+        <h:outputStylesheet library="css" name="font-awesome.min.css"/>
+        <!-- Theme CSS -->
+        <h:outputStylesheet library="css" name="logingenesis.css"/>
+        <link rel="shortcut icon" href="#{request.contextPath}/resources/imgs/favicon.png"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>#{msjIndex.InicioG}</title>
+    </h:head>
+
+    <h:body>
+        <section class="login-card">
+
+            <!-- Login (giriş) Form Sayfası -->
+            <form id="login-form" class="col-lg-12" method="post">
+
+                <!-- Logo -->
+                <div >
+                    <h3 class="intro-heading">Genesis Gourmet</h3>
                 </div>
-        </f:view>
-    <ui:composition template="/WEB-INF/template/templatelogin/templateLogin.xhtml">
-        
-        
-        
-    </ui:composition>
-</html>
+                <!--        <div class="col-lg-12 logo-kapsul">
+                            <img width="200" class="logo" src="http://losgrillos.com/thumb.php?src=http://losgrillos.com/images/uploads/2013/icono-grupo-facebookss0sllk.png&h=450&w=600&q=90&zc=1" alt="Logo"/>
+                        </div>-->
 
+                <!-- #Logo Bitiş -->
+
+                <!-- Kullanıcı Adı Giriş İnput -->
+                <div class="group">
+                    <input type="text" required="">
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label><i name="usuario" class="material-icons input-ikon fa fa-user"></i>
+                            <span class="span-input">Documento</span></label>
+                    </input>
+                </div>
+                <!-- #Kullanıcı Adı Giriş İnput Bitiş -->
+
+                <!-- Şifre İnput Giriş-->
+                <div class="group">
+                    <input type="password" required="">
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label><i name="contraseña" class="material-icons input-sifre-ikon fa fa-key"></i>           
+                            <span class="span-input">Clave</span></label>
+                    </input>
+                </div>
+
+                <button id="enviar" name="enviar" class="giris-yap-buton ">Ingresar</button>
+                
+                <div class="volver">
+                    <ul class="nav navbar-nav navbar-right">
+                        <a class="page-scroll" href="index.xhtml">Volver</a>
+                    </ul>
+                </div>     
+            </form>
+        </section>
+    </h:body>
+</html>

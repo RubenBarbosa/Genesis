@@ -58,6 +58,7 @@ a:focus {
     position: relative;
     padding: 0px 25px;
     width: 100%;
+    margin-top: -50px;
 }
 .logo-kapsul {
     text-align: center;
@@ -86,6 +87,7 @@ a:focus {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     background: none;
     color: #eee;
+    margin-top: 60px;
 }
 .group input:focus {
     outline: none;
@@ -218,7 +220,7 @@ input:valid ~ label {
     border-radius: 5px;
     outline: none;
     opacity: 0.8;
-    margin-left: 140px;
+    margin-left: 100px;
     width: 150px;
 }
 .forgot-and-create {
@@ -241,19 +243,18 @@ input:valid ~ label {
     display: block;
 }
 
-.volver{
-   padding-left: 50px;
-    padding-top: 10px;
-
-}
 .intro-heading {
         font-family: "Blacksword", Helvetica, Arial, sans-serif;
         text-transform: capitalize;
         color: rgb(172, 27, 24);
         font-weight: 500;
-        font-size: 50px;
+        font-size: 60px;
         line-height: 75px;
         -webkit-text-stroke-color: rgb(255, 255, 255);
         -webkit-text-stroke-width: 0.5px;
-        margin-left: 40px;
+        margin-left: 1px;
+    }
+    .volver{
+        margin-right: 220px;
+        margin-top: 40px;
     }

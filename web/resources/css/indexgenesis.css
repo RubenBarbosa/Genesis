@@ -246,7 +246,7 @@ fieldset[disabled] .btn-xl:hover {
 }
 
 header {
-    background-image:url('#{resource["imgs/fondoindex.jpg"]}');
+    background-image: url('#{resource["imgs/fondoindex.jpg"]}');
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -631,7 +631,7 @@ aside.clients img {
 
 section#contact {
     background-color: #222;
-    background-image: url(../img/map-image.png);
+    background-image: url('#{resource["imgs/map-image.png"]}');
     background-position: center;
     background-repeat: no-repeat
 }
